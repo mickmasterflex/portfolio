@@ -1,0 +1,35 @@
+<header class="site-header {% if page.is_lp %}lp{% endif %}{% if page.is_home %}home{% endif %}">
+    {% if page.is_lp %}
+    
+    {% else %}
+
+    <div class="inner row {% if page.page_width == 'wide' %}wide{% endif %}">
+        <div class="logo left">
+            <a class="site-logo" href="{{ site.baseurl }}"><img class="" src="{{ site.baseurl }}{{ site.logo }}"/></a>
+        </div>
+        
+        {% if site.simpleheader %}
+        
+            {% for navlink in site.navlinks %}
+                <a href="{{ navlink.url }}" class="">{{ navlink.title }}</a>
+            {% endfor %}
+            
+        {% else %}
+
+            {% if site.navlinks %}
+                {% include navigation.html %}
+            {% endif %}
+            
+            <div class="phone right">
+                <a href="tel:{{ site.phone }}" class="show-for-medium-up"><h3 class="phone number">{{ site.text_phone }}</h3></a>
+                <a href="tel:{{ site.phone }}" class="show-for-medium-up"><h4 class="phone title">{{ page.phone_title }}</h4></a>
+                <a href="tel:{{ site.phone }}" class="button-two show-for-small-down">Call Us</a>
+            </div>
+            <div class="clearfix"></div>
+        {% endif %}
+
+    <div class="clearfix"></div>
+    
+    {% endif %}
+    
+</header>

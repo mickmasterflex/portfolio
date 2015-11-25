@@ -1,0 +1,60 @@
+---
+#======================================================
+# Description:
+# This example html is used to display and process a Proton offer
+#
+# Use case examples:
+#   * I want to load a offer based on an offer_id passed in the url.
+#   * I want to dispatch to the first offer.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: blank  # layout requirement
+
+#========= Link to required js for page ===============
+form_js: /prometheus/offer_form/js/offer_form.js
+
+#========= Name form & give js something to query =====
+form_id: offer_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/api/post_school_lead/
+
+#========= Where page goes after form submit ==========
+next_url: http://www.google.com
+
+#========= Common Marketing Variables =================
+title: Example Offer Form
+---
+
+<script type="text/javascript">
+    var form_id = '#{{ page.form_id }}';
+    var post_url = '{{ page.post_url }}';
+    var next_url = '{{ page.next_url }}';
+</script>
+
+<!-- required html for offer form -->
+<form class="cmxform" name="{{ page.form_id }}" id="{{ page.form_id }}" method="get">
+    <div id="render_form_fields"></div>
+    <div class="submit">
+        <input id="adid" type="hidden" name="adid" value="" />
+
+        <!-- submit button -->
+        <button id="submit" type="submit">Submit</button>
+        <div class="tcpa"></div>
+    </div>
+</form>
+
+<!-- required html for offer content -->
+<div class="offer_content">
+    <div class="title"></div>
+    <div class="content_block"></div>
+</div>
+
+<script type="text/javascript">
+    var expire = 10;
+</script>

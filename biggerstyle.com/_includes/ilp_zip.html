@@ -1,0 +1,16 @@
+<div class="ilp-shortform">
+    <form name="shortform" id="application-form" method="get" action="{{ site.baseurl }}thanks-vantage.html">
+        <h3>{{ page.intent_heading }}</h3>
+        <div class="form-section">
+            <div class="field form-element">
+                <label id="zip_label" for="zip_code">Zip Code *</label>
+                <input id="zip_code" type="text" name="zip_code" class="validate_zip" maxlength="5" placeholder="00000" />
+            </div>
+
+        </div>
+        <div class="submit">
+            <div id="form_errors"></div>
+            <button id="application-submit" class="ilp-button" type="submit" onClick="ga('send', 'event', 'ILP', 'Submit', 'ILPZipSubmit');">{{ page.button_text }}</button>
+        </div>
+    </form>
+</div>

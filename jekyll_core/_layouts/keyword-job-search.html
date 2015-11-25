@@ -1,0 +1,75 @@
+---
+#======================================================
+# Description:
+# This example html is used to display a keyword job search page.
+#
+# Use case examples:
+#   * I want to show a keyword-generated job search page.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: /results/?
+append_form_fields: yes
+
+#========= Variation Variables ========================
+form_side: flipped
+form_type: job_search
+
+#========= Common Marketing Variables =================
+title: Example Static Page
+heading_one: Search for Medical Jobs in Your Area
+heading_two: 
+form_heading: 
+sitemap_include: y
+---
+<div class="row lp-top-wrap">
+    <div class="article large-push-5 medium-push-6 large-7 medium-6 medium-uncentered small-centered columns">
+        <div class="content-area hide-for-small-down hero-image">
+        </div>
+    </div>
+    <div class="aside large-pull-7 medium-pull-6 large-5 medium-6 medium-uncentered small-centered columns">
+        {% include prometheus_job_search_form.html %}
+    </div>
+</div>
+
+<div class="row lp-middle-wrap">
+    <div class="medium-8 medium-centered columns">
+        <div class="search_results">
+            <ul class="job_wrap">
+                {% for job in page.jobs limit:3 %}
+                    <li class="job">
+                        <div class="job_title">{{ job.name }}</div>
+                        <div class="job_desc details">{{ job.company }} - {{ job.city }}, {{ job.state }}</div>
+                        <div class="job_desc">{{ job.shortdescription }}</div>
+                        <a href="/register/?next={{ job.url }}" class="job_hover"></a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="/results/?search_query={{ page.keyword }}">View More Jobs</a>
+        </div>
+    </div>
+    
+    <div class="lp-content medium-8 medium-centered columns">
+        <h4>Start your {{ page.keyword }} Job Search Here!</h4>
+        <p>We have positions from all across the web on our site. Start your search today to explore your options.</p>
+    </div>
+</div>

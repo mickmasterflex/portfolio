@@ -1,0 +1,1227 @@
+/**
+ * Multistep Styles for NI Dispatch
+ *
+ * Place all styles that pertain to the multistep layout here.
+ *
+ * @author Kevin Bigelow
+ * @version 1.0.0
+ * @since 1.0.0
+ */
+
+/* -------------------------------------------------------------------
+	Import
+------------------------------------------------------------------- */
+@include web-fonts(("Bitter": ("400", "700")));
+@include web-fonts(("Raleway": ("200", "400","700")));
+
+/* -------------------------------------------------------------------
+	Base
+------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+    font-family: $raleway;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $defaultText;
+}
+
+/* -------------------------------------------------------------------
+	Form Elements
+------------------------------------------------------------------- */
+
+label {
+    font-family: $raleway;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: $altText;
+    margin: 1.1rem 0 .29rem 0;
+}
+.label_error {
+}
+.input_error {
+    transition: none;
+    border: solid 2px $punch !important;
+    @include border-bottom-left-radius(0);
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+    font-family: $raleway;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: $scorpion;
+    height: 3.7rem;
+    margin: 0;
+    padding: 0 1.4375rem;
+    @include box-shadow(0rem, .0625rem, .0625rem, $blueWhale, null);
+    transition: none;
+}
+select {
+    @include border-radius(.4375rem);
+    option {
+        padding: .5rem 0;
+    }
+}
+
+.multi_back {
+    font-family: $raleway;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $white;
+    @include text-shadow(.0625rem, .0625rem, 0, $buccaneer);
+    padding: 1.4rem 0 1.6rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid $black;
+    @include border-radius(.25rem);
+    -webkit-transition: background .25s ease; /* For Safari 3.1 to 6.0 */
+    transition: background .25s ease;
+    &:hover {
+        background-color: $blueWhale;
+    }
+}
+
+.multi_next {
+    font-family: $raleway;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $white;
+    @include text-shadow(.0625rem, .0625rem, 0, $buccaneer);
+    padding: 1.4rem 0 1.6rem 0;
+    background-color: $burntRedSienna;
+    border: 1px solid $buccaneer;
+    @include border-radius(.25rem);
+    @include box-shadow(0, .0625rem, 0, $froly, inset);
+    -webkit-transition: background .25s ease; /* For Safari 3.1 to 6.0 */
+    transition: background .25s ease;
+    &:hover {
+        background-color: $persimmon;
+    }
+    &.green {
+        @include text-shadow(.0625rem, .0625rem, 0, $peaGreen);
+        background-color: $jungleGreen;
+        border: 1px solid $peaGreen;
+        @include box-shadow(0rem, .0625rem, 0, $shamrock, inset);
+        &:hover {
+            background: $jungleGreenLight;
+        }
+    }
+    &.show-success {
+        display: none;
+    }
+}
+
+#partners {
+    display: none;
+    position: fixed;
+    height: 50% !important;
+    top: 10%;
+    left: 50%;
+    z-index: 1050;
+    overflow: auto;
+    width: 300px !important;
+    margin: 0 0 0 -150px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    -webkit-overflow-scrolling: touch;
+    @include border-radius(6px);
+    @include box-shadow(0, 3px, 7px, rgba(0, 0, 0, 0.3), null);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    h2 {
+        font-family: $typeface1;
+        text-align: left;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 700;
+        font-weight: normal;
+        font-style: normal;
+        letter-spacing: -1px;
+        line-height: 120%;
+        color: $h2a;
+        margin: 0;
+        padding: 0;
+        text-rendering: optimizeLegibility;
+    }
+    #partners__closer {
+        font-weight: 700;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: block;
+        padding: 0;
+        margin: 0.75rem 0.75rem 0 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #fff;
+        border: solid 1px #cacaca;
+        color: #cacaca;
+        &:hover {
+            background: #ff5454;
+            border: solid 1px #ee4f4f;
+            color: #ffffff;
+        }
+    }
+}
+
+#multi_next_1, #multi_next_4 {
+    display: block;
+    width: 100%;
+    margin: 1.6rem auto 0;
+    &.show-success {
+        display: none;
+    }
+}
+
+#multi_next_2, #multi_next_3 {
+    width: 100%;
+    margin: .6rem auto 0;
+}
+
+#multi_next_3 .section-desc {
+    font-family: $raleway;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.35;
+    text-align: center;
+    }
+
+#multistep_form {
+    margin-bottom: 4rem;
+    #step_3 {
+        .form-section  {
+            .form-element:nth-child(3), .form-element:nth-child(4), .form-element:nth-child(5), .form-element:nth-child(6), .form-element:nth-child(7), .form-element:nth-child(8), .form-element:nth-child(9), .form-element:nth-child(10) {
+                float: left;
+                width: 100%;
+            }
+        }
+    }
+    .school_selection {
+        .section-title { display: none; }
+    }
+    .school-select {
+        background: #fff; 
+        border: 1px solid #cecece; 
+        border-radius: 5px; 
+        -webkit-border-radius: 5px; 
+        -moz-border-radius: 5px; 
+        -ms-border-radius: 5px; 
+        -o-border-radius: 5px; 
+        width: 85%; 
+        margin: 0 auto; 
+        overflow: hidden; 
+        position: relative; 
+        padding: 15px;
+        .school-content { 
+            margin-top: 20px;
+            display: block;
+            overflow: hidden;
+            margin-bottom: 5px;
+            label { position: absolute; left: 140px; top: 15px; }
+        }
+        input[type="checkbox"] { 
+            position: absolute;
+            left: 115px; 
+            top: 15px;
+        }
+        select { 
+            margin: 5px 5px 0 5px; 
+            max-width: 70% !important; 
+            float: right; 
+        }
+        #offer_id { display: none; }
+        img { 
+            width: 20%; 
+            display: block; 
+            float: left; 
+            clear: left; 
+            position: absolute; 
+            top: 5px; 
+        }
+    }
+    .form-wrap {
+        padding: .775rem 1.1875rem 1.875rem  1.1875rem;
+        background-color: rgba(5, 43, 61, 0.7);
+        border: solid .0625rem $horizon;
+        @include border-radius(0.4375rem);
+        h3 {
+            color: $altText;
+            margin: 0rem 0px 0.5rem;
+            text-align: center;
+        }
+        }
+    .left {
+        text-align: left !important;
+        }
+    .section-title {
+        font-family: $bitter;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.25rem;
+        line-height: 1.19;
+        color: $white;
+        text-align: left;
+        margin: 10px 0;
+        padding: 7px 0;
+        display: block;
+        overflow: hidden;
+        border-radius: none;
+        background: none;
+        clear: left;
+        }
+    .section-desc {
+        font-family: $raleway;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 1.5rem;
+        line-height: 1.35;
+        color: $white;
+        text-align: left;
+        a { 
+            color: $orient;
+            &:hover { color: $black; }
+        }
+        .brand_description {
+            h1, h2, h3, h4, h5 { 
+                font-family: $raleway;
+                font-style: normal;
+                font-size: 1.5rem;
+                color: $white;
+                font-weight: 700;
+                letter-spacing: .0125rem;
+            }
+            p {
+                font-family: $raleway;
+                color: #DADADA;
+                font-size: 1.0625rem;
+                text-align: left;
+                margin: .5rem 0;
+                max-width: 24rem;
+                font-weight: 400;
+                text-shadow: 0px 0px 2px rgba(0, 0, 0, .8);
+            }
+        }
+    }
+    .school-heading {
+        display: block;
+        margin: 2rem auto 3rem;
+        padding: 0;
+        .school-logo {
+            display: block;
+            margin: 0 auto;
+            background: $white;
+            padding: 2px 8px 4px 8px;
+            border-bottom-left-radius: 7px;
+            border-top-left-radius: 7px;
+            @include box-shadow(0, 1px, 0, $horizon, null);
+            height: 5.25rem;
+            max-width: 8.25rem;
+            float: left;
+            img {
+                background: #3A6F9A;
+                vertical-align: middle;
+                max-height: 25px;
+                max-width: 160px;
+            }
+            .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
+        .section-title {
+            overflow: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+    }
+    .tcpa {
+        font-family: $raleway;
+        font-size: .85rem;
+        line-height: 1.75;
+        font-weight: 200;
+        color: $botticelli;
+        margin: 1rem 0;
+        p {
+            font-size: .85rem;
+        }
+        label {
+            font-family: $raleway;
+            font-size: .85rem;
+            line-height: 1.75;
+            font-weight: 200;
+            color: $botticelli;
+            margin: 1rem 0;
+            p {
+                font-size: .85rem;
+            }
+        }
+    }
+    #partners__opener { color: $white; }
+
+    .validation-description {
+        font-size: 12px;
+        font-style: italic;
+        display: none;
+        color: #ff0000;
+        }
+    .form-disclaimer {
+        color: #999;
+        border-top: 1px dotted;
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: normal;
+        text-align: center;
+        padding-top: 15px; 
+        }
+    .sub-required { 
+        font-family: $raleway;
+        color: $botticelli;
+        font-size: .85rem;
+        line-height: 1rem;
+        font-weight: normal;
+        text-align: center;
+        display: block;
+        margin: 1rem auto 0;
+    }
+    .form_submit_cell {
+        text-align: center;
+    }
+    #school_form_submit {
+        background-color: #ee4f4f !important;
+        border: 1px solid #763131;
+        margin: 10px auto 5px;
+        display: block;
+        &:hover { background-position: center -62px; }
+        &:active { background-position: center -124px; }
+        }
+    .form-req-mark { color: $burntRedSienna; }
+    .hide { display: none; }
+    
+    .field_error {
+        width: auto;
+        margin: 0 auto;
+        padding: .2rem .5rem .35rem .5rem;
+        text-align: left;
+        color: $white;
+        background: $punch;
+        @include transition(position .25s);
+        @include border-bottom-right-radius(5px);
+        @include border-bottom-left-radius(5px);
+    }
+    .checkbox {
+        &:hover {
+            cursor: pointer;
+            }
+        .custom {
+            display: block;
+            margin-top: 1rem;
+            width: 8%;
+            padding: .4rem 0 .6rem .7rem;
+            background: rgba(0, 0, 0, .6);
+            border-top-left-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+            &:hover {
+                background: rgba(0, 0, 0, 0.6);
+                cursor: pointer;
+            }
+            input {
+                margin: 0;
+                &:hover {
+                cursor: pointer;
+                }
+            }
+            }
+        label[for=double_opt] {
+            width: 92%;
+            float: right;
+            background: rgba(0, 0, 0, .3);
+            padding: 1rem 2rem 2rem;
+            margin: 1rem 0 0 0;
+            border-top-right-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+            border-top-left-radius: none;
+            line-height: 1.65;
+            &:hover {
+                background: rgba(0, 0, 0, 0.6);
+                cursor: hand;
+            }
+            .label_error {
+                border: 2px solid #d92b2b;
+                border-bottom-left-radius: 0;
+            }
+        }
+        .field_error {
+            margin-left: 7.8%;
+            width: auto;
+        }
+    }
+    input[type="checkbox"], input[type="radio"] {
+        margin: .4375rem .75rem .3125rem .75rem;
+        display: block;
+        float: left;
+    }
+    .radio {
+        margin: 0;
+        display: block;
+        line-height: 1.75;
+    }
+
+}
+
+/* -------------------------------------------------------------------
+	Layout
+------------------------------------------------------------------- */
+
+.page-content {
+    &.multistep {
+        @include bg($defaultBackgroundColor, 'images/bg-bluecity.jpg', top, center, no-repeat);
+        background-size: cover;
+    }
+    .wrap {
+    }
+}
+
+.offer_content {
+    background: rgba(255,255,255,0.85);
+    padding: 1rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #d7d7d7;
+}
+
+.atlas_loader {
+    width: 30%;
+    margin: 0 auto 2rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: 0.3125rem;
+    padding: 1rem;
+    border: 0.0625rem solid #d7d7d7;
+}
+
+.no-site-header {
+    display: none;
+}
+.footer-numbers {
+    margin: 4rem 0 0 0;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, .7);
+    h5 {
+        font-family: $raleway;
+        font-style: normal;
+        color: $white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.75rem;
+        margin: 1rem 0 0 0;
+        }
+    p {
+        font-family: $raleway;
+        font-size: 1.25rem;
+        line-height: 1.3;
+        font-weight: 400;
+        font-style: normal;
+        color: $white;
+        text-align: center;
+        margin: .5rem 0 1.2rem 0;
+        }
+    .section { padding: 0 1.75rem; }
+    .middle {
+        border-left: solid .0625rem rgba(213, 213, 213, .5);
+        border-right: solid .0625rem rgba(213, 213, 213, .5);
+    }
+}
+.multistep-footer {
+    border-top: 1px solid $altBorder;
+    min-height: 3.5rem;
+    padding: 0;
+    @include bg(transparent, 'images/bg-pattern-1.jpg', center, center, repeat);
+    p {
+        color: $altText !important;
+        font-size: .9375rem;
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        color: $altText;
+        text-decoration: underline;
+        &:hover {
+            color: $altText;
+        }
+    }
+    .copyright {
+        padding: 1.625rem 0;
+        text-align: left;
+        font-size: .9375rem;
+        .large-3 {
+            text-align: right;
+        }
+        &.lp { 
+            text-align: center;
+            padding: 1rem 0 .5rem;
+        }
+        .right { text-align: right; }
+    }
+    .site-logo {
+        margin: 1rem auto 0;
+        display: block;
+    }
+}
+
+#agree_terms { float: none; }
+
+.step {
+    margin: 2.375rem 0 0 0;
+}
+
+#step_1 {
+    margin: 3.375rem 0 0 0;
+    .section-title {
+        margin: 1rem 0 0;
+        }
+    p {
+        margin-bottom: .9rem;
+        }
+}
+
+#step_2 {
+    .form-wrap {
+        input {
+            margin: 0;
+            }
+        }
+}
+
+#step_4 {
+    margin: 0;
+    h5 {
+        font-family: $raleway;
+        font-size: 1.3rem;
+        color: #FFFFFF;
+        font-style: normal;
+        line-height: 1.875rem;
+        text-align: left;
+        font-weight: 700;
+        padding: 0 0 .25rem 0;
+        margin: 0;
+        text-rendering: optimizeLegibility;
+    }
+    .section-title {
+        text-align: left;
+        padding: 1.2rem 0 1rem 2rem;
+        height: 85px;
+        border: solid 0.0625rem #5584a2;
+        background: rgba(5, 43, 61, 0.7);
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        clear: none;
+    }
+    .section-desc {
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.65;
+    }
+    #schooldesc__opener {
+        color: $white;
+        font-weight: 700;
+        &:hover {
+            color: $botticelli;
+        }
+        &.btn {
+            -webkit-transition: background .25s ease; /* For Safari 3.1 to 6.0 */
+            transition: background .25s ease;
+            background: rgba(0,0,0,.5);
+            display: block;
+            padding: 1rem;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            h5 { 
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.125rem;
+                line-height: 1rem;
+                font-weight: 400;
+                }
+            &:hover {
+                -webkit-transition: background .25s ease; /* For Safari 3.1 to 6.0 */
+                transition: background .25s ease;
+                background: rgba(0,0,0,.8);
+            }
+        }
+    }
+    .form-wrap {
+        padding: .9rem 1.1875rem;
+    }
+}
+
+#step_5 {
+    margin-top: 1rem;
+}
+
+#step_2, #step_3 {
+    .section-title {
+        text-align: center;
+        padding: 0 0 .9rem 0;
+        }
+    .form-wrap {
+        padding: .9rem 1.1875rem;
+        }
+}
+
+#step_2, #step_3, /* #step_4 */ {
+    .section-title {
+        margin: 0;
+    }
+    .section-desc {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+#step_2, #step_3, #step_4, #step_5 { display: none; }
+
+.steps { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0; width: 100%;
+    text-align: center; 
+    li {
+        display: inline-block;
+        width: 18%;
+        text-align: center;
+        padding: 5px 0;
+        margin: 0;
+        border: 1px solid #d3d3d3;
+        background: #e3e3e3;
+        .active {
+            color: #fff;
+            font-weight: bold;
+            background: #5c8ba7;
+        }
+        .completed {
+            color: #cbcbcb;
+            background: #eee;
+            border-color: #e5e5e5;
+        }
+    }
+}
+
+#thankyou_1 {
+    margin: .75rem 0 0 0;
+    .section-title {
+        margin: 0 0 10px 0;
+        padding: 0 0 7px 0;
+    }
+    .school-wrap {
+        padding: 0;
+        background-color: rgba(5, 43, 61, 0.7);
+        border: solid .0625rem $horizon;
+        @include border-radius(0.4375rem);
+        margin-bottom: 2.5rem;
+    }
+    .school {
+        display: table;
+        &:before {
+            content: url("/core/images/icon-check.png");
+            position: absolute;
+            top: -.625rem;
+            left: -.625rem;
+        }
+        .logo {
+            border-top-left-radius: 0.4375rem;
+            border-bottom-left-radius: .4375rem;
+            overflow: hidden;
+        }
+        &.top {
+            border-bottom: solid .0625rem $horizon;
+            .logo {
+                border-top-left-radius: 0.4375rem;
+                border-bottom-left-radius: .4375rem;
+                overflow: hidden;
+            }
+        }
+        &.middle {
+        }
+        &.bottom {
+            border-top: solid .0625rem $horizon;
+            .logo {
+                border-top-left-radius: 0.4375rem;
+                border-bottom-left-radius: .4375rem;
+                overflow: hidden;
+            }
+        }
+        &.columns {
+            padding: 0;
+        }
+        .logo {
+            display: table;
+            float: left;
+            margin: 0 .0625rem;
+            width: 6.25rem;
+            height: 7.5rem;
+            background-color: #fff;
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+            img {
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+        .details {
+            display: table;
+            .inner {
+                display: table-cell;
+                padding: 0 1rem;
+                height: 100%;
+                box-sizing: border-box;
+                width: 21rem;
+                clear: both;
+                padding: .5rem .5rem .5rem 1rem;
+            }
+            h6 {
+                font-family: $raleway;
+                font-size: 1.25rem;
+                line-height: 1.2;
+                font-weight: 400;
+                color: $white;
+                margin-bottom: .15rem;
+            }
+            p {
+                font-family: $raleway;
+                font-size: 1.125rem;
+                line-height: 1.2;
+                font-weight: 200;
+                color: $white;
+                margin: .25rem 0 0 0;
+            }
+        }
+    }
+    .other-offers-wrap {
+        padding: 0;
+        margin-top: 4rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: solid .0625rem $horizon;
+        @include border-radius(0.4375rem);
+        .row {
+            margin: 0 2rem;
+        }
+        .phone-icon {
+            height: 6rem;
+            background: url('/core/images/icon-phone.png');
+            @include bg(null, '/images/icon-phone.png', top, center, no-repeat);
+        }
+        h5 {
+            font-family: $raleway;
+            text-align: center;
+            font-size: 2.25rem;
+            font-style: normal;
+            font-weight: 700;
+            padding: 1rem 0 1.75rem;
+            margin: 1.25rem 0 0 0;
+            color: $white;
+            @include text-shadow(.0625rem, .0625rem, 0, $peaGreen);
+            @include bg($jungleGreen);
+            @include border-radius(0 0 0.4375rem 0.4375rem);
+        }
+        p {
+            font-family: $raleway;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: $white;
+        }
+    }
+}
+
+#thankyou_2 {
+    margin: 0 0 0 0;
+    .other-offers-wrap {
+        padding: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: solid .0625rem $horizon;
+        @include border-radius(0.4375rem);
+        .row {
+            margin: 0 2rem;
+        }
+        .phone-icon {
+            height: 6rem;
+            background: url('/core/images/icon-phone.png');
+            @include bg(null, '/images/icon-phone.png', top, center, no-repeat);
+        }
+        h5 {
+            font-family: $raleway;
+            text-align: center;
+            font-size: 2.25rem;
+            font-style: normal;
+            font-weight: 700;
+            padding: 1rem 0 1.75rem;
+            margin: 1.25rem 0 0 0;
+            color: $white;
+            @include text-shadow(.0625rem, .0625rem, 0, $peaGreen);
+            @include bg($jungleGreen);
+            @include border-radius(0 0 0.4375rem 0.4375rem);
+        }
+        p { 
+            font-family: $raleway;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: $white;
+        }
+    }
+}
+
+#thankyou_3 {
+    margin: 0 0 0 0;
+    .phone-wrap {
+        padding: 0;
+        background-color: rgba(5, 43, 61, 0.7);
+        border: solid .0625rem $horizon;
+        @include border-radius(0.4375rem);
+        .row {
+            margin: 2.5rem 0 0 0;
+        }
+        .phone-icon {
+            height: 6rem;
+            background: url('/core/images/icon-phone.png');
+            @include bg(null, '/images/icon-phone.png', top, center, no-repeat);
+        }
+        h5 {
+            font-family: $raleway;
+            text-align: center;
+            font-size: 2.25rem;
+            font-style: normal;
+            font-weight: 700;
+            padding: 1rem 0 1.75rem;
+            margin: 1.25rem 0 0 0;
+            color: $white;
+            @include text-shadow(.0625rem, .0625rem, 0, $peaGreen);
+            @include bg($jungleGreen);
+            @include border-radius(0 0 0.4375rem 0.4375rem);
+        }
+        p { 
+            font-family: $raleway;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: $white;
+        }
+    }
+}
+
+.header-title {
+    padding: 1rem 0 1.5rem 0;
+    margin: 0 0 3rem 0;
+    border-bottom: solid .0625rem $peaGreen;
+    @include bg($jungleGreen);
+    .inner {
+        padding: 0 1rem;
+    }
+    .section-title {
+        font-family: $raleway;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 700;
+        color: $white;
+        text-align: center;
+        margin: 0;
+        padding: 0.25rem 0 .5rem;
+        @include text-shadow(.0625rem, .0625rem, 0, $peaGreen);
+        img {
+            margin: 0 .75rem .25rem 0;
+        }
+        &.check { @include bg(null, '/images/icon-check.png', top, center, no-repeat); }
+    }
+    .section-desc {
+        text-align: center;
+        margin-bottom: 0;
+        }
+    p { 
+        font-family: $raleway;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: $white;
+    }
+    &.school-submit, .school-submit-end {
+        display: none;
+        margin-bottom: 0;
+        padding: .75rem 0 1rem 0;
+        .section-desc {
+            font-size: 1.25rem !important;
+            font-weight: 400 !important;
+            
+        }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Additional Elements
+------------------------------------------------------------------- */
+#loading-spinner { display: none; position: absolute; top: 50%; left: 50%; width: 160px; z-index: 100; background: #000; text-align: center; color: #fff; padding: 20px 0; border-radius: 8px; margin: 0 0 0 -80px; }
+
+#loading-spinner img { margin-bottom: 5px; }
+
+#loading-overlay { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 500; }
+
+#preloader_wrap { width: 120px; margin: 1rem auto; }
+
+#loaderImage { display: none; }
+
+
+/* -------------------------------------------------------------------
+	Responsive Display Styles
+------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .multistep-footer {
+        .copyright {
+            text-align: center;
+            .right {
+                text-align: center;
+                padding: 0 0 0 0;
+            }
+        }
+    }
+}
+
+/* Desktop */
+@media (min-width: 960px) {
+
+}
+
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (max-width: 640px) {
+    #multistep_form {
+        margin: 0 1rem;
+        #step_1 {
+            margin: 0;
+        }
+        .school-heading {
+            margin-bottom: 1rem;
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            .school-logo {
+                float: none;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 7px;
+                border-bottom-left-radius: 7px;
+            }
+            .section-title {
+                overflow: auto;
+                overflow-y: auto;
+                white-space: normal;
+            }
+        }
+        
+    }
+    #step_4 {
+        margin: 0;
+        h5 {
+            font-family: $raleway;
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            font-style: normal;
+            line-height: 1.875rem;
+            text-align: left;
+            font-weight: 700;
+            padding: 0 0 .25rem 0;
+            margin: 0;
+            text-rendering: optimizeLegibility;
+        }
+        .section-title {
+            text-align: center;
+            padding: .2rem 0 0 0;
+            height: auto;
+            border: none;
+            background: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            float: none;
+        }
+        .section-desc {
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.65;
+        }
+    }
+    .header-title {
+        p { font-size: 1.1rem; }
+    }
+    #thankyou_1 {
+        margin-top: 0;
+        .section-title { text-align: center; }
+        .section-desc { font-size: 1.25rem; text-align: center; }
+        p { margin-bottom: .5rem; }
+        .school-wrap { margin-top: 1rem; }
+        .other-offers-wrap { margin-top: 2rem; }
+    }
+    .footer-numbers {
+        padding: 0 1rem 1rem 1rem;
+        .section {
+            margin: 0;
+        }
+        .middle {
+            border-left: none;
+            border-right: none;
+            border-top:  solid .0625rem rgba(213, 213, 213, .5);
+            border-bottom:  solid .0625rem rgba(213, 213, 213, .5);
+        }
+    }
+    .privacy {
+        .title {
+            position: fixed;
+        }
+        .top {
+            margin-top: 5rem;
+        }
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* Mobile Portrait */
+@media (max-width: 479px) {
+    #multistep_form {
+        margin: 0;
+        .section-title {
+            font-size: 1.625rem;
+            margin: .55rem 0 0;
+        }
+        .form-wrap {
+            border-radius: 0;
+            border: none;
+            padding: .125rem 1.1875rem 3rem;
+            margin-top: .5rem;
+            label {
+                font-size: 1rem;
+                line-height: 1.25;
+            }
+        }
+    }
+    .header-title {
+        margin-bottom: 1rem;
+        .section-title { font-size: 2rem; }
+    }
+    .steps {
+        
+    }
+    #step_2, #step_3 {
+        margin-top: 1rem;
+        .section-title {
+            padding: 0;
+        }
+        .section-desc {
+            margin-bottom: 0;
+        }
+    }
+    #thankyou_1 {
+        .section-title { font-size: 2.25rem; }
+        .school-wrap {
+            margin-bottom: 2rem;
+            .school {
+                &:before {
+                    top: -10px;
+                    left: -7px;
+                }
+            }
+        }
+    }
+    #thankyou_3 {
+        margin-bottom: 1rem;
+        .phone-wrap {
+            background: none;
+            border: none;
+            .row {
+                margin-top: 1rem;
+            }
+            h5 {
+                background: none;
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    .footer-numbers {
+        margin: 0;
+        padding: 0 1rem 1rem 0; 
+        .section {
+            margin: 0;
+        }
+        .middle {
+            border-left: none;
+            border-right: none;
+            border-top:  solid .0625rem rgba(213, 213, 213, .5);
+            border-bottom:  solid .0625rem rgba(213, 213, 213, .5);
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    #multistep_form {
+        .form-wrap {
+            padding: 1.2rem .75rem;
+        }
+    }
+    .multistep-footer {
+        .copyright {
+            text-align: center;
+            .right {
+                text-align: center;
+            }
+        }
+    }
+    .header-title {
+        .section-title { font-size: 1.5rem; }
+        p { font-size: 1rem; }
+        .section-desc { text-align: left; margin-bottom: .5rem; }
+    }
+    #step_2, #step_3 {
+        margin: .75rem 0 0 0;
+        .section-title {
+            margin-bottom: 0;
+        }
+        
+    }
+    #thankyou_1 {
+        .school-wrap {
+            .school {
+                .logo { display: none; }
+                .details { padding-left: 2rem; }
+            }
+        }
+        .section-title {
+            font-size: 1.8rem;
+        }
+        .section-desc {
+            text-align: left;
+            font-size: 1rem;
+        }
+    }
+}

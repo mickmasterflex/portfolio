@@ -1,0 +1,98 @@
+<form class="cmxform{% if page.ilp %} ilp-shortform{% endif %}{% if page.form_slider %} slider_form{% endif %}{% if page.form_class %} {{ page.form_class }}{% endif %}" id="{{ page.form_id }}" name="{{ page.form_id }}" method="get" autocomplete="off">
+    {% if page.form_image %}
+        {{ page.form_image }}
+    {% endif %}
+    {% if page.form_heading %}
+        <h3>{{ page.form_heading }}</h3>
+    {% endif %}
+    
+
+    {% if page.form_slider %}
+    <div class="slider_wrap">
+    {% endif %}
+    
+    {% if page.form_slider %}
+        <ul id="progressbar">
+            {% for field in page.form_fields %}
+                <li {% if forloop.first == true %}class="active"{% endif %}>Step {{ forloop.index }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    {% for field in page.form_fields %}
+        {% if page.form_slider %}
+        <fieldset>
+        {% endif %}
+        <div class="field form-element {% if page.home_hrz %}medium-4 small-12 columns{% elsif page.home_hrz_onefield %}medium-8 small-12 columns{% endif %}{% if page.minimized_fields %}{% if field.type != 'hidden' %}minimized{% endif %}{% endif %}">
+            {% if field.type != 'hidden' %}<label for="{{ field.field_name }}" class="{% if page.form_slider %}slider_label{% endif %}{% if field.type %}{{ field.type }}_label{% endif %}">{{ field.label }} {% if field.is_required == 'required' %}<em class="form-req-mark">*</em>{% endif %}</label>{% endif %}
+            {% if field.type == 'checkbox' %}
+                <input id="{{ field.field_name }}" {% if field.is_required %}{% else %}class="ignore"{% endif %} name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == 1 %}checked{% endif %} {{ field.is_required }} />
+            {% elsif field.type == 'select' %}
+                {% if page.minimized_fields %}<div class="input-wrap">{% endif %}<select id="{{ field.field_name }}" {% if field.is_required %}{% else %}class="ignore"{% endif %} name="{{ field.field_name }}" {{ field.is_required }}>
+                    {% for option in field.options %}
+                        <option value="{{ option.value }}" {% if field.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+                    {% endfor %}
+                </select>{% if page.minimized_fields %}</div>{% endif %}
+            {% elsif field.type == 'radio' %}
+                {% for option in field.options %}
+                    <label class="radio">
+                        <input id="{{ field.field_name }}" {% if field.is_required %}{% else %}class="ignore"{% endif %} name="{{ field.field_name }}" type="{{ field.type }}" value="{{ option.value }}" {% if page.check_first_radio == true %}{% if forloop.first == true %}checked{% endif %}{% endif %} {{ field.is_required }} />{{ option.label }}
+                    </label>
+                {% endfor %}
+            {% elsif field.type == 'hidden' %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" value="{{ field.value }}" />
+            {% else %}
+                {% if page.minimized_fields %}<div class="input-wrap">{% endif %}<input id="{{ field.field_name }}" {% if field.is_required %}{% else %}class="ignore"{% endif %} name="{{ field.field_name }}" type="{{ field.type }}" {{ field.is_required }} {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %} />{% if page.minimized_fields %}</div>{% endif %}
+            {% endif %}
+        </div>
+        {% if page.form_slider %}
+        </fieldset>
+        {% endif %}
+
+    {% endfor %}
+    
+    {% if page.form_slider %}
+    </div>
+    {% endif %}
+
+    {% if page.prepop_hidden %}
+    <div id="render_form_fields"></div>
+    {% endif %}
+    
+    <div class="submission {% if page.home_hrz %}medium-4 small-12 columns{% elsif page.home_hrz_onefield %}medium-4 small-12 columns{% endif %}">
+        <button class="button-one" id="multi_next_1" type="submit">{% if page.button_text %}{{ page.button_text }}{% else %}Next {% endif %}</button>
+        <div class="tcpa">{% if page.tcpa | size > 0 %} {{ page.tcpa }} {% else %} {% include tcpa_generic.html %} {% endif %}</div>
+        {% if page.exclude_geo_prepop != true %}
+        <input id="city" type="hidden" name="city" value="" />
+        <input id="state" type="hidden" name="state" value="" />
+        {% endif %}
+    </div>
+
+</form>
+
+<div id="url2png-cheese"></div>
+
+<!-- geo prepop -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type='text/javascript' src='{{ site.baseurl }}core/js/geo_prepop_helper.js'></script>
+
+<!-- form field masking -->
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        {% for field in page.form_fields %}
+            {% if field.mask %}
+                {% if field.placeholder %}
+                    $('#{{ field.field_name }}').mask('{{ field.mask }}', {placeholder: 'e.g. {{ field.placeholder }}'});
+                {% else %}
+                    $('#{{ field.field_name }}').mask('{{ field.mask }}', {placeholder: 'e.g. {{ field.mask }}'});
+                {% endif %}
+            {% else %}
+                {% if field.placeholder %}
+                    $('#{{ field.field_name }}').attr('placeholder', 'e.g. {{ field.placeholder }}');
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    });
+</script>

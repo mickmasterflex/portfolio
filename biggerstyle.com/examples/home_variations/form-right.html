@@ -1,0 +1,117 @@
+---
+#======================================================
+# Description:
+# This homepage features an area for a LARGE amount of content and a Prometheus simple form
+#
+# Use case examples:
+# You need a home page with a flex form and a area for a LARGE amount of content ( 2 headings, paragraphs of text, lists, imagery )
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+is_home: yes
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: short_form.html
+
+#========= Common Marketing Variables =================
+title: Jekyll Template
+heading_one: This Here is a Title!
+heading_two: Now this is a secondary title
+paragraph: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+form_heading: Form Heading Here
+phone_title: Have Questions? We’re Here to Help.
+button_text: Button Text Here
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+    - label: What Are You Interested In?
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Select One
+            value:
+          - label: Arts
+            value: 50
+          - label: Business & Management
+            value: 52
+          - label: Computers & Technology
+            value: 11
+          - label: Criminal Justice & Legal
+            value: 43
+          - label: Culinary
+            value: 12.05
+          - label: Nursing & Healthcare
+            value: 51.07
+          - label: Trades
+            value: 46
+    - label: What is Your Level of Education?
+      field_name: education_level
+      type: select
+      is_required: required
+      options:
+          - label: Choose One
+            value:
+          - label: No HS Diploma/GED
+            value: No HS Diploma/GED
+          - label: High School Graduate
+            value: High School Graduate
+          - label: Some College Credits
+            value: Some College Credits
+          - label: College Associate's
+            value: College Associate's
+          - label: College Bachelor's
+            value: College Bachelor's
+          - label: College Master's
+            value: College Master's
+          - label: College Doctoral
+            value: College Doctoral
+---
+
+
+<div class="main-content form-right">
+    <div class="row">
+        <div class="medium-6 columns">
+            {{ if page.heading_one }}<h1>{{ page.heading_one }}</h1>{{ endif }}
+            {{ if page.heading_two }}<h2>{{ page.heading_two }}</h2>{{ endif }}
+            {{ if page.paragraph }}<p>{{ page.paragraph }}</p>{{ endif }}
+        </div>
+        
+        <div class="form-wrap medium-6 columns">
+            <div class="inner">
+                <div class="top">
+                    <h3>{{ page.form_heading }}</h3>
+                </div>
+                <div class="bottom">
+                    {% include prometheus_simple_form.html %}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

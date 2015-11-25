@@ -1,0 +1,50 @@
+---
+#======================================================
+# Description:
+# This example html is used to display and process a Proton offer
+#
+# Use case examples:
+#   * I want to load a offer based on an offer_id passed in the url.
+#   * I want to dispatch to the first offer.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_page_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: multistep
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/short_form/js/short_form.js
+
+#========= Name form & give js something to query =====
+form_id: short_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: offer_form.html
+
+#========= Common Marketing Variables =================
+title: Example Short Form
+form_heading: Forms Have Headings
+
+#========= Cake Specific Variables ====================
+ckm_key: 8jkXoT7PbIA
+ckm_campaign_id: 394
+ckm_subid: SF-EDU
+ckm_subid_2: Danding
+form_cap_type: SF-EDU
+program: Shortform Example
+source:
+source_lp_domain: findanycollege.com
+---
+
+<h4 class="section-title">Find schools in your area with degrees in your interests.</h4>
+<p class="section-desc show-for-medium-up">Get matched to schools based on the information you enter, it's that easy.</p>
+<p class="section-desc show-for-medium-up">Start by entering your zip code and selecting your interests.</p>

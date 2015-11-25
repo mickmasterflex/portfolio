@@ -1,0 +1,23 @@
+---
+#==================================================
+# Description:
+# This is the base html for use with example pages
+#
+# Use case examples:
+#   * I want to build out an example of a Prometheus page.
+#
+# Notes:
+# Blah
+#
+#==================================================
+---
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+</script>
+
+{{ content }}
+
+<!-- must go after all page content -->
+<script type="text/javascript" src="{{ page.form_js }}"></script>

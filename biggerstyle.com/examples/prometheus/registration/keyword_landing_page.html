@@ -1,0 +1,45 @@
+---
+#======================================================
+# Description:
+# This example html is used to display a keyword job search page.
+#
+# Use case examples:
+#   * I want to show a keyword-generated job search page.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: keyword-job-search  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: /results/
+
+#========= Variation Variables ========================
+form_side: flipped
+form_type: job_search
+headertype: logo-center
+
+#========= Common Marketing Variables =================
+title: Example Static Page
+heading_one: Testing
+heading_two: Also a Test
+form_heading: 
+---
+
+<div>This is an example static page!</div>
+<div><a id="next_page" href="{{ page.next_url }}">Next Page</a></div>

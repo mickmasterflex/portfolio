@@ -1,0 +1,14 @@
+<nav role="navigation" class="social-links">
+    <div class="social-icons">
+        <ul>
+            {% for social in site.social %}
+            <li>
+                <a href="{{ social.url }}" class="social {{ social.network }}"></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="contact">
+        <a id="contact-button" class="button-two">Contact Us</a>
+    </div>
+</nav>

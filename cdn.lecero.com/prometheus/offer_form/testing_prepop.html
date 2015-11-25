@@ -1,0 +1,78 @@
+---
+layout: blank
+title: Example Simple Form
+form_js: /prometheus/simple_form/js/simple_form.js
+form_id: simple_form
+post_url: test.html
+next_url: example.html
+
+# Form Fields
+form_fields:
+    - label: Zip Code
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+    - label: Email
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+    - label: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+---
+
+<script type="text/javascript">
+    var form_id = '#{{ page.form_id }}';
+    var post_url = '{{ page.post_url }}';
+    var next_url = '{{ page.next_url }}';
+</script>
+
+<form class="cmxform" id="{{ page.form_id }}" name="{{ page.form_id }}" method="get">
+    {% for field in page.form_fields %}
+    <div class="field form-element">
+        <label for="{{ field.field_name }}">{{ field.label }}</label><br/>
+        {% if field.type == 'checkbox' %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == 1 %}checked{% endif %} {{ field.is_required }} />
+        {% elsif field.type == 'select' %}
+            <select id="{{ field.field_name }}" name="{{ field.field_name }}" {{ field.is_required }}>
+                {% for option in field.options %}
+                    <option value="{{ option.value }}" {% if field.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+                {% endfor %}
+            </select>
+        {% elsif field.type == 'radio' %}
+            {% for option in field.options %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == option.value %}checked{% endif %} value="{{ option.value }}" {{ field.is_required }} />{{ option.label }}<br/>
+            {% endfor %}
+        {% elsif field.type == 'hidden' %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" value="{{ field.value }}" />
+        {% else %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {{ field.is_required }} />
+        {% endif %}
+    </div>
+    {% endfor %}
+    <div>
+    <button id="submit" type="submit">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        {% for field in page.form_fields %}
+            {% if field.mask %}
+                $('#{{ field.field_name }}').mask('{{ field.mask }}');
+            {% endif %}
+        {% endfor %}
+    });
+</script>

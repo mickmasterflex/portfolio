@@ -1,0 +1,230 @@
+<div id="school_form_container" data-type="Multistep">
+    <div id="loading-spinner">
+        <strong>Loading...</strong>
+    </div>
+    <div id="loading-overlay"></div>
+
+    <div id="multistep_form" data-type="Multistep">
+
+        <div id="step_1" class="step">
+            <form id="atlas-query" action="" method="get">
+                <input type="hidden" id="adid" name="adid" value="" />
+                <input type="hidden" id="sub_campaign" name="sub_campaign" value="" />
+                <div class="form-section row">
+                    <div class="large-6 medium-6 columns">
+                        {% if page.sales_copy %}
+                        {{ page.sales_copy }}
+                        {% else %}
+                        <h4 class="section-title">Find schools in your area with degrees in your interests.</h4>
+                        <p class="section-desc show-for-medium-up">Get matched to schools based on the information you enter, it's that easy.</p>
+                        <p class="section-desc show-for-medium-up">Start by entering your zip code and selecting your interests.</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-wrap large-6 medium-6 columns">
+                        <span class="form-element">
+                            <label for="zip_code">What's Your Zip Code? <em class="form-req-mark">*</em></label>
+                            <input id="zip_code" type="text" maxlength="5" name="zip_code" class="validate_zip" value="" placeholder="00000">
+                            <span class="field_error">Please Enter a Valid Zip Code</span>
+                        </span><!-- end .school-form-element -->
+                        <span class="form-element">
+                            <label for="area_of_interest">What Are You Interested In? <em class="form-req-mark">*</em></label>
+                            <select id="area_of_interest" name="area_of_interest" class="validate_select">
+                                <option value="">Select One</option>
+                                <option value="50">Arts</option>
+                                <option value="52">Business &amp; Management</option>
+                                <option value="11">Computers &amp; Technology</option>
+                                <option value="12.04">Cosmetology</option>
+                                <option value="43">Criminal Justice &amp; Legal</option>
+                                <option value="12.05">Culinary</option>
+                                <option value="13">Education &amp; Teaching</option>
+                                <option value="52">Hospitality, Tourism &amp; Travel</option>
+                                <option value="22">Legal Studies</option>
+                                <option value="24">Liberal Arts</option>
+                                <option value="51">Nursing &amp; Healthcare</option>
+                                <option value="42">Psychology &amp; Human Services</option>
+                                <option value="38">Religion</option>
+                                <option value="27">Science, Math &amp; Engineering</option>
+                                <option value="46">Trades</option>
+                                <option value="47">Vocational Education</option>
+                            </select>
+                            <span class="field_error">Please Select an Option</span>
+                        </span><!-- end .form-element -->
+                        <span class="form-element">
+                            <label for="level_education_school">What is Your Level of Education? <em class="form-req-mark">*</em></label>
+                            <select id="level_education_school" name="level_education_school" class="validate_select">
+                                <option value="">Choose One:</option>
+                                <option value="No HS Diploma/GED">No HS Diploma/GED</option>
+                                <option value="GED">GED</option>
+                                <option value="High School Graduate">High School Graduate</option>
+                                <option value="Some College Credits">Some College Credits</option>
+                                <option value="College Associate's">College Associate's</option>
+                                <option value="College Bachelor's">College Bachelor's</option>
+                                <option value="College Master's">College Master's</option>
+                                <option value="College Doctoral">College Doctoral</option>
+                            </select>
+                            <span class="field_error">Please Select an Option</span>
+                        </span><!-- end .form-element -->
+                        <input class="multi_next green" id="multi_next_1" type="button" onclick="multistep.submitAtlas()" value="Next ›" />
+                        <span class="sub-required">(Fields marked with <em class="form-req-mark">*</em> are required)</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="step_2" class="step">
+            <form id="shortform" action="" method="get">
+                <div class="form-section">
+                    <h4 class="section-title">Tell Us About Yourself</h4>
+                    <div class="form-wrap large-6 medium-8 small-centered columns">
+                        <span class="form-element">
+                            <label for="first_name">What's Your First Name? <em class="form-req-mark">*</em></label>
+                            <input id="first_name" type="text" name="first_name" class="validate_text" value="" placeholder="First Name">
+                            <span class="field_error">Please Review this Field</span>
+                        </span><!-- end .school-form-element -->
+                        <span class="form-element">
+                            <label for="last_name">Your Last Name <em class="form-req-mark">*</em></label>
+                            <input id="last_name" type="text" name="last_name" class="validate_text" value="" placeholder="Last Name">
+                            <span class="field_error">Please Review this Field</span>
+                        </span><!-- end .school-form-element -->
+                        <span class="form-element">
+                            <label for="email_address">Email Address <em class="form-req-mark">*</em></label>
+                            <input id="email_address" type="text" name="email_address" class="validate_email" value="" placeholder="Email Address">
+                            <span class="field_error">Please Enter a Valid Email</span>
+                        </span><!-- end .school-form-element -->
+                        <span class="form-element">
+                            <label for="phone_home">Phone Number <em class="form-req-mark">*</em></label>
+                            <input id="phone_home" type="text" name="phone_home" class="validate_phone" value="" placeholder="xxx-xxx-xxxx">
+                            <span class="field_error">Please Enter a Valid Phone Number</span>
+                        </span><!-- end .school-form-element -->
+                        <input id="ckm_campaign_id" type="hidden" name="ckm_campaign_id" value="{{ page.ckm_campaign_id }}" />
+                        <input id="ckm_key" type="hidden" name="ckm_key" value="{{ page.ckm_key }}" />
+                        <input id="ckm_subid" type="hidden" name="ckm_subid" value="SF-EDU" />
+                        <input id="form_cap_type" type="hidden" name="form_cap_type" value="SF-EDU" />
+                        <input id="ckm_subid_2" type="hidden" name="ckm_subid_2" value="Multistep" />
+                        <input id="ptid" type="hidden" name="ptid" value="" />
+                        <input id="source" type="hidden" name="source" value="" />
+                        <input id="source_lp_domain" type="hidden" name="source_lp_domain" value="{{ site.text_url }}" />
+                        <input id="program_cat_id" type="hidden" name="program_cat_id" value="{{ page.program_cat_id }}" />
+                        <input id="program_category_id" type="hidden" name="program_category_id" value="{{ page.program_cat_id }}" />
+                        <div class="tcpa">
+                            {% if page.tcpa %} {{ page.tcpa }} {% else %} {% include tcpa_generic.html %} {% endif %}
+                        </div>
+                        <input class="multi_next green" id="multi_next_2" type="button" onclick="multistep.submitShortform()" value="Next ›" />
+                        <span class="sub-required">(Fields marked with <em class="form-req-mark">*</em> are required)</span>
+                    </div><!-- end .form-wrap -->
+                </div><!-- end .form-section -->
+                
+            </form>
+        </div>
+
+        <div id="step_3" class="step">
+            <form id="common" action="" method="get">
+                <h4 class="section-title">Additional Information</h4>
+                <p class="section-desc medium-8 columns small-centered">Once you've decided which schools you want to hear more about we'll need a way to get more information to you.</p>
+                <div class="form-wrap large-6 medium-8 small-centered columns">
+                    <div class="form-section" id="render_form_here"></div><!-- remaining common fields for offer form -->
+                    <div class="form_errors"></div>
+                    <div class="form-section">
+                        <input class="multi_next green" id="multi_next_3" type="button" onclick="multistep.submitCommon()" value="Next" />
+                        <span class="sub-required">(Fields marked with <em class="form-req-mark">*</em> are required)</span>
+                    </div><!-- end .form-section -->
+                    <div class="tcpa"></div>
+                </div>
+            </form>
+        </div>
+
+        <div id="step_4" class="step">
+            <!-- dynamic school content -->
+            <form id="offer" action="" method="get">
+                
+                <div class="header-title school-submit large-12 small-centered columns">
+                    <div class="inner row">
+                        <p class="section-desc">Success! Your request was sent! You may be interested in the school below.</p>
+                    </div>
+                </div>
+                
+                <div class="offer_content"></div>
+                <div class="school-content-left large-6 medium-6 medium-uncentered small-centered columns">
+                    <a id="schooldesc__opener" class="btn show-for-small-only"><h5>See School Description</h5></a>
+                    <div class="section-desc show-for-medium-up"></div>
+                </div>
+                <div class="form-wrap large-6 medium-6 medium-uncentered small-centered columns">
+                    <div class="form-section" id="render_school_form"></div><!-- campus and offer dropdowns for offer form -->
+                    <div class="form-section" id="render_school_form_specific"></div><!-- school specific fields for offer form -->
+                    <div class="form_errors"></div>
+                    <div class="tcpa"></div>
+                    <div class="form-section form-submit"></div><!-- end .form-section -->
+                </div>
+            </form>
+        </div>
+
+        <div id="preloader_wrap">
+            <div id="loaderImage"></div>
+        </div>
+
+        <div id="step_5" class="step">
+            <div class="form-section">
+
+                <div id="thankyou_1">
+                    <div class="header-title school-submit-end large-12 small-centered columns">
+                        <div class="inner row">
+                            <p class="section-desc">Success! Your request has been completed.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns large-12">
+                            <div class="large-6 medium-6 columns">
+                                <h4 class="section-title">Congratulations!</h4>
+                                <p class="section-desc">Your requests have successfully been submitted!</p>
+                                <p class="section-desc">Be expecting to be contacted by the school or schools listed on the right.</p>
+                            </div>
+                            <div class="school-wrap large-6 medium-6 columns"></div>
+                        </div>
+                        <div class="other-offers-wrap columns">
+                            <div class="row other_offer_results"></div>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end thankyou_1 -->
+
+                <div id="thankyou_2">
+                    <div class="row">
+                        <div class="header-title thankyou_2 large-12 small-centered columns">
+                            <div class="inner row">
+                                <h4 class="section-title"><img src="/core/images/icon-check-white.png"/>Success!</h4>
+                                <p class="section-desc">Below are the top education results that we have for you.</p>
+                            </div>
+                        </div>
+                        <div class="other-offers-wrap small-centered columns">
+                            <div class="row other_offer_results"></div>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end thankyou_2 -->
+
+                <div id="thankyou_3">
+                    <div class="row">
+                        <div class="header-title thankyou_3 large-12 small-centered columns">
+                            <div class="inner row">
+                                <h4 class="section-title"><img src="/core/images/icon-check-white.png"/>Congratulations!</h4>
+                                <p class="section-desc">Your requests have successfully been submitted!</p>
+                                <p class="section-desc">Be expecting a phone call to discuss your education opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="phone-wrap large-6 medium-6 small-centered columns">
+                            <div class="row">
+                                <div class="phone-icon small-3 columns"></div>
+                                <p class="small-9 columns">You can call us if you’re ready to discuss your education options now.</p>
+                                <h5 href="tel:888-795-2376" class="columns">888-795-2376</h5>
+                            </div>
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end thankyou_3 -->
+
+            </div><!-- end .form-section -->
+            <div id="school-content-container" class="form-section accordion-group"></div>
+        </div>
+
+    </div><!-- end #multistep_form -->
+</div>
+
+<!-- Google geocoder api -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>

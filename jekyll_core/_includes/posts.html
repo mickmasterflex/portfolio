@@ -1,0 +1,24 @@
+<div class="tag-wrap" id="tag-all">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+    {% for post in site.posts %}
+    <div class="article {% if post.featured %}large-8 medium-8 featured{% else %}large-4 medium-4{% endif %}">
+        <a href="{{ post.url }}" title="{{ post.title }}">
+            <div class="post-image">
+                <span class="image-fade">
+                    <span class="image-fade-text">{{ post.summary }}</span><br/>
+                    <span class="image-fade-link">Read more &NestedGreaterGreater;</span>
+                </span>
+                <img src="{{ site.baseurl }}core/images/blog/{{ post.post_image }}" alt="{{post.title}}" />
+            </div>
+            <div class="post-title">
+                <div class="title">
+                    <h3>{{ post.title }}</h3>
+                </div>
+                <div class="author">By: {{ post.author }}</div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+    <div class="clear"></div>
+</div>

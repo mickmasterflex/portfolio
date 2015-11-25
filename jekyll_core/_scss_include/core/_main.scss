@@ -1,0 +1,627 @@
+/* -------------------------------------------------------------------
+	Import
+------------------------------------------------------------------- */
+@import "_mixins.scss";
+@import "_job-application.scss";
+@import "_quinstreet.scss";
+@import "_multistep.scss";
+@import "_prometheus.scss";
+@import "_privacy_style.scss";
+@import "_partner_style.scss";
+@import "_schoolDesc_style.scss";
+@import "_moveo.scss";
+@import "_elephantus.scss";
+
+/* -------------------------------------------------------------------
+	Base
+------------------------------------------------------------------- */
+
+* { margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+    font-family: $typeface1;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    @include bg($bg1);
+    color: $p1;
+}
+
+
+/* -------------------------------------------------------------------
+	Typography
+------------------------------------------------------------------- */
+h1 {
+    font-family: $typeface1;
+    color: $h1a;
+    font-size: 4.25rem;
+    line-height: 5rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-family: $typeface1;
+    color: $h2a;
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+h3 {
+    font-family: $typeface1;
+    color: $h3a;
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    font-family: $typeface1;
+    color: $h4a;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+h5 {
+    font-family: $typeface1;
+    color: $h5a;
+    font-size: .9375rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+h6 {
+    font-family: $typeface1;
+    color: $h6a;
+    font-size: .9375rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: $typeface1;
+    color: $p1;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: $link1;
+    text-decoration: underline;
+    &:hover {
+        color: $link1-hover;
+        text-decoration: underline;
+    }
+}
+li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: $li1;
+}
+h1, h2, h3, h4, h5, h6, p {
+    &.center { text-align: center; }
+}
+
+/* -------------------------------------------------------------------
+	Global Spans
+------------------------------------------------------------------- */
+
+#wrap { @include bg($bg1); }
+.wrap:before,
+.wrap:after { content:""; display:table; }
+.wrap:after { clear: both; }
+.wrap {
+    max-width: 60rem;
+    padding: 0 1.875rem;
+    margin: 0 auto;
+    zoom: 1;
+}
+.row { max-width: 60rem; }
+.row.wide { max-width: 1400px; }
+.clear { clear: both; }
+
+
+/* -------------------------------------------------------------------
+	Buttons
+------------------------------------------------------------------- */
+
+.button-one {
+    font-family: $typeface1;
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    color: $btn1-text;
+    @include bg($btn1);
+    border: .0625rem solid $btn1-border;
+    @include border-radius(0.3125rem);
+    position: relative;
+    display: block;
+    padding: .75rem 0.625rem;
+    margin: 0;
+    @include transition(all .25s);
+    &:hover {
+        text-decoration: none;
+        color: $btn1-text-hover;
+        border: .0625rem solid $btn1-border-hover;
+        @include bg($btn1-hover);
+    }
+    &:visited, &:focus, &:active {
+        text-decoration: none;
+        color: $btn1-text-hover;
+        @include bg($btn1-hover);
+    }
+}
+.button-two {
+    font-family: $typeface1;
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    color: $btn2-text;
+    @include bg($btn2);
+    border: .0625rem solid $btn2-border;
+    @include border-radius(0.3125rem);
+    position: relative;
+    display: block;
+    padding: 1.125rem .625rem;
+    margin: 0;
+    @include transition(all .25s);
+    &:hover {
+        text-decoration: none;
+        color: $btn2-text-hover;
+        border: .0625rem solid $btn2-border-hover;
+        @include bg($btn2-hover);
+    }
+    &:visited, &:focus, &:active {
+        text-decoration: none;
+        color: $btn2-text-hover;
+        @include bg($btn2-hover);
+    }
+}
+.button-three {
+    font-family: $typeface1;
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    color: $btn3-text;
+    @include bg($btn3);
+    border: .0625rem solid $btn3-border;
+    @include border-radius(0.3125rem);
+    position: relative;
+    display: block;
+    padding: 1.125rem .625rem;
+    margin: 0;
+    @include transition(all .25s);
+    &:hover {
+        text-decoration: none;
+        color: $btn3-text-hover;
+        border: .0625rem solid $btn3-border-hover;
+        @include bg($btn3-hover);
+    }
+    &:visited, &:focus, &:active {
+        text-decoration: none;
+        color: $btn3-text-hover;
+        @include bg($btn3-hover);
+    }
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus { 
+    &.button-one { background: $btn1; }
+    &.button-two { background: $btn2; }
+    &.button-three { background: $btn3; }
+}
+
+/* -------------------------------------------------------------------
+	Header & Footer
+------------------------------------------------------------------- */
+
+.site-header, .site-footer, .footer-bottom {
+    .phone {
+        a { text-decoration: none; }
+        p { margin: 0; }
+        h3 {
+            font-size: 2rem;
+            line-height: 1.75rem;
+            margin: .5rem 0 0;
+            text-decoration: none;
+        }
+        h4 { font-size: 1.125rem; text-decoration: none; }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Header
+------------------------------------------------------------------- */
+
+.site-header {
+    @include bg($bg1);
+    padding: 0.4375rem .5rem .625rem;
+    .inner { height: 4.4375rem; }
+    .logo { margin-top: .625rem; }
+    .phone {
+        h3 {
+            text-align: right;
+            font-size: 2rem;
+            line-height: 1.75rem;
+            margin: .5rem 0 0;
+        }
+        h4 { text-align: right; }
+    }
+    &.lp { min-height: 0; height: 0; }
+    &.none { min-height: 0; height: 0; }
+}
+
+.site-title,
+.site-title:hover,
+.site-title:visited {
+    display: block;
+    font-size: 26px;
+    letter-spacing: -1px;
+    float: left;
+    line-height: 56px;
+    position: relative;
+    z-index: 1;
+}
+
+.site-logo {
+    &.small {
+        img { height: 78px; }
+    }
+}
+
+// Contact Header Begins
+.social-links {
+    float: right;
+    margin: 0;
+    .social-icons { margin: 0; float: left; margin-top: .375rem; }
+    li {
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        margin: 0 0 0 .25rem;
+    }
+    ul { margin-bottom: 0; }
+    a {
+        display: block;
+        outline: none;
+        padding: 0.625rem 1rem;
+        margin-top: .25rem;
+        color: $link1;
+        width: 1.875rem;
+        height: 1.5rem;
+        background-size: contain;
+        &.social { padding-top: .5rem; }
+        &.facebook { @include bg(transparent, 'core/images/icon-facebook.png', center, center, no-repeat) }
+        &.google_plus { @include bg(transparent, 'core/images/icon-googleplus.png', center, center, no-repeat) }
+        &.twitter { @include bg(transparent, 'core/images/icon-twitter.png', center, center, no-repeat) }
+    }
+    .contact {
+        margin: 0 0 0 1rem;
+        position: relative;
+        float: left;
+        a { margin-top: 0; }
+    }
+    .button-two {
+        width: 9rem;
+        height: auto;
+        padding: 0.625rem 1.5rem 0.825rem;
+        text-decoration: none;
+        color: $btn2-text;
+        border-radius: 0;
+        &:hover {
+            background: $btn2;
+            border-color: $btn2-border-hover;
+            color: $btn2-text-hover;
+        }
+    }
+}
+.contact-wrap-container { position: relative; }
+.contact-wrap {
+    display: none;
+    float: right;
+    background: $bg1;
+    @include border-radius(0.3125rem);
+    position: absolute;
+    right: 0px;
+    top: -0.325rem;
+    width: 25rem;
+    z-index: 99;
+    @include box-shadow( 0,0,.0625rem,$black );
+    .icons {
+        padding: 0.5rem 0.5rem 0.925rem;
+        background: $bg1;
+        @include border-radius(0.3125rem 0 0 0.3125rem);
+        border-right: 1px solid $border3;
+        li {
+            text-align: center;
+            padding: .5rem 0.5rem 0.75rem;
+            &.last { padding: 0.5rem 0 0; }
+        }
+    }
+    .info {
+        padding: 0;
+        li {
+            border-bottom: 1px solid $border3;
+            padding: 1.125rem 1rem 1.3125rem;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.875rem;
+            &.last { border: 0 none; }
+            a { color: $link1; text-decoration: none; }
+        }
+    }
+    ul { margin: 0; }
+    li { list-style: none; }
+}
+
+// Menu Wrap Styles - These are strangely like the Contact Wrap styles above. Coincidence?
+.menu-wrap-container { position: relative; }
+.menu-wrap {
+    display: none;
+    float: right;
+    background: $bg1;
+    @include border-radius(0);
+    border: $border3;
+    position: absolute;
+    right: 0px;
+    top: -0.325rem;
+    min-width: 11rem;
+    z-index: 99;
+    @include box-shadow( 0,0,.0625rem,$black );
+    a {
+        color: $nav1-text;
+        background: $nav1-bg;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem .5rem;
+        border-bottom: solid .0625rem $nav1-border;
+        &:hover { background: $nav1-bg-hover; color: $nav1-text-hover; }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Footer
+------------------------------------------------------------------- */
+
+.site-footer {
+    min-height: 3.5rem;
+    padding: 0;
+    border-bottom: solid .0625rem $border1;
+    @include bg($bg1);
+    
+    // Structure
+    .wrap { padding: 2.125rem 1.875rem 2.5rem; }
+    .copyright {
+        padding: 1.625rem 0;
+        text-align: left;
+        font-size: .9375rem;
+        &.lp { text-align: center; }
+    }
+    &.lp { border-top: solid .0625rem $border1; border-bottom: none; }
+    
+    // Typography
+    p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    ul { list-style: none; }
+    
+    //Elements
+    .site-logo {
+        &.lp { display: block; margin: 0 auto; margin-top: 2rem; }
+    }
+}
+
+.footer-bottom {
+    min-height: 3.5rem;
+    padding: 3rem 0;
+    border-bottom: none;
+    @include bg($bg1);
+    
+    // Structure
+    .footer-content { float: left; }
+    .phone {
+        h3 { margin: .25rem 0 2rem; }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Home Page
+------------------------------------------------------------------- */
+
+.main-content {
+    @include bg($bg2);
+    
+    // Form Structure Styles - These are used on 2 of the home variations and can be overwritten in _home_variations.scss
+    .form-wrap {
+        display: block;
+        padding: 0 1rem;
+        margin-top: .5rem;
+        
+        // Structure
+        .inner {
+            box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.25);
+            @include border-radius(.25rem);
+            @include bg ($bg1);
+        }
+        .top {
+            display: inline-block;
+            width: 100%;
+            padding: 1.5rem 11% 1.75rem;
+            @include bg ($bg1);
+            @include border-top-left-radius(.25rem);
+            @include border-top-right-radius(.25rem);
+        }
+        .bottom {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: .75rem 11% 2rem;
+            border-top: solid .0625rem $border1;
+            @include bg ($bg1);
+            @include border-bottom-left-radius(.25rem);
+            @include border-bottom-right-radius(.25rem);
+        }
+        
+        //Typography
+        h3 { text-align: center; }
+        
+        // Elements
+        .button-one { width: 100%; }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Thank You Page
+------------------------------------------------------------------- */
+
+.thankyou {
+    min-height: 80vh;
+    h3 {
+        margin-top: 0;
+    }
+    .phone {
+        p {
+            margin-bottom: 0;
+        }
+        a {
+            h3 {
+                text-decoration: none;
+                color: $altHeading2;
+            }
+        }
+        h4 {
+            color: $altHeading1;
+            font-weight: 700;
+        }
+    }
+    .heading {
+        display: block;
+        width: 100%;
+        padding: 4rem 0 5rem;
+        @include bg($defaultBackgroundColor, '../../images/bg-lp-1.jpg', center, center, no-repeat);
+        background-size: cover;
+        h1, h2 {
+            text-align: center;
+            font-style: normal;
+        }
+        h1 {
+            font-size: 2.9375rem;
+            margin-bottom: .625rem;
+            margin-top: 0;
+        }
+    }
+    .conversion {
+        padding: 2rem;
+    }
+    .article {
+        padding: 2rem 0;
+    }
+    .thanks_ad {
+        display: block;
+        width: 300px;
+        height: 250px;
+        @include bg(#000);
+        float: right;
+    }
+}
+
+.page-banners-wrap {
+    h1 { margin: 2rem 0 0; }
+    h2 { margin: .25rem 0 1.5rem; }
+}
+.banners {
+    display: block;
+    margin: 1rem 0 2rem;
+    h1, h2 {
+        text-align: center;
+    }
+    .banner-element-wrap {
+        padding: 0;
+        margin-bottom: .5rem;
+    }
+    img {
+        border: 1px solid $border2;
+        margin: 0 auto;
+        display: block;
+        width: 300px;
+        height: 250px;
+        background: #000;
+    }
+    .adsbygoogle.adsbygoogle {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+/* -------------------------------------------------------------------
+	Media Queries
+------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+
+@media screen and (max-width: 750px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+
+    //Contact Header
+    .social-links {
+        .social-icons { display: none; }
+        .button-two {
+            width: 6rem;
+            padding: 0.625rem 0.5rem 0.9825rem;
+            font-size: 1rem;
+        }
+    }
+    .contact-wrap { width: auto !important; }
+}
+
+@media screen and (max-width: 600px) {
+    
+}
+
+@media screen and (max-width: 400px) {
+    
+}
+
+@media screen and (max-width: 320px) {
+    
+}

@@ -1,0 +1,119 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: short_form.html
+
+#========= Common Marketing Variables =================
+title: Example Simple Form
+heading_one: Testing
+heading_two: Also a Test
+form_heading: Forms Have Headings
+form_image: <!-- <img src="" alt="" /> -->
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: What Are You Interested In?
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Select One
+            value:
+          - label: Arts
+            value: 50
+          - label: Business & Management
+            value: 52
+          - label: Computers & Technology
+            value: 11
+          - label: Criminal Justice & Legal
+            value: 43
+          - label: Culinary
+            value: 12.05
+          - label: Nursing & Healthcare
+            value: 51.07
+          - label: Trades
+            value: 46
+    - label: What is Your Level of Education?
+      field_name: education_level
+      type: select
+      is_required: required
+      options:
+          - label: Choose One
+            value:
+          - label: No HS Diploma/GED
+            value: No HS Diploma/GED
+          - label: High School Graduate
+            value: High School Graduate
+          - label: Some College Credits
+            value: Some College Credits
+          - label: College Associate's
+            value: College Associate's
+          - label: College Bachelor's
+            value: College Bachelor's
+          - label: College Master's
+            value: College Master's
+          - label: College Doctoral
+            value: College Doctoral
+---
+
+<h4 class="section-title">Find schools in your area with degrees in your interests.</h4>
+<p class="section-desc">Get matched to schools based on the information you enter, it's that easy.</p>
+<p class="section-desc">Start by entering your zip code and selecting your interests.</p>
+
+<div class="tab-wrap show-for-medium-up">
+    <div class="tab-option-wrap">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">Tab One</li>
+            <li class="tab-link" data-tab="tab-2">Tab Two</li>
+            <li class="tab-link" data-tab="tab-3">Tab Three</li>
+            <li class="tab-link" data-tab="tab-4">Tab Four</li>
+        </ul>
+    </div>
+    
+    <div id="tab-1" class="tab-content current">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div id="tab-2" class="tab-content">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div id="tab-3" class="tab-content">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+    <div id="tab-4" class="tab-content">
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div id="clear" style="clear:both;"></div>
+</div>

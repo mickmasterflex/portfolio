@@ -1,0 +1,54 @@
+---
+layout: prometheus_base_layout
+ilp: true
+---
+
+<div class="ilp-page-content version5">
+    <div class="wrapper row">
+
+        {% if page.form_id %}
+            {% if page.form_id == 'short_form' %}
+                <div class="ilp-heading-top large-12 small-centered columns"></div>
+        
+                <div class="aside large-5 medium-6 medium-uncentered small-centered columns">
+                    {% include prometheus_school_short_form.html %}
+                </div>
+        
+                <div class="article large-7 medium-6 medium-uncentered hide-for-small-down columns">
+                    {% if page.variation == 'b' %}<div class="infographic"></div>{% endif %}
+                    <div class="content-area">{{ content }}</div>
+                </div>
+        
+                <div class="content-area show-for-small-down medium-7 small-centered columns">{{ content }}</div>
+            {% elsif page.form_id == 'offer_form' %}
+                <div class="atlas_loader">
+                    <div class="centered">
+                        <div>{{ page.loader_text }}</div>
+                        <img src="//cdn.lecero.com/atlas_host_post/images/loader.gif" title="Loading Results" />
+                    </div>
+                </div>
+                <div id="offer_wrap">
+                    <div class="aside blue large-5 medium-6 medium-uncentered small-centered columns">
+                        {% include prometheus_offer_form.html %}
+                    </div>
+                    <div class="article large-7 medium-6 medium-uncentered small-centered columns">
+                        <!-- required html for offer content -->
+                        <div class="offer_content">
+                            <div class="title"></div>
+                            <div class="content_block"></div>
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            
+        {% else %}
+            <div class="article large-12 columns">
+                <h1>{{ page.heading_one }}</h1>
+                <h2>{{ page.heading_two }}</h2>
+                <div class="content-area">{{ content }}</div>
+            </div>
+        {% endif %}
+
+    </div>
+</div>

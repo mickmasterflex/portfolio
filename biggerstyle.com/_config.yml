@@ -1,0 +1,80 @@
+title:              BiggerStyle.com
+description:        BiggerStyle.com
+logo:               images/logo.png
+logo_2:             images/logo.png
+favicon:            images/favicon.png
+conversion_script:  http://cdn.lecero.com/atlas_host_post/conversion_scripts.html
+
+include:      [".js"]
+
+# Google Analytics
+google_analytics_id: UA-19083885-34
+
+# Change url to your domain. Leave localhost server or blank when working locally.
+url:              http://localhost:4000
+baseurl:          /
+text_url:         BiggerStyle.com
+nophoneheader: true
+# Owner/author information
+owner:
+  name:           
+  avatar:         bio-photo.jpg
+  email:          contact@BiggerStyle.com
+
+# Contact Info
+email:            CustomerService@BiggerStyle.com
+phone:            8015555555
+text_phone:       8015555555
+
+simpleheader: This line gives the site the most basic header
+
+# Links to include in top navigation
+# For external links add external: true
+navlinks:
+  - title: Search
+    url: /
+
+# Social Links
+social:
+    - network: facebook
+      url: https://www.facebook.com/BiggerStyle
+    - network: google_plus
+      url: https://plus.google.com/+BiggerStyle
+#     - network: twitter
+#       url: http://www.twitter.com/
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:       America/Denver
+highlighter:    pygments
+markdown:       redcarpet
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+vertical: home construction
+
+# Partner list
+# partner_list:
+#     - AcademicDegrees.net
+#     - Academic Advisor
+#     - Certified Payment Processing
+#     - CollegeDegreeFinder.org
+#     - College Overview
+#     - Degree Atlas
+#     - Degree Connection
+#     - DegreeMatch
+#     - DegreePath
+#     - DegreeScout
+#     - edegree
+#     - Education Advising Center
+#     - Education Ahead
+#     - Education Center
+#     - Education Headquarters
+#     - EducationLink
+#     - Education Now
+#     - Education Source
+#     - Grand Education
+#     - The Student Recruiter

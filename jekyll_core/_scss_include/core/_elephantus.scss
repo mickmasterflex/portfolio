@@ -1,0 +1,212 @@
+/* -------------------------------------------------------------------
+	ADLAND STYLES!
+------------------------------------------------------------------- */
+
+// Section
+.elephantus {
+
+    //Structure
+    padding: 1rem 0 2rem;
+    max-width: 1400px;
+
+    article {
+        padding: .625rem;
+    }
+    .title {
+        overflow: hidden;
+    }
+    .main {
+        float: left;
+    }
+    .sidebar {
+        display: none;
+        float: left;
+        &.left-side {
+            width: 100%;
+            padding: 0;
+            .bottom {
+                display: none;
+            }
+        }
+        &.right-side {
+            width: 336px;
+        }
+    }
+    .related-brands {
+        display: inline-block;
+        margin: 1rem 0;
+        li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #f6f6f6;
+            padding-bottom: .5rem;
+            &:last-child {
+                border: none;
+            }
+            h4 {
+                width: 250px;
+                float: left;
+                margin-top: 0.125rem;
+                padding-left: 0.5rem;
+            }
+        }
+        ul {
+            margin: 0;
+            padding-left: 0;
+        }
+        .img-wrap {
+            overflow: hidden;
+            display: block;
+            width: 50px;
+            height: 50px;
+            float: left;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+    form {
+        padding: .5rem;
+        border: 1px solid $border2;
+        background: rgb(246, 246, 246) none repeat scroll 0% 0%;
+        border: 1px solid rgb(234, 234, 234);
+        padding: 1rem;
+        border-radius: 5px;
+        h3 {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+    }
+    input[type="checkbox"], input[type="radio"] {
+        margin: 0.4375rem 0.75rem 0.3125rem 0;
+    }
+    .tcpa { margin-top: 1rem; }
+    #mobile-form {
+        display: none;
+        margin-bottom: 1rem;
+    }
+    #form-appear {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+
+    // Ad Stuff
+    .ad {
+        display: block;
+        margin: 1rem 0;
+        &.square-tall {
+            width: 300px;
+            height: 600px;
+        }
+        &.square {
+            width: 300px;
+            height: 250px;
+        }
+        &.square-small {
+            width: 100%;
+            height: 75px;
+        }
+        &.responsive {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    }
+
+    // Typography
+    h1, h2, h3, h4, h5, h6, p, ul {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 0;
+    }
+    h4 {
+        margin-top: 1rem;
+        color: $h4b;
+    }
+    p {
+        margin-bottom: 1rem;
+    }
+    ul {
+        margin-top: .5rem;
+        padding-left: 1.1rem;
+    }
+    li {
+        margin-bottom: .5rem;
+    }
+}
+
+// Media Queries
+@media screen and (min-width: 480px) {
+    .elephantus {
+        // Typography
+        h1, h2, h3, h4, h5, h6, p {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        article {
+            padding: .5rem 1.25rem;
+        }
+        .sidebar {
+            width: 300px;
+        }
+        .ad {
+            float: left;
+            margin-right: .625rem;
+            margin-top: 0;
+        }
+    }
+}
+@media screen and (min-width: 740px) {
+    .elephantus {
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 1rem;
+        }
+        .main {
+            width: calc(100% - 300px);
+        }
+        .sidebar {
+            &.left-side {
+                display: block;
+                width: 300px;
+                padding-left: 0;
+                padding-top: .5rem;
+                .bottom {
+                    display: block;
+                }
+            }
+        }
+        #mobile-form {
+            display: block;
+        }
+        #form-appear {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 1100px) {
+    .elephantus {
+        .main {
+            width: calc(100% - 636px);
+            padding: .5rem 2.5rem;
+        }
+        .sidebar {
+            &.right-side {
+                display: block;
+            }
+        }
+    }
+}

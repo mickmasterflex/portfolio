@@ -1,0 +1,19 @@
+<footer class="prometheus-footer">
+        <div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+            <p class="copyright {% if page.is_lp %}lp{% endif %}">
+                <span class="columns large-6 medium-12 small-12 small-centered">© 2015 {{ site.title }} | All Rights Reserved</span>
+                <span class="right columns large-6 medium-12 small-12 small-centered"><a href="/privacy.html"  target="_blank">Privacy Policy</a> | <a href="{{ site.baseurl }}" target="_blank">About Us</a> | <a href="{{ site.baseurl }}" target="_blank">{{ site.text_url }}</a></span>
+            </p>
+        </div>
+    </div>
+    {% if page.atlas_testing %}
+    <div id="atlas_testing">
+        <div id="response_time"></div>
+        <div id="atlas_results">
+            <ol></ol>
+        </div>
+    </div>
+    {% endif %}
+</footer>
+

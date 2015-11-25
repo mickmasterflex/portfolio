@@ -1,0 +1,99 @@
+title:              Jekyll Template
+description:        This is the Jekyll Template
+logo:               core/images/logo.png
+logo_2:             core/images/logo.png
+favicon:            core/images/favicon.ico
+conversion_script:  http://cdn.lecero.com/atlas_host_post/conversion_scripts.html
+vertical: Special Product
+
+include:      [".js"]
+
+# Google Analytics
+google_analytics_id: UA-19083885-34
+
+# Change url to your domain. Leave localhost server or blank when working locally.
+url:              http://localhost:4000
+baseurl:          /
+text_url:         Jekyll_Core.com
+
+# Owner/author information
+owner:
+  name:           
+  avatar:         bio-photo.jpg
+  email:          contact@jekyll_core.com
+
+# Contact Info
+email:            CustomerService@jekyll_core.com
+phone:            5555555555
+text_phone:       555.555.5555
+
+# Links to include in top navigation
+# For external links add external: true
+navlinks:
+  - title: About
+    url: about/
+
+# Social Links
+#social:
+#    - network: facebook
+#      url: https://www.facebook.com/JekyllCore
+#    - network: google_plus
+#      url: https://plus.google.com/+JekyllCore
+#    - network: twitter
+#      url: http://www.twitter.com/
+
+
+# Programs
+#programs:
+#    - title: Healthcare
+#      url: ?area_of_interest=51&zipCode=
+#      img: fp_nursinghc.jpg
+#    - title: Business
+#      url: ?area_of_interest=52&zipCode=
+#      img: fp_business.jpg
+#    - title: IT / Computers
+#      url: ?area_of_interest=11&zipCode=
+#      img: fp_it.jpg
+#    - title: Arts & Design
+#      url: ?area_of_interest=50&zipCode=
+#      img: fp_artdesign.jpg
+#    - title: Criminal Justice & Legal
+#      url: ?area_of_interest=43&zipCode=
+#      img: fp_cj.jpg
+#    - title: Trades
+#      url: ?area_of_interest=47&zipCode=
+#      img: fp_mech.jpg
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:       America/Denver
+highlighter:    pygments
+markdown:       redcarpet
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+# Partner list
+#partner_list:
+#    - AcademicDegrees.net
+#    - Academic Advisor
+#    - Certified Payment Processing
+#    - CollegeDegreeFinder.org
+#    - College Overview
+#    - Degree Atlas
+#    - Degree Connection
+#    - DegreeMatch
+#    - DegreePath
+#    - DegreeScout
+#    - edegree
+#    - Education Advising Center
+#    - Education Ahead
+#    - Education Center
+#    - Education Headquarters
+#    - EducationLink
+#    - Education Now
+#    - Education Source
+#    - Grand Education
+#    - The Student Recruiter

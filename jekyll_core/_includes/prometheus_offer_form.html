@@ -1,0 +1,18 @@
+<!-- required html for offer form -->
+<form class="cmxform {% if page.ilp %}ilp-shortform{% endif %}" name="{{ page.form_id }}" id="{{ page.form_id }}" method="get" autocomplete="off">
+    {% if page.new_offer_layout %}{% else %}{% if page.form_heading %}<h3>{{ page.form_heading }}</h3>{% endif %}{% endif %}
+    <div id="render_form_fields"></div>
+    <div class="submit">
+        <input id="adid" type="hidden" name="adid" value="" />
+
+        <!-- submit button -->
+        <div class="tcpa"></div>
+        <button class="button-one" id="multi_next_1" type="submit">Submit</button>
+    </div>
+</form>
+
+<div id="url2png-cheese"></div>
+
+<script type="text/javascript">
+    var expire = 10;
+</script>

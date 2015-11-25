@@ -1,0 +1,30 @@
+---
+#======================================================
+# Description:
+# This example html is used to display a static html page.
+#
+# Use case examples:
+#   * I want to show any sort of content during my path.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Where page goes after form submit ==========
+next_url: next.html
+
+#========= Common Marketing Variables =================
+title: Example Static Page
+heading_one: Testing
+heading_two: Also a Test
+---
+
+<div>This is an example static page!</div>
+<div><a id="next_page" href="{{ page.next_url }}">Next Page</a></div>

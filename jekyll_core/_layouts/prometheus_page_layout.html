@@ -1,0 +1,61 @@
+---
+layout: prometheus_base_layout
+---
+
+<div class="page-content multistep">
+    <div class="wrap">
+        <div id="school_form_container">
+            <div id="multistep_form">
+                <div id="step_1">
+                    {% if page.form_id %}
+                        {% if page.form_id == 'flex_form' %}
+                            <div class="large-6 medium-6 columns">
+                                {{ content }}
+                            </div>
+                            <div class="form-wrap large-6 medium-6 columns">
+                                {% include prometheus_simple_form.html %}
+                            </div>
+                        {% elsif page.form_id == 'short_form' %}
+                            <div class="large-6 medium-6 columns">
+                                {{ content }}
+                            </div>
+                            <div class="form-wrap large-6 medium-6 columns">
+                                <h4 class="section-title" style="text-align: center">Tell Us About Yourself</h4>
+                                {% include prometheus_short_form.html %}
+                            </div>
+                        {% elsif page.form_id == 'offer_form' %}
+                            <div class="atlas_loader">
+                                <div class="centered">
+                                    <div>{{ page.loader_text }}</div>
+                                    <img src="//cdn.lecero.com/atlas_host_post/images/loader.gif" title="Loading Results" />
+                                </div>
+                            </div>
+                            <div id="offer_wrap">
+                                <div class="large-6 medium-6 columns">
+                                    <!-- required html for offer content -->
+                                    <div class="offer_content">
+                                        <div class="title"></div>
+                                        <div class="content_block"></div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap large-6 medium-6 columns">
+                                    {% include prometheus_offer_form.html %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="large-12 medium-12 columns">
+                            {{ content }}
+                        </div>
+                    {% endif %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if page.show_footer == true %}
+    {% include footer-numbers.html %}
+    {% endif %}
+</div>
+
+

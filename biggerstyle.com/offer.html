@@ -1,0 +1,72 @@
+---
+#======================================================
+# Description:
+# This is the apartment detail page!
+#
+# Use case examples:
+# You need a detail page
+#
+# Notes:
+#
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: landingpages/shortform.html
+
+#========= Common Marketing Variables =================
+title: BiggerStyle
+tcpa: <!-- NO TCPA Needed -->
+
+---
+
+<section class="offer-page">
+    <div class="row">
+
+        <div class="details columns medium-8">
+            <span id="type">Apartment for Rent</span>
+            <h1 id="address">8215 University Ridge Drive, Charlotte, NC</h1>
+            <span id="brand">Colonial Village at Chancellor Park Apartments</span>
+            <div class="bottom">
+                <div class="inner">
+                    <h5 id="price">$799/mo</h5>
+                    <span id="bed">3 bed • </span><span id="bath">2 bath • </span><span id="sqft">1237 sqft</span>
+                </div>
+                <a class="button-one" id="phone_number" href="tel:8015555555">801.555.5555</a>
+                <div class="clear"></div>
+            </div>
+            <div class="google-maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.206695410739!2d-111.89021850000002!3d40.757478400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f51730827a73%3A0x6fae71fa7326abbd!2sThe+Grand+America+Hotel!5e0!3m2!1sen!2sus!4v1438206772715" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="images columns medium-4">
+            <img src="/images/apt-img-lrg.jpg"/>
+            <img src="/images/apt-img-lrg.jpg"/>
+            <img src="/images/apt-img-lrg.jpg"/>
+            <img src="/images/apt-img-lrg.jpg"/>
+        </div>
+
+        <div class="columns">
+            <div class="ad leaderboard"></div>
+        </div>
+
+    </div>
+</section>

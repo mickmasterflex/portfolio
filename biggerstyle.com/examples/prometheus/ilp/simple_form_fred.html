@@ -1,0 +1,66 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: p-uma-offer.html?offer_id=5231
+
+#========= Variation Variables ========================
+v_type: fred
+
+#========= Common Marketing Variables =================
+title: 2015 Top School Match!
+heading_one: Great News!
+heading_two: We've selected Ultimate Medical Academy as the 2015 Best Healthcare Career Training Option for You!
+form_heading: 2015 Top School Match!
+form_image: <img class="form-image" src="/core/images/ultimate-medical-academy.jpg" alt="UMA">
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+---
+
+<h4 class="section-title">UMA provides one of the top certification programs for Healthcare Professionals.</h4>
+<p class="section-desc show-for-medium-up">In just 2 minutes, you can get matched to a school that fits your needs and goals.</p>
+<p class="section-desc show-for-medium-up">It's free, it's easy, and it works!</p>
+<h4 class="section-title">Programs</h4>
+<ul>
+<li class="condensed">Diploma - Medical Billing & Coding</li>
+<li class="condensed">Diploma – Medical Administrative Assistant</li>
+<li class="condensed">Diploma – Medical Office Billing Specialist</li>
+<li class="condensed">Diploma – Pharmacy Technician</li>
+<li class="condensed">A.S. – Medical Billing & Coding</li>
+<li class="condensed">A.S. – Health Sciences (Medical Administrative Assistant)</li>
+<li class="condensed">A.S. – Healthcare Management</li>
+<li class="condensed">A.S. – Healthcare Information Technology</li>
+<li class="condensed">A.S. – Health Sciences (Pharmacy Technician)</li>
+</ul>

@@ -1,0 +1,82 @@
+---
+#======================================================
+# Description:
+# This homepage features 2 options for the user to select from - each options has an area for a title, icon, button and short description of around 124 characters.
+#
+# Use case examples:
+# You need a home page where the user selects one of two options
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+is_home: yes
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: short_form.html
+
+#========= Common Marketing Variables =================
+title: Jekyll Template
+heading_one: This Here is a Title!
+heading_two: Now this is a secondary title
+phone_title: Have Questions? We’re Here to Help.
+---
+
+<div class="main-content two-options">
+    <div class="row">
+        <div class="heading large-12 small-12 small-centered">
+            <h1>{{ page.heading_one }}</h1>
+            <h2>{{ page.heading_two }}</h2>
+        </div>
+        <div class="option-wrap">
+            <div class="option medium-6 columns">
+                <div class="inner">
+                    <div class="top">
+                        <img src="images/icon.png" class="icon" alt="icon-arrows" width="77" height="77" />
+                        <h3>Option 1</h3>
+                    </div>
+                    <div class="bottom">
+                        <form action="{{ site.baseurl }}landingpages/lp-refinance-shortform.html">
+                            <button class="button-one">Button Text</button>
+                        </form>
+                        <p>Gorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="option medium-6 columns">
+                <div class="inner">
+                    <div class="top">
+                        <img src="images/icon.png" class="icon" alt="icon-house" width="77" height="73" />
+                        <h3>Option 2</h3>
+                    </div>
+                    <div class="bottom">
+                        <form action="{{ site.baseurl }}landingpages/lp-mortgage-shortform.html">
+                            <button class="button-one">Button Text</button>
+                        </form>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

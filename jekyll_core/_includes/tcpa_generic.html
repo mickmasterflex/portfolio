@@ -1,0 +1,10 @@
+{% if site.tcpa %}
+    {{ site.tcpa }}
+{% else %}
+    <p>
+        By clicking Next I consent that the phone number provided (home or cell) may be dialed by
+        automated technology so that I may be contacted by {{ site.title }} and up to
+        {% if site.partner_list %}<a id="partners__opener">3 partners</a> {% else %} 3 partners {% endif %}
+        regarding {{ site.vertical }} and I am not required to consent to receive services.
+    </p>
+{% endif %}

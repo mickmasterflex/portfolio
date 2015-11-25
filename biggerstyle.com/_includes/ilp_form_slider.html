@@ -1,0 +1,62 @@
+<div class="ilp-shortform">
+    <div class="container form-section">
+        <h3>{{ page.intent_heading }}</h3>
+        <section>
+            <form name="shortform" id="theForm" class="simform" autocomplete="off" action="#">
+                <div class="simform-inner">
+                    <ol class="questions">
+                        {% for field in page.slider_fields %}
+                        <li>
+                            <span><label for="q{{ forloop.index }}">{{ field.label }}</label></span>
+                            <input class="{{ field.class }}" id="q{{ forloop.index }}" name="{{ field.field_name }}" type="text"/>
+                        </li>
+                        {% endfor %}
+                    </ol><!-- /questions -->
+
+                    <div class="controls">
+                        <div class="progress"></div>
+                        <button class="next ilp-next-button">{{ page.button_text }}</button>
+                        <span class="number">
+                            <span class="number-current"></span>
+                            <span class="number-total"></span>
+                        </span>
+                        <span class="error-message"></span>
+                    </div><!-- / controls -->
+                </div><!-- /simform-inner -->
+                <div class="submit">
+                    <span class="tcpa">{% if page.tcpa %} {{ page.tcpa }} {% else %} {% include tcpa_generic.html %} {% endif %}
+                    </span>
+                    <div id="form_errors"></div>
+                    <button id="application-submit" class="ilp-button" type="submit" onClick="ga('send', 'event', 'ILP', 'Submit', 'ILPShortformSubmit');">{{ page.button_submit_text }}</button>
+                </div>
+                <span class="final-message"></span>
+            </form><!-- /simform -->
+        </section>
+    </div>
+    <script src="{{ site.baseurl }}core/js/ilp_slider/classie.js"></script>
+    <script src="{{ site.baseurl }}core/js/ilp_slider/stepsForm.js"></script>
+    <script>
+        var theForm = document.getElementById( 'theForm' );
+    
+        new stepsForm( theForm, {
+            onSubmit : function( form ) {
+                // hide form
+                classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+                $.ajax({
+                    url: 'http://valkyrie.neutronnetwork.com/d.ashx',
+                    type: 'POST',
+                    data: $('#theForm').serialize()+"&controller=ShaggyDController&ckm_campaign_id=363&ckm_key=sccKargMaJ4&source_lp=findanycollege.com&adid=dc", // data to be submitted
+                    success: function (response) {
+
+                    }
+                });
+    
+                // let's just simulate something...
+                var messageEl = theForm.querySelector( '.final-message' );
+                messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+                classie.addClass( messageEl, 'show' );
+            }
+        } );
+    </script>
+</div>

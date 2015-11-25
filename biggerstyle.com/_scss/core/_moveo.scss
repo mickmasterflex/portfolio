@@ -1,0 +1,185 @@
+/* -------------------------------------------------------------------
+	Moveo Landing Page
+------------------------------------------------------------------- */
+.moveo {
+    
+    // Typography
+    h1 {
+        color: $h1b;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        text-align: center;
+    }
+    h2 {
+        color: $h2b;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        text-align: left;
+    }
+    h3 {
+        font-size: 1.125rem;
+        margin: .125rem 0;
+    }
+    h4 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    p {
+        color: $p2;
+        line-height: 1.375;
+        margin: .5rem 0 .625rem;
+    }
+    li {
+        line-height: 1.375;
+        margin: .5rem 0 .625rem;
+    }
+    .inner {  
+        p { color: $p1; }
+    }
+    
+    // Structure
+    .top {
+        min-height: 90vh;
+        min-height: calc(100vh - 48px);
+        padding: 2.625rem 0 1rem;
+        @include bg($bg5, '/core/images/bg_moveo_placeholder.jpg', no-repeat, center, center);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .bottom {
+        @include bg($bg2);
+    }
+    .branding {
+        padding-top: .5rem;
+        padding-bottom: .625rem;
+        @include bg($bg5);
+        .logo {
+            display: block;
+            margin: 0 auto;
+            height: 1.875rem;
+        }
+    }
+    .content {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        .inner {
+            padding: 1rem;
+            margin-top: 1.325rem;
+            @include bg($bg1);
+        }
+    }
+    
+    // Form
+    .lp-shortform {
+        margin: 1.5rem 0;
+        padding-bottom: 0.625rem;
+        @include bg(#e6e6e6);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .make-room {
+        padding: 0 .75rem;
+        display: block;
+        #multi_next_1, #multi_next_4 {
+            margin-top: .75rem;
+        }
+    }
+    .controls {
+        margin-top: 0.5rem;
+    }
+    .simform {
+        ol::before { display: none; }
+        .progress{ 
+            border: none;
+            height: .25rem;
+            margin-bottom: 0.5rem;
+            &:before {
+                right: .75rem;
+                left: .75rem;
+                width: auto;
+                height: 0.25rem;
+            }
+        }
+        .number { right: .75rem; display: none; }
+        .error-message {
+            font-family: $typeface1;
+            font-style: normal;
+            color: $defaultError;
+            font-size: .875rem;
+            font-weight: 500;
+            text-align: center;
+            padding: .125rem 0 0 0;
+            width: auto;
+            display: block;
+            position: relative;
+        }
+    }
+    label.question {
+        font-family: $typeface2;
+        font-size: 1.125rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.625rem 0.5rem;
+        margin: 0;
+        @include bg($bg1);
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    .button-three, .next {
+        font-family: $typeface2;
+        font-weight: bold;
+        border: .0625rem solid $btn3-border;
+        box-shadow: none;
+        @include transition(all, .125s);
+        height: auto;
+        padding: .875rem 1rem 1rem;
+        &:hover {
+            border: .0625rem solid $btn3-border-hover;
+            box-shadow: none;
+        }
+    }
+    .button-four.radio {
+        font-family: $typeface2;
+        font-size: 1rem;
+        line-height: 1.25;
+        font-weight: 400;
+        text-align: left;
+        @include bg($btn4);
+        border-radius: 5px;
+        border: .0625rem solid $btn4-border;
+        @include transition(all, .125s);
+        height: auto;
+        padding: .875rem 2.5rem 1rem;
+        margin: .5rem 0;
+        position: relative;
+        @include transition(all, .125s);
+        box-shadow: none;
+        &:hover {
+            border: .0625rem solid $btn4-border-hover;
+            box-shadow: none;
+        }
+        &.checked {
+            @include bg($btn4-active);
+            color: $btn4-text-hover;
+            border-color: $btn4-border-active;
+        }
+        input {
+            position: absolute;
+            width: 16px;
+            margin-left: -27px;
+        }
+    }
+    select {
+        border: solid .0625rem $border1;
+        border-radius: 0;
+    }
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+        margin-top: .625rem;
+        font-family: $typeface2;
+    }
+    .radio {
+        input, select { margin-top: 4px; }
+    }
+}

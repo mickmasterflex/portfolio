@@ -1,0 +1,164 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: blank  # layout requirement
+
+#========= Link to required js for page ===============
+form_js: /prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: simple_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: next.html
+
+#========= Common Marketing Variables =================
+title: Example Simple Form
+
+#========= Form Fields ================================
+form_fields:
+    - label: Regular Text Box
+      field_name: text
+      type: text
+      value:
+      required: yes
+    - label: Email
+      field_name: email
+      type: text
+      value:
+      required: yes
+    - label: Hidden Field
+      field_name: hidden
+      type: hidden
+      value: hidden value
+    - label: Checkbox
+      field_name: checkbox
+      type: checkbox
+      value: 1
+      required: yes
+    - label: Select This
+      field_name: select
+      type: select
+      value:
+      required: yes
+      options:
+        - label: Select an Option
+          value:
+        - label: first option
+          value: 1
+        - label: second option
+          value: 2
+    - label: Radio Buttons
+      field_name: radio
+      type: radio
+      value: 1
+      required: yes
+      options:
+        - label: first radio
+          value: 1
+        - label: second radio
+          value: 2
+
+---
+
+<script type="text/javascript">
+    var form_id = '#{{ page.form_id }}';
+    var post_url = '{{ page.post_url }}';
+    var next_url = '{{ page.next_url }}';
+</script>
+
+<form class="cmxform" id="{{ page.form_id }}" name="{{ page.form_id }}" method="get">
+    {% for field in page.form_fields %}
+    <div class="field form-element">
+        <label for="{{ field.field_name }}">{{ field.label }}</label><br/>
+        {% if field.type == 'checkbox' %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == 1 %}checked{% endif %} {% if field.required == 'yes' %}required{% endif %} />
+        {% elsif field.type == 'select' %}
+            <select id="{{ field.field_name }}" name="{{ field.field_name }}" {% if field.required == 'yes' %}required{% endif %}>
+                {% for option in field.options %}
+                    <option value="{{ option.value }}" {% if field.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+                {% endfor %}
+            </select>
+        {% elsif field.type == 'radio' %}
+            {% for option in field.options %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == option.value %}checked{% endif %} id="{{ option.value }}" value="{{ option.value }}" {% if field.required == 'yes' %}required{% endif %} /><label for="{{ option.value }}">{{ option.label }}<label/><br/>
+            {% endfor %}
+        {% elsif field.type == 'hidden' %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" value="{{ field.value }}" />
+        {% else %}
+            <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.required == 'yes' %}required{% endif %} />
+        {% endif %}
+    </div>
+    {% endfor %}
+    <div>
+    <button id="submit" type="submit">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        // validate the comment form when it is submitted
+        $(form_id).validate({
+            rules: {
+                text: "required",
+                checkbox: "required",
+                select: "required",
+                radio: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                dateformat: "required",
+                terms: "required"
+            },
+            messages: {
+                fname: "Enter your firstname",
+                lname: "Enter your lastname",
+                email: {
+                    required: "Please enter a valid email address",
+                    minlength: "Please enter a valid email address",
+                    remote: jQuery.validator.format("{0} is already in use")
+                },
+                dateformat: "Choose your preferred dateformat",
+                terms: " "
+            },
+            // the errorPlacement has to take the table layout into account
+            errorPlacement: function(error, element) {
+                if (element.is(":radio"))
+                    error.appendTo(element.parent().next().next());
+                else if (element.is(":checkbox"))
+                    error.appendTo(element.next());
+                else
+                    error.appendTo(element.parent());
+            },
+            // specifying a submitHandler prevents the default submit, good for the demo
+            submitHandler: function() {
+                $(form_id).submit(prometheus_submit(form_id));
+            },
+            // set this class to error-labels to indicate valid fields
+            success: function(label) {
+                // set &nbsp; as text for IE
+                label.html("&nbsp;").addClass("checked");
+            },
+            highlight: function(element, errorClass) {
+                $(element).parent().next().find("." + errorClass).removeClass("checked");
+            }
+        });
+    });
+</script>

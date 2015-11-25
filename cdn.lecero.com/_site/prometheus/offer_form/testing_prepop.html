@@ -1,0 +1,66 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+</script>
+
+<script type="text/javascript">
+    var form_id = '#simple_form';
+    var post_url = 'test.html';
+    var next_url = 'example.html';
+</script>
+
+<form class="cmxform" id="simple_form" name="simple_form" method="get">
+    
+    <div class="field form-element">
+        <label for="zip_code">Zip Code</label><br/>
+        
+            <input id="zip_code" name="zip_code" type="text" required />
+        
+    </div>
+    
+    <div class="field form-element">
+        <label for="email_address">Email</label><br/>
+        
+            <input id="email_address" name="email_address" type="text" required />
+        
+    </div>
+    
+    <div class="field form-element">
+        <label for="first_name">First Name</label><br/>
+        
+            <input id="first_name" name="first_name" type="text" required />
+        
+    </div>
+    
+    <div class="field form-element">
+        <label for="last_name">Last Name</label><br/>
+        
+            <input id="last_name" name="last_name" type="text" required />
+        
+    </div>
+    
+    <div>
+    <button id="submit" type="submit">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        
+            
+                $('#zip_code').mask('99999');
+            
+        
+            
+        
+            
+        
+            
+        
+    });
+</script>
+
+<!-- must go after all page content -->
+<script type="text/javascript" src="/prometheus/simple_form/js/simple_form.js"></script>

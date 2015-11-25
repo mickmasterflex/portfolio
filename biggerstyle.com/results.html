@@ -1,0 +1,583 @@
+---
+#======================================================
+# Description:
+# This is the apartment search results page. Maybe one day it will have it's own template!
+#
+# Use case examples:
+# You need a reults page
+#
+# Notes:
+#
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type:
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/static_page/static_page.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= Where page goes after form submit ==========
+next_url:
+
+#========= Common Marketing Variables =================
+title: BiggerStyle
+tcpa: <!-- NO TCPA Needed -->
+header_type: header_simple.html
+---
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<div class="form-top">
+    <form id="search-form" class="row">
+        <div class="columns">
+            <div class="inner">
+                <span class="form-element">
+                    <label for="location">Zip Code</label>
+                    <input id="location" type="tel" name="location" value="" placeholder="e.g. 90001">
+                </span><!-- end location-form-element -->
+                <div class="advanced-fields">
+                    <span class="form-element">
+                        <label for="type">Home Type</label>
+                        <select id="type" name="type">
+                            <option value="">Any</option>
+                            <option value="1">House</option>
+                            <option value="2">Apartment</option>
+                        </select>
+                    </span><!-- end hometype-form-element -->
+                    <span class="form-element">
+                        <label for="minprice">Min Price</label>
+                        <select id="minprice" name="minprice">
+                            <option value="">Any</option>
+                            <option value="500">$500+</option>
+                            <option value="750">$750+</option>
+                            <option value="1000">$1,000+</option>
+                            <option value="1250">$1,250+</option>
+                            <option value="1500">$1,500+</option>
+                            <option value="1750">$1,750+</option>
+                            <option value="2000">$2,000+</option>
+                            <option value="2500">$2,500+</option>
+                            <option value="3000">$3,000+</option>
+                        </select>
+                    </span><!-- end price-form-element -->
+                    <span class="form-element">
+                        <label for="maxprice">Max Price</label>
+                        <select id="maxprice" name="maxprice">
+                            <option value="">Any</option>
+                            <option value="750">$750</option>
+                            <option value="1000">$1,000</option>
+                            <option value="1250">$1,250</option>
+                            <option value="1500">$1,500</option>
+                            <option value="1750">$1,750</option>
+                            <option value="2000">$2,000</option>
+                            <option value="2500">$2,500</option>
+                            <option value="3000">$3,000</option>
+                        </select>
+                    </span><!-- end price-form-element -->
+                    <span class="form-element">
+                        <label for="minbeds">Bedrooms</label>
+                        <select id="minbeds" name="minbeds">
+                            <option value="">Any</option>
+                            <option value="0">0+</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </span><!-- end bedroom-form-element -->
+                    <span class="form-element">
+                        <label for="sort">Sort Results By:</label>
+                        <select id="sort" name="sort">
+                            <option value="">Sort by Best Match</option>
+                            <option value="pricel">Rent low to high</option>
+                            <option value="priceh">Rent high to low</option>
+                            <option value="bedl">Number of bedrooms low to high</option>
+                            <option value="bedh">Number of bedrooms high to low</option>
+                            <option value="dist">Distance from zip</option>
+                            <option value="recent">Most recently updated shown first</option>
+                        </select>
+                    </span><!-- end sort-form-element -->
+                </div>
+                <span class="form-element">
+                    <input type="submit" class="button-two" value="Search" />
+                </span>
+                <span class="form-element hidden">
+                    <a class="button-three advanced-options-btn">Advanced</a>
+                </span>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<section class="search-results-wrap">
+    <div class="row">
+
+        <div class="search-results">
+
+            <h1 id="results-heading" class="columns"><span id="total-listings"></span> Openings in <div id="query_city"></div></h1>
+
+            <!-- BiggerStyle - Link Ads - Search Results -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:15px"
+                 data-ad-client="ca-pub-6943270913451072"
+                 data-ad-slot="6917244414"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+            <div class="paginate columns">
+                <a class="columns small-4 large-2 paginate-previous">Previous Page</a>
+                    <span class="columns small-4 large-8">
+                        <h6>Page <span class="page-number"></span> of <span class="total-pages"></span></h6>
+                    </span>
+                <a class="columns small-4 large-2 paginate-next">Next Page</a>
+            </div>
+            <div class="clear"></div>
+
+            <!-- BiggerStyle - Responsive - Search Results - Slot 1 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6943270913451072"
+                 data-ad-slot="2347444018"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+            <ul id="search-results"></ul>
+
+            <div class="paginate columns">
+                <a class="columns small-4 large-2 paginate-previous">Previous Page</a>
+                    <span class="columns small-4 large-8">
+                        <h6>Page <span class="page-number"></span> of <span class="total-pages"></span></h6>
+                    </span>
+                <a class="columns small-4 large-2 paginate-next">Next Page</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="ad skyscraper-wide hide-for-small-down">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- BiggerStyle - Search Results Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6943270913451072"
+                 data-ad-slot="5237191612"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+</section>
+
+<section class="modal-register">
+    <div class="close-modal"></div>
+    <div class="form-wrap row">
+        <div class="inner columns medium-centered small-12 medium-6 large-4">
+            <h2>Contact Property</h2>
+            <form class="cmxform" name="reg_form" id="reg_form" method="get" autocomplete="off">
+                <div class="field form-element">
+                    <label for="first_name">First Name <em class="form-req-mark">*</em></label>
+                    <input id="first_name" type="text" name="first_name" placeholder="First Name" required />
+                </div>
+                <div class="field form-element">
+                    <label for="last_name">Last Name <em class="form-req-mark">*</em></label>
+                    <input id="last_name" type="text" name="last_name" placeholder="Last Name" required />
+                </div>
+                <div class="field form-element">
+                    <label for="email_address">Email <em class="form-req-mark">*</em></label>
+                    <input id="email_address" type="text" name="email_address" placeholder="example@example.com" required />
+                </div>
+                <div class="field form-element">
+                    <label for="phone_home">Phone <em class="form-req-mark">*</em></label>
+                    <input id="phone_home" type="text" name="phone_home" required />
+                </div>
+                <div class="form-element">
+                    <label for="moving">When are you Moving?</label>
+                    <select id="moving" name="moving">
+                        <option value="moving_now">Moving Now</option>
+                        <option value="moving_this_month">Moving this Month</option>
+                        <option value="moving_next_month">Moving next Month</option>
+                        <option value="moving_soon">Moving soon</option>
+                    </select>
+                </div>
+                <div class="field form-element">
+                    <label for="zip_code">Zip <em class="form-req-mark">*</em></label>
+                    <input id="zip_code" type="text" name="zip_code" required />
+                </div>
+
+                <p class="submit">
+                    <p class="tcpa">By clicking the "Contact" button I consent that the phone number provided (home or cell) may be dialed by automated technology so that I may be contacted by BiggerStyle regarding mortgage/rental services opportunities. I am not required to consent to receive services.</p>
+
+                    <input id="adid" type="hidden" name="adid" value="" />
+                    <input id="city" type="hidden" name="city" value="" />
+                    <input id="state" type="hidden" name="state" value="" />
+                    <input id="reg_submit" type="hidden" name="reg_submit" value="submitted" />
+                    <input id="controller" type="hidden" name="controller" value="ApartmentController" />
+                    <input id="source_lp_domain" type="hidden" name="source_lp_domain" value="biggerstyle.com" />
+
+                    <!-- submit button -->
+                    <button class="button-one" id="multi_next_1" type="submit">Contact</button>
+                    <!-- no thanks button -->
+                    <a class="" id="no_thanks" href="#">No Thanks</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- geo prepop -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        //get get variable from the url string
+        //if exists, add to form and submit
+        //else show search message
+        var odin_api = 'http://www.firstmedicaljobs.com/odin/api/v1/property/?';
+        var total_listings = null;
+        var total_pages = null;
+        var page_number = 1;
+        var query_city = null;
+        $('.page-number').html(page_number);
+
+        $('#reg_form #adid').val(GetURLParameter('adid'));
+
+        var location = GetURLParameter('location'),
+                home_type = GetURLParameter('type'),
+                minprice_search = GetURLParameter('minprice'),
+                maxprice_search = GetURLParameter('maxprice'),
+                minbeds_search = GetURLParameter('minbeds'),
+                sort_search = GetURLParameter('sort');
+        $('#search-form #location').val(location);
+        $('#search-form #type').val(home_type);
+        $('#search-form #minprice').val(minprice_search);
+        $('#search-form #maxprice').val(maxprice_search);
+        $('#search-form #minbeds').val(minbeds_search);
+        $('#search-form #sort').val(sort_search);
+
+        function set_total_pages(pages){
+            total_pages = pages;
+        }
+
+        // Toggle Advanced Options
+        $(document).on('click', '.advanced-options-btn', function() {
+            $('.advanced-fields').toggle();
+            $('.advanced-options-btn').toggle();
+        });
+
+        $('.paginate-previous').click(function(){
+            if(page_number <= 1) {
+                page_number = 1;
+            } else {
+                page_number = page_number -1;
+            }
+            console.log(page_number);
+            $('#search-form').submit();
+        });
+
+        $('.paginate-next').click(function(){
+            if(page_number >= total_pages) {
+                page_number = total_pages;
+            } else {
+                page_number = page_number + 1;
+            }
+            console.log(page_number);
+            $('#search-form').submit();
+        });
+
+        $(document).on('click', '#search-form button', function(){
+            page_number = 1;
+        });
+
+        var search_function = function() {
+            $('#search-results').html('');
+            $('#search-results').append('<span class="loading-message"><img id="loading-gif" src="/images/ajax-loader.gif"/><h3 id="loading-text">Loading...</h3></span><div class="clear"></div>');
+            $form_values = $('#search-form').serializeArray();
+
+            location = $form_values[0]['value'];
+
+            var lat = null;
+            var lng = null;
+            var geocoder = new google.maps.Geocoder();
+            var milliseconds = new Date();
+            var timestamp = Math.floor(milliseconds.getTime() / 1000);
+
+            geocoder.geocode( { 'address': location}, function(results, status){
+                lat = results[0].geometry.location.G;
+                lng = results[0].geometry.location.K;
+                var params = {
+                    'cla': lat,
+                    'clo': lng,
+                    'house': $form_values[1]['value'],
+                    'minprice' : $form_values[2]['value'],
+                    'maxprice' : $form_values[3]['value'],
+                    'minbeds' : $form_values[4]['value'],
+                    'sort' : $form_values[5]['value'],
+                    'perpage' : 25,
+                    'page' : page_number,
+                    'key' : 'K2dh7dam2h',
+                    'ts' : timestamp
+                };
+
+                var out = new Array();
+
+                for (key in params) {
+                    out.push(key + '=' + encodeURIComponent(params[key]));
+                }
+
+                //serialize array to string, concatenate to url
+                var serializedParams = out.join('&');
+                var url = odin_api + serializedParams;
+
+                console.log( url );
+                $.getJSON(url, function(data){
+                    $('#search-results').html('');
+                    var listing_url;
+                    $.each(data[0].properties, function( index, value ) {
+                        var type = null;
+                        if(value.is_house == 1) {
+                            type="House for rent";
+                        }
+                        else {
+                            type="Apartment for rent";
+                        }
+
+                        var price = null;
+                        if((value.low_price[0] && value.high_price[0]) && value.low_price[0] == value.high_price[0]) {
+                            price = '$' + value.low_price;
+                        }
+                        else if(value.low_price[0] && value.high_price[0]) {
+                            price = '$' + value.low_price + ' - ' + '$' + value.high_price;
+                        }
+                        else {
+                            price = "Contact for Price"
+                        }
+
+                        var beds = null;
+                        if(value.low_bed[0] && value.high_bed[0]) {
+                            beds = value.low_bed + ' - ' + value.high_bed;
+                        }
+                        else {
+                            beds = value.low_bed;
+                        }
+
+                        var baths = null;
+                        if(value.low_bath[0] && value.high_bath[0]) {
+                            baths = value.low_bath + ' - ' + value.high_bath;
+                        }
+                        else {
+                            baths = value.low_bath;
+                        }
+
+                        var row = '<li class="result row">' +
+                                '<span class="details columns small-8">' +
+                                '<span id="type">' + type + '</span>' +
+                                '<h4 id="address">' + value.address + '</h4>' +
+                                '<span id="brand">' + value.name + '</span>' +
+                                '<h5 id="price">' + price + '</h5>' +
+                                '<span id="bed">' + beds + ' bedrooms • </span><span id="bath">' + baths + ' bathrooms • </span><span id="sqft">' + value.low_area + ' - ' + value.high_area + ' sqft </span>' +
+                                '<div class="bottom">' +
+                                '<button class="button-one btn-view-post"><a target="_blank" ' + ( get_prometheus_data()["reg_submit"] == "submitted" ? 'href="' + value.url + '"' : '') + ' data-listing-url="' + value.url + '">Check Availability</a></button><span id="date">Posted ' + value.updated + '</span>' +
+                                '<div class="clear"></div>' +
+                                '</div>' +
+                                '</span>' +
+                                '<div class="img-wrap">' + '<img src="' + value.image + '" class="columns small-4"/>' + '</div>' +
+                                '</li>';
+
+                        $("#search-results").append( row );
+                        total_listings = data[0].total_listings;
+                        total_pages = data[0].total_pages;
+                        query_city = data[0].properties[0].city;
+                        $('#query_city').html(query_city);
+                        $('#total-listings').html(total_listings);
+                        set_total_pages(total_pages);
+                        $('.total-pages').html(total_pages);
+                        $('.page-number').html(page_number);
+                        $('.paginate').show();
+                        $('#results-heading').show();
+                    });
+
+                    // add ad tag every 4 job listings
+                    $('#search-results li.result:nth-child(3)').after(function() {
+                        var ad =  '<!-- BiggerStyle - Responsive - Search Results - Slot 2 -->'
+                                + '<ins class="adsbygoogle"'
+                                + 'style="display:block"'
+                                + 'data-ad-client="ca-pub-6943270913451072"'
+                                + 'data-ad-slot="6638042819"'
+                                + 'data-ad-format="auto"></ins>'
+                                + '<script>'
+                                + '(adsbygoogle = window.adsbygoogle || []).push({});'
+                                + '</scr' + 'ipt>';
+                        return ad;
+                    });
+
+                    $(document).on('click', '.details button', function(){
+                        listing_url = $(this).children().attr('data-listing-url');
+                    });
+
+                    //Registration
+                    $(document).on('click', '#reg_form button', function(e){
+                        e.preventDefault();
+                        // Post URL for registration form
+                        var post_url = 'http://valkyrie.neutronnetwork.com/api/post_apartment_lead';
+                        // add data to cookie
+                        var cookie_data = $('#reg_form').serializeObject();
+                        // Data for registration form
+                        var reg_data = $('#reg_form').serializeAll();
+                        $.ajax({
+                            url: post_url,
+                            type: 'POST',
+                            data: reg_data,
+                            async: false,
+                            success: function( response ) {
+                                debug( 'Response: ' + response );
+                                append_prometheus_data(cookie_data);
+                                // Open Listing Url in new tab
+                                $('.modal-register').hide();
+                                $('body').toggleClass('no-scroll');
+                                ga('send', 'event', 'BiggerStyle', 'Submit', 'RegForm');
+                                goog_report_conversion();
+                                window.open(listing_url);
+                            },
+                            error: function(event, response, ajaxSettings, thrownError) {
+                                // alert(thrownError);
+                            },
+                            timeout: 30000 // sets timeout to 30 seconds
+                        });
+                    });
+
+                    //No Thanks Button
+                    $(document).on('click', '#no_thanks', function() {
+                        $.cookie("prometheus-form-data", '{"reg_submit":"submitted"}', { expires: 1, path: '/' });
+                        $('.modal-register').toggle();
+                        $('body').toggleClass('no-scroll');
+                        ga('send', 'event', 'BiggerStyle', 'Click', 'OptOut');
+                        window.open(listing_url);
+                    });
+
+                    //No Thanks Button
+                    $(document).on('click', '.close-modal', function() {
+                        $('.modal-register').toggle();
+                        $('body').toggleClass('no-scroll');
+                    });
+
+                    $(document).on('click', '.btn-view-post', function() {
+                        if(get_prometheus_data() != undefined) {
+                            if( get_prometheus_data()['reg_submit'] != 'submitted' ) {
+                                $('.modal-register').toggle();
+                                $('#reg_form #zip_code').val(location);
+                                $('body').toggleClass('no-scroll');
+                            } else {
+                                window.open(listing_url);
+                            }
+                        }
+                    });
+                });
+            });
+        };
+
+        if($('#search-form #location').val().length > 0) {
+            return search_function();
+        }
+
+        $('#search-form').submit(search_function);
+    });
+
+    //====== SerializeAll ==========================================================
+    $.fn.serializeAll = function() {
+        var rselectTextarea = /^(?:select|textarea)/i;
+        var rinput = /^(?:color|date|datetime|datetime-local|email|file|hidden|month|number|password|range|search|tel|text|time|url|week)$/i;
+        var rCRLF = /\r?\n/g;
+
+        var arr = this.map(function(){
+            return this.elements ? jQuery.makeArray( this.elements ) : this;
+        })
+            .filter(function(){
+                return this.name && !this.disabled &&
+                    ( this.checked || rselectTextarea.test( this.nodeName ) ||
+                    rinput.test( this.type ) );
+            })
+            .map(function( i, elem ){
+                var val = jQuery( this ).val();
+
+                return val == null ?
+                    null :
+                    jQuery.isArray( val ) ?
+                        jQuery.map( val, function( val, i ){
+                            return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+                        }) :
+                    { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+            }).get();
+
+        return $.param(arr);
+    };
+
+    //====== SerializeObject =======================================================
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+</script>
+
+<!-- Google Code for BiggerStyle Registration Conversion Page
+In your html page, add the snippet and call
+goog_report_conversion when someone clicks on the
+chosen link or button. -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    goog_snippet_vars = function() {
+        var w = window;
+        w.google_conversion_id = 1037938829;
+        w.google_conversion_label = "c183CMS6xl8QjeH27gM";
+        w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+        goog_snippet_vars();
+        window.google_conversion_format = "3";
+        window.google_is_call = true;
+        var opt = new Object();
+        opt.onload_callback = function() {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        }
+        var conv_handler = window['google_trackConversion'];
+        if (typeof(conv_handler) == 'function') {
+            conv_handler(opt);
+        }
+    }
+    /* ]]> */
+</script>
+<script type="text/javascript"
+        src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>

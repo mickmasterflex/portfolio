@@ -1,0 +1,167 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_basic_lp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: ../thanks.html
+
+#========= Common Marketing Variables =================
+title: Best Contractors Only
+heading_one: Enter Your Info
+heading_two: Get Matched to the Best Contractors
+form_heading: Get Started Here
+form_image: 
+minimized_fields: true
+header_type: header.html
+
+#========= Form Fields ================================
+form_fields:
+    - label: Project Type
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Additions and Remodels
+            value: 1
+          - label: Appraisers and Home Inspectors
+            value: 2
+          - label: Architects
+            value: 3
+          - label: Bathroom Remodeling
+            value: 4
+          - label: Cabinets and Countertops
+            value: 5
+          - label: Carpentry
+            value: 6
+          - label: Carpet
+            value: 7
+          - label: Cleaning
+            value: 8
+          - label: Concrete & Masonry
+            value: 9
+          - label: Custom Homes
+            value: 10
+          - label: Decks & Porches
+            value: 11
+          - label: Decorators & Designers
+            value: 12
+          - label: Doors
+            value: 13
+          - label: Dry Wall
+            value: 14
+          - label: Electrical
+            value: 15
+          - label: Engineers
+            value: 16
+          - label: Excavation
+            value: 17
+          - label: Fencing
+            value: 18
+          - label: Flooring
+            value: 19
+          - label: Foundation
+            value: 20
+          - label: Garage Doors
+            value: 21
+          - label: Glass
+            value: 22
+          - label: Handyman
+            value: 23
+          - label: Home Security
+            value: 24
+          - label: HVAC
+            value: 25
+          - label: Insulation
+            value: 26
+          - label: Kitchen Remodeling
+            value: 27
+          - label: Landscaping
+            value: 28
+          - label: Moving
+            value: 29
+          - label: Painting
+            value: 30
+          - label: Pest Control
+            value: 31
+          - label: Plumbing
+            value: 32
+          - label: Real Estate Development
+            value: 33
+          - label: Roofing
+            value: 34
+          - label: Siding
+            value: 35
+          - label: Small Projects and Repairs
+            value: 36
+          - label: Solar Energy
+            value: 37
+          - label: Specialty
+            value: 38
+          - label: Sunrooms
+            value: 39
+          - label: Swimming Pools
+            value: 40
+          - label: Tile Work
+            value: 41
+          - label: Walls
+            value: 42
+          - label: Windows
+            value: 43
+    - label: Zip Code
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+    - label: Email
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+    - label: Phone
+      field_name: phone_home
+      type: text
+      value:
+      is_required: required
+      mask: (999) 999-9999
+
+---
+
+<h3>Congratulations! You're one step closer to getting started.</h3>
+<p>At BiggerStyle, we are comitted to offering you nothing but the best for all of your Home Repair projects.  We have teamed up with top local contractors who want to take the hassle out of remodeling for you.</p>
+<p>Fill out your information, sit back, and let us take care of the rest.</p>

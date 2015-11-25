@@ -1,0 +1,222 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_elephantus  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: ../../../thanks-new.html
+
+#========= Common Marketing Variables =================
+header_type: header_simple.html
+title: Example Simple Form
+heading_one: Harris School of Business in Wilmington
+form_heading: Forms Have Headings
+mobile_sticky_button: Request Info
+
+related_pages_title: Similar Colleges
+related_pages:
+    - title: Steven's Henager College
+      url: www.google.com
+      img: https://i.ytimg.com/i/XsBXr8T4fWrY9zFYNID-gA/mq1.jpg?v=5220fadf
+    - title: Steven's Henager College
+      url: www.google.com
+      img: https://i.ytimg.com/i/XsBXr8T4fWrY9zFYNID-gA/mq1.jpg?v=5220fadf
+    - title: Steven's Henager College
+      url: www.google.com
+      img: https://i.ytimg.com/i/XsBXr8T4fWrY9zFYNID-gA/mq1.jpg?v=5220fadf
+
+
+#========= Form Fields ================================
+form_fields:
+    - label: Zip Code
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+    - label: Email
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+    - label: Phone
+      field_name: phone_home
+      type: text
+      value:
+      is_required: required
+      mask: (999) 999-9999
+    - label: Which best describes you?
+      field_name: experience
+      type: radio
+      is_required: required
+      options:
+          - label: I am a certified Medical Admin Assistant
+            value: experienced
+          - label: I need training.  Show me schools in my area that offer training and certification
+            value: not_experienced
+
+---
+
+
+<section class="row elephantus wide">
+
+    <a href="#form" id="form-appear" class="button-one">{{ page.mobile_sticky_button }}</a>
+
+    <article class="title">
+        <h1>{{ page.heading_one }}</h1>
+
+        <div class="ad square-small"></div>
+    </article>
+
+    <aside class="sidebar left-side">
+        {% include prometheus_simple_form.html %}
+    </aside>
+
+    <article class="main">
+
+        <h3>Harris School of Business</h3>
+        <p>Ready to take your career to the next level? Harris School of Business is a private,post-secondary school offering students the opportunity to obtain a quality,practical career education in the growing fields of business, legal studies,and allied health, with special emphasis on administrative office support. For over forty years, Harris School of Business has been committed to offering our students high-quality post-secondary career training. We strive to provide the knowledge and skills needed for a rewarding career in the business, healthcare or professional world.</p>
+
+        <div class="ad square"></div>
+
+        <h3>What makes Harris School of Business so special?</h3>
+
+        <h4>Convenience</h4>
+        <p>Harris School of Business offers eight campus locations in Delaware, New Jersey,Pennsylvania and Connecticut.</p>
+
+        <h4>Financial Aid</h4>
+        <p>At several Harris campus locations, financial aid programs are available to those who qualify. Contact Harris for details.</p>
+
+        <h4>Career Placement Assistance</h4>
+        <p>Our staff will work hard to help you find employment related to your training in the career you’ve chosen.</p>
+
+        <div class="ad square"></div>
+
+        <h4>Fast-Track Programs</h4>
+        <p>In less than a year, students can prepare for rewarding positions in the growing fields of business, legal studies or healthcare.</p>
+
+        <h4>Prior Learning</h4>
+        <p>You maybe able to waive some courses toward your diploma if you have advanced skills or prior education in the field you want to study.</p>
+
+        <h4>Our Reputation for Quality</h4>
+        <p>Harris School of Business has provided quality career training to thousands of people since its founding in 1965. Harris can help you get ahead in a career where you can really shine! Contact us today.</p>
+
+        <h4>Career Training Programs:</h4>
+        <ul>
+          <li>Professional Medical Assistant Plus</li>
+          <li>Massage Therapy</li>
+          <li>Legal Office Technology</li>
+          <li>Health Claims Specialist Plus</li>
+          <li>Dental Assistant</li>
+          <li>Pharmacy Technician</li>
+          <li>Multi-Skilled Health Technician</li>
+          <li>Surgical Technology</li>
+          <li>Medical Assistant</li>
+          <li>Certified Nurses Aide</li>
+          <li>Patient Care Technician Level 1</li>
+          <li>Patient Care Technician Level 2</li>
+          <li>Phlebotomy</li>
+          <li>Medical Administrative Assistant</li>
+        </ul>
+
+        <p>Programs are subject to change without notice. Not all programs are available at all campus locations. Contact Harris School of Business today and get your application started!</p>
+
+        <div class="ad square"></div>
+
+        <p>For general information, cost of attendance, financial aid information, and student outcome please visit: <a href="http://schooliya.com/peg/index.html" target="_blank">http://schooliya.com/peg/index.html</a></p>
+
+        <h4><b>Accreditation</b></h4>
+
+        <p>Our Danbury, Upper Darby, Cherry Hill, Linwood, and Hamilton campuses are accredited by the Accrediting Council for Independent Colleges and Schools to award diplomas: </p>
+        <p><b>Accrediting Council for Independent Colleges and Schools</b></p>
+        <p>750 First Street, N.E.
+        Suite 980</p>
+        <p>Washington, D.C. 20002-4241 </p>
+        <p>(202) 336-6780</p>
+
+        <p>Our Wilmington, DE campus is accredited by the Accrediting Council for Continuing Education &amp; Training to award diplomas:</p>
+        <p><b>Accrediting Council for Continuing Education &amp; Training</b></p>
+        <p>1722 N Street NW</p>
+        <p>Washington, DC 20036</p>
+        <p>(202) 955-1113</p>
+
+        <p>Our Dover, DE and Voorhees, NJ campuses are accredited by:</p>
+        <p><b>The Accrediting Commission of Career Schools and Colleges (ACCSC)</b></p>
+        <p><a href="http://www.accsc.org/" target="_blank">www.accsc.org</a></p>
+        <p>2101 Wilson Boulevard, Suite 302</p>
+        <p>Arlington, Virginia 22201</p>
+        <p>(703) 247-4212</p>
+
+        <p>Our Surgical Technology program is accredited programmatically by:</p>
+        <p><b>The Accrediting Bureau of Health Education Schools (ABHES)</b></p>
+        <p><a href="http://www.abhes.org/" target="_blank">www.abhes.org</a></p>
+        <p>7777 Leesburg Pike, Suite 314</p>
+        <p>N. Falls Church, VA 22043</p>
+        <p>Tel: (703) 917-9503</p>
+        <p>Fax: (703) 917-4109</p>
+
+    </article>
+
+    <aside class="sidebar right-side">
+
+        <div class="ad square"></div>
+
+        <div class="related-brands">
+            <h3>{{ page.related_pages_title }}</h3>
+            <ul>
+                {% for related_page in page.related_pages %}
+                <li>
+                    <a href="{{ related_page.url }}">
+                        {% if related_page.img %}
+                        <div class="img-wrap">
+                            <img src="{{ related_page.img }}"/>
+                        </div>
+                        {% endif %}
+                        <h4>{{ related_page.title }}</h4>
+                        <div class="clear"></div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="ad square"></div>
+
+    </aside>
+
+    <div class="clear"></div>
+</section>

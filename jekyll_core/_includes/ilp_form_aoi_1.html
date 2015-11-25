@@ -1,0 +1,13 @@
+<div class="ilp-aoi-shortform">
+    
+    <div class="aoi-heading-wrap">
+        <h3>{{ page.heading_one }}</h3>
+        <p>{{ page.heading_two }}</p>
+    </div>
+    
+    <div class="aoi-button-wrap">
+        {% for aoi_button in page.aoi_buttons %}
+        <a href="{{ aoi_button.url }}" class="{{ aoi_button.trackingClass }} {{ aoi_button.class }} aoi-button" id="q{{ forloop.index }}">{{ aoi_button.name }}</a>
+        {% endfor %}
+    </div>
+</div>

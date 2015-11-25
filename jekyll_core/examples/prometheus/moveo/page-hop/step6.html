@@ -1,0 +1,81 @@
+---
+#======================================================
+# Description:
+# This is the example for the mobile first landing page
+#
+# Use case examples:
+#   * Mobile Land
+#
+# Notes:
+# 
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: multistep
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/api/post_school_lead/
+
+#========= Where page goes after form submit ==========
+next_url: step7.html
+
+#========= Common Marketing Variables =================
+button_text: Next
+header_type: header_none.html
+check_first_radio: true
+
+#========= Form Fields ================================
+form_fields:
+    - label: Your Email Address?
+      placeholder: example@example.com
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+---
+
+<section class="moveo">
+    <section class="top">
+        <div class="row">
+            <div class="large-6 medium-6 small-12 medium-centered columns">
+                <h1>Career Opportunities as a Medical Assistant</h1>
+            </div>
+            <div class="large-6 medium-6 small-12 medium-centered columns">
+                {% include prometheus_mobile_form.html %}
+            </div>
+        </div>
+    </section>
+    
+    <section class="bottom">
+        <div class="branding">
+            <img class="logo" src="{{ site.baseurl }}{{ site.logo }}"/>
+        </div>
+        <div class="row">
+            <div class="medium-8 small-12 medium-centered columns content">
+                <h2>Find the right job.</h2>
+                <p>To get started, enter your contact information to see qualified job offers in your area.</p>
+                <div class="inner">
+                    <h3>Medical Office Receptionist Job Responsibilities:</h3>
+                    <p>Serves patients by greeting and helping them; scheduling appointments; maintaining records and accounts.</p>
+                    <h3>Medical Office Receptionist Job Duties:</h3>
+                    <ul>
+                        <li>Welcomes patients and visitors by greeting patients and visitors, in person or on the telephone; answering or referring inquiries.</li>
+                        <li>Optimizes patients' satisfaction, provider time, and treatment room  utilization by scheduling appointments in person or by telephone.</li>
+                        <li>Keeps patient appointments on schedule by notifying provider of patient's arrival; reviewing service delivery compared to schedule; reminding provider of service delays.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</section>

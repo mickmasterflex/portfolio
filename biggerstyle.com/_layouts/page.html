@@ -1,0 +1,25 @@
+---
+layout: base_layout
+---
+
+<script type='text/javascript' src='{{ site.baseurl }}core/js/validate-callcenter.js'></script>
+
+{% include page_title.html %}
+
+<div class="row page-content">
+    <div class="wrap">
+        <div class="large-8 medium-8 small-12 left">
+            <div class="content">
+                {{ content }}
+            </div>
+        </div>
+        <div class="large-4 medium-4 small-12 right">
+            {% include page_sidebar.html %}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+{% if page.include_recent_posts %}
+    {% include page_recent.html %}
+{% endif %}

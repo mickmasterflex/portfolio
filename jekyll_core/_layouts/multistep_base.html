@@ -1,0 +1,13 @@
+---
+layout: base_layout
+---
+
+<div class="page-content multistep">
+    <div class="wrap">
+        {{ content }}
+        {% include form_multistep.html %}
+    </div>
+    {% if page.show_footer == true %}
+    {% include footer-numbers.html %}
+    {% endif %}
+</div>

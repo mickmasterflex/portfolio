@@ -1,0 +1,14 @@
+---
+layout: prometheus_base_layout
+page_width: wide
+---
+
+{{ content }}
+
+<script>
+    $(document).on('click', '#form-appear', function() {
+        $('.left-side').toggle();
+        $('#mobile-form').toggle();
+        $('#form-appear').toggle();
+    });
+</script>

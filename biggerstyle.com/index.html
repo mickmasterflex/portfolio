@@ -1,0 +1,86 @@
+---
+#======================================================
+# Description:
+# This homepage features 2 options for the user to select from - each options has an area for a title, icon, button and short description of around 124 characters.
+#
+# Use case examples:
+# You need a home page where the user selects one of two options
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+is_home: yes
+home_hrz_onefield: yes
+header_type: header_min_logo.html
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/static_page/static_page.js
+
+#========= Common Marketing Variables =================
+title: BiggerStyle
+heading_one: Find Your Next Apartment
+heading_two: Search the latest listings below!
+button_text: Search
+---
+<script type="text/javascript" async="async" src="http://flx571.lporirxe.com/flp/flcpc.js?qid=635383f5136383f5137353&cid=571&p1=0&p2=0&p3=biggerstyle&p4=home"></script>
+<section class="main-content horizontal-form">
+    <div class="row">
+        <div class="heading large-12 small-12 small-centered">
+            <h1>{{ page.heading_one }}</h1>
+            <h2>{{ page.heading_two }}</h2>
+            <p>{{ page.paragraph }}</p>
+        </div>
+        
+        <div class="form-wrap row">
+            <div class="inner">
+                <form class="cmxform" id="flex_form" name="flex_form" method="get" autocomplete="off" novalidate="novalidate" action="/results.html?">
+                    <div class="field form-element medium-8 small-12 columns">
+                        <label for="location" class="text_label">Search by Zip Code <em class="form-req-mark">*</em></label>
+                        <input id="location" name="location" type="tel" required="" aria-required="true" placeholder="e.g. 90001">
+                    </div>
+                    <div class="submission medium-4 small-12 columns">
+                        <button class="button-one" id="multi_next_1" type="submit">{{ page.button_text }}</button>
+                        <input type="hidden" id="adid" name="adid" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript">
+        $('#flex_form #adid').val(GetURLParameter('adid'));
+    </script>
+</section>
+
+<section class="main-content home">
+    <div class="row">
+        <div class="columns">
+            <h2>Welcome to BiggerStyle.com!</h2>
+                <p>If you've got a property that needs a tenant, or if you're a renter who needs a place to live, you've come to the right place! BiggerStyle.com makes it quick and easy for tenants to search for rental homes, which is why thousands of them use our comprehensive database every day to find their perfect home for rent. This is the best place for renters, property owners and property managers to connect online.</p>
+                <p>With BiggerStyle.com, you can take your time finding your next residence -- search as much as you want when it's convenient for you, and it's all free! We've got thousands of available houses, apartments, condos and duplexes all over the country and in your area.</p>
+            <h3>For Renters</h3>
+            <ul>
+                <li>Search thousands of listings -- around the block or across the country -- anytime for FREE.</li>
+                <li>View up-to-date property listings on our easy-to-use website. Narrow down your options by choosing the refinements that are most important to you, such as number of bedrooms and bathrooms, price range, location, pet policy and more.</li>
+            </ul>
+                <h3>Landlords / Property Management</h3>
+            <ul>
+                <li>Share your listing with millions of qualified renters every month during their rental search.</li>
+                <li>Reach more renters with free basic listings on our network sites.</li>
+                <li>Advertise to renters that are specifically looking for small properties.</li>
+                <li>Easy to use set up and update tools.</li>
+            </ul>
+        </div>
+    </div>
+</section>

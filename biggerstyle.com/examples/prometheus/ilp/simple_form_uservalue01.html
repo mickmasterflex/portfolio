@@ -1,0 +1,100 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: short_form.html
+
+#========= Common Marketing Variables =================
+title: Example Simple Form
+heading_one: Congrats! We’ve found the perfect program for you!
+heading_two: Get started by filling out your information!
+form_heading: Enter Your Zip Code to See Nursing School Options!
+form_image: <img src="/core/images/ultimate-medical-academy.jpg" alt="UMA" />
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: What Are You Interested In?
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Select One
+            value:
+          - label: Arts
+            value: 50
+          - label: Business & Management
+            value: 52
+          - label: Computers & Technology
+            value: 11
+          - label: Criminal Justice & Legal
+            value: 43
+          - label: Culinary
+            value: 12.05
+          - label: Nursing & Healthcare
+            value: 51.07
+          - label: Trades
+            value: 46
+    - label: What is Your Level of Education?
+      field_name: education_level
+      type: select
+      is_required: required
+      options:
+          - label: Choose One
+            value:
+          - label: No HS Diploma/GED
+            value: No HS Diploma/GED
+          - label: High School Graduate
+            value: High School Graduate
+          - label: Some College Credits
+            value: Some College Credits
+          - label: College Associate's
+            value: College Associate's
+          - label: College Bachelor's
+            value: College Bachelor's
+          - label: College Master's
+            value: College Master's
+          - label: College Doctoral
+            value: College Doctoral
+---
+
+<div class="user-value">
+    <h5>Here's what you can expect from us.</h5>
+    <ul>
+        <li><img src="../../../core/images/phonecall.jpg" alt="phonecall" width="167" height="128" /><span class="inner">We’ll call you to talk  about your education options.</span></li>
+        <li><img src="../../../core/images/notes.jpg" alt="notes" width="167" height="128" /><span class="inner">We’ll send you free information about the school of your choice.</span></li>
+    </ul>
+</div>
+<p class="section-desc show-for-medium-up">Get matched to schools based on the information you enter, it's that easy.</p>
+<p class="section-desc show-for-medium-up">Start by entering your zip code and selecting your interests.</p>

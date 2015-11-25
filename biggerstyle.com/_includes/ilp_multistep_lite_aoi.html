@@ -1,0 +1,53 @@
+<div class="ilp-aoi-shortform">
+    <form name="aoi_form" id="aoi-form" method="get" action="{{ site.baseurl }}{{ page.form_target }}">
+        <div class="form-section">
+            <div class="field form-element">
+                <label id="zip_label" for="zip_code">What's Your Zip Code? <em class="form-req-mark">*</em></label>
+                <input id="zip_code" type="text" name="zip_code" class="validate_zip" maxlength="5" placeholder="00000" />
+                <span class="field_error" style="display:none">Please Review this Field</span>
+            </div>
+            <div class="field form-element">
+                <label for="area_of_interest">What Are You Interested In? <em class="form-req-mark">*</em></label>
+                <select id="area_of_interest" name="area_of_interest" class="validate_select">
+                    <option value="">Select One</option>
+                    <option value="50">Arts</option>
+                    <option value="52">Business &amp; Management</option>
+                    <option value="11">Computers &amp; Technology</option>
+                    <option value="43">Criminal Justice &amp; Legal</option>
+                    <option value="12.05">Culinary</option>
+                    <option value="51">Nursing &amp; Healthcare</option>
+                    <option value="46">Trades</option>
+                </select>
+                <span class="field_error" style="display:none">Please Select an Option</span>
+            </div>
+            <div class="field form-element">
+                <label for="level_education_school">What is Your Level of Education? <em class="form-req-mark">*</em></label>
+                <select id="level_education_school" name="level_education_school" class="validate_select">
+                    <option value="">Choose One:</option>
+                    <option value="No HS Diploma/GED">No HS Diploma/GED</option>
+                    <option value="GED">GED</option>
+                    <option value="High School Graduate">High School Graduate</option>
+                    <option value="Some College Credits">Some College Credits</option>
+                    <option value="College Associate's">College Associate's</option>
+                    <option value="College Bachelor's">College Bachelor's</option>
+                    <option value="College Master's">College Master's</option>
+                    <option value="College Doctoral">College Doctoral</option>
+                </select>
+                <span class="field_error" style="display:none">Please Select an Option</span>
+            </div>
+        </div>
+        <div class="submit">
+            <div id="form_errors"></div>
+            <button id="application-submit" class="ilp-button multi_next green" type="submit" onClick="ga('send', 'event', 'ILP', 'Submit', 'ILPShortformSubmit');">{{ page.button_text }}</button>
+
+            <span class="sub-required">(Fields marked with <em class="form-req-mark">*</em> are required)</span>
+
+            <input id="city" type="hidden" name="city" value="" />
+            <input id="state" type="hidden" name="state" value="" />
+            <input id="adid" type="hidden" name="adid" value="" />
+        </div>
+    </form>
+</div>
+
+<!-- Atlas and zipcode pre population -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>

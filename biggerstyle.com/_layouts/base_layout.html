@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html {% if page.angular %}ng-app="jobTickerApp"{% endif %}>
+    {% include head.html %}
+    <body class="page cbp-spmenu-push">
+        <div id="wrap" class="{% if page.page_name %}{{ page.page_name }}{% endif %}">
+            {% if page.page_name %}
+            <div class="image-wrap">
+            {% endif %}
+            {% if page.header_type %}
+                {% include {{ page.header_type }} %}
+            {% elsif page.is_lp %}
+                {% include header_lp.html %}
+            {% elsif page.multistep %}
+                {% include header_multistep.html %}
+            {% elsif page.header == "contact" %}
+                {% include header_contact.html %}
+            {% else %}
+                {% include header.html %}
+            {% endif %}
+
+            {{ content }}
+            
+            {% if page.footer_type %}
+                {% include {{ page.footer_type }} %}
+            {% elsif page.is_lp %}
+                {% include footer_lp.html %}
+            {% elsif page.multistep %}
+                {% include footer_multistep.html %}
+            {% else %}
+                {% include footer.html %}
+            {% endif %}
+        </div>
+        {% include site_scripts.html %}
+        {% if page.fraud_logix %}
+            {% include fraud_logix.html %}
+        {% endif %}
+
+        <!-- must go after all page content -->
+        <script type="text/javascript" src="{{ page.form_js }}"></script>
+
+        {% if site.text_url == 'AmbitionLending.com' %}
+        <!-- Google Code for Remarketing Tag -->
+        <!--------------------------------------------------
+        Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+        --------------------------------------------------->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 1037938829;
+            var google_custom_params = window.google_tag_params;
+            var google_remarketing_only = true;
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1037938829/?value=0&amp;guid=ON&amp;script=0"/>
+            </div>
+        </noscript>
+        {% endif %}
+    </body>
+</html>

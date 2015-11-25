@@ -1,0 +1,725 @@
+/* -------------------------------------------------------------------
+Import
+------------------------------------------------------------------- */
+@import "../_scss_include/core/_variables.scss";
+@import "../_scss_include/core/_default_colors.scss";
+@import "_site_variables.scss";
+@import "../_scss_include/core/_main.scss";
+@import "../_scss_include/core/_home_variations.scss";
+
+@include web-fonts(("PT Sans": ("400", "700")));
+@include web-fonts(("Cantata One": ("400")));
+
+/* -------------------------------------------------------------------
+	Base
+------------------------------------------------------------------- */
+
+body {
+    #wrap { overflow: hidden; }
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+/* -------------------------------------------------------------------
+Typography
+------------------------------------------------------------------- */
+
+h1 {
+    font-family: $typeface2;
+    font-size: 2.8125rem;
+    line-height: 1.25;
+}
+h2 { 
+    font-size: 2.125rem;
+    line-height: 1.125;
+    margin: .5rem 0;
+}
+h3 { 
+    font-size: 1.5625rem;
+    line-height: 1.25;
+}
+h4 {
+    font-size: 1.1875rem;
+    line-height: 1.25;
+}
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+h6 {  }
+p { font-weight: 300; margin-top: 1rem; }
+a {
+    &:hover {  }
+}
+li { }
+
+/* -------------------------------------------------------------------
+	Buttons
+------------------------------------------------------------------- */
+
+.button-one, .button-two, .button-three {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .5rem 1.5rem;
+    border-radius: 3px;
+    -webkit-font-smoothing:antialiased;
+}
+.button-two {
+    padding: 0.625rem 1.5rem;
+}
+.button-three {
+    padding: 0.625rem 1.5rem;
+}
+.button-four {
+    display: block;
+    width: 100%;
+    margin: 1rem 0 0;
+    background: #eeeeee;
+    color: #333333;
+    border: 1px solid #333333;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.625rem 1.5rem;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* -------------------------------------------------------------------
+	Header & Footer
+------------------------------------------------------------------- */
+
+.site-header, .site-footer, .footer-bottom {  }
+
+/* -------------------------------------------------------------------
+	Header
+------------------------------------------------------------------- */
+
+.site-header {
+    @include bg($bg1);
+    padding: .25rem 0.5rem .4325rem;
+    .inner {
+        height: 3.75rem;
+    }
+    &.home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+    &.lp { padding: 0; }
+    .phone {
+        &.number { font-family: $helvetica; font-size: 1.5rem; font-weight: 700; margin-top: .375rem; }
+        &.title { font-size: .9375rem; line-height: 1.5; font-weight: 400; }
+    }
+    .site-logo {
+        img {
+            width: 15rem;
+        }
+    }
+}
+
+.nav.simple {
+    float: right;
+    margin-top: 1rem;
+    a {
+        font-weight: 700;
+        text-decoration: none;
+    }
+}
+
+/* -------------------------------------------------------------------
+	Footer
+------------------------------------------------------------------- */
+
+.site-footer {
+    @include bg($bg1);
+    border-bottom: none;
+    margin-top: 0;
+    
+    // Structure
+    .wrap { padding: 1rem 1.875rem 2rem; }
+    &.lp { margin-top: 0; border-top: .06256rem solid $border2; }
+    &.home { margin-top: 0; }
+}
+
+.prometheus-footer { border-top: solid .0625rem $border2; }
+
+/* -------------------------------------------------------------------
+	Home Page
+------------------------------------------------------------------- */
+
+.main-content {
+    &.home {
+        background: #ffffff;
+        border-bottom: 1px solid #cccccc;
+        padding: 1rem 0;
+    }
+}
+.horizontal-form {
+    @include bg($bg1, 'images/bg_1.jpg');
+    background-size: cover;
+
+    // Structural
+    .row { top: 20%; }
+    
+    .form-wrap {
+        form { background: $bg1; }
+        .inner { width: 80%; }
+    }
+    
+    // Typography
+    h1 {
+        color: $h1b;
+        font-weight: 700;
+        font-size: 3.375rem;
+        line-height: 1;
+    }
+    h2 {
+        color: $h2b;
+        font-weight: 400;
+        font-size: 1.625rem;
+        padding: .5rem 0 .875rem;
+    }
+    label {
+        color: $label1;
+        font-weight: 400;
+        font-size: 1.25rem;
+    }
+    
+    // Elements
+    
+}
+
+/* -------------------------------------------------------------------
+	Offer Page
+------------------------------------------------------------------- */
+
+.offer-page {
+    background: $bg3;
+    padding: 1rem 0;
+    .details {
+        background: $bg1;
+    }
+    span {
+        color: $span1;
+        font-size: 1.125rem;
+        line-height: 1.25;
+    }
+    .details {
+        padding: 1rem;
+    }
+    img { padding: 0; }
+    #type {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    #address {
+        color: $h1c;
+        font-size: 1.75rem;
+        padding: .125rem 0 .1875rem;
+    }
+    #brand {  }
+    #price {
+        font-size: 2rem;
+        line-height: 1;
+        color: $h5b;
+        text-transform: none;
+        margin: 1rem 0 0;
+    }
+    #date {
+        float: right;
+        margin-top: .625rem;
+    }
+    .button-one {
+        display: inline-block;
+        float: right;
+        margin-top: 1.875rem;
+        font-size: 1.125rem;
+    }
+    .bottom {
+        position: relative;
+        display: block;
+        padding: .5rem 0px 1.5rem;
+        .inner {
+            display: inline-block;
+        }
+    }
+    .images {
+        overflow: scroll;
+        height: 734px;
+        img {
+            width: 100%;
+            display: block;
+            margin-bottom: .125rem;
+        }
+    }
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* -------------------------------------------------------------------
+	Results Page
+------------------------------------------------------------------- */
+
+.form-top {
+    padding: 0 0 1.5rem;
+    background: $bg4;
+    position: relative;
+    .inner {
+        margin: 0 auto;
+        width: auto;
+        display: block;
+    }
+    .form-element {
+        float: left;
+        margin-right: .5rem;
+    }
+    .hidden {
+        display: none;
+    }
+    .button-two, .button-three {
+        margin-top: 2.3125rem;
+        float: left;
+    }
+    .button-two {
+        padding: .75rem;
+    }
+    label {
+        font-weight: 700;
+        color: $label2;
+    }
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+        width: auto;
+        min-width: 6rem;
+        border: none;
+    }
+    select { border-radius: 3px; }
+    #location {
+        width: 6rem;
+    }
+}
+
+.search-results-wrap {
+    background: $bg3;
+    padding: 1rem 0;
+    .row {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $h1c;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+}
+#results-heading {
+    display: none;
+}
+#query_city {
+    display: inline-block;
+}
+.loading-message {
+    display: block;
+    margin: 2rem auto 4rem;
+    width: 10rem;
+    h6, img {
+        display: block;
+        float: left;
+    }
+    img {
+        margin-top: .5rem;
+        margin-right: .5rem;
+    }
+}
+.search-results {
+    width: calc(100% - 180px);
+    margin-right: 20px;
+    display: block;
+    float: left;
+    margin-left: 0;
+    ul { 
+        margin-left: 0;
+    }
+}
+.modal-register {
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: scroll;
+    .close-modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    .form-wrap {
+        .inner {
+            background: $bg1;
+            margin-top: 2rem;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding: .125rem 1rem 1rem;
+            z-index: 2;
+        }
+        .tcpa {
+            font-size: .875rem;
+            line-height: 1.4;
+        }
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: .5rem;
+        border-bottom: .25rem;
+        font-size: 1.75rem;
+        color: $h2c;
+    }
+    #multi_next_1, #multi_next_4 {
+        margin-top: 1rem;
+    }
+}
+.paginate {
+    padding: 0;
+    border-radius: 6px;
+    background: #E5E5E5;
+    margin-bottom: 1rem;
+    display: none;
+    h6 {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        font-weight: 700;
+        padding-top: .25rem;
+    }
+    a {
+        background: $white;
+        text-decoration: none;
+        padding: .25rem;
+        text-align: center;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+}
+
+.result {
+    background: $bg1;
+    list-style: none;
+    margin: 0 0 .75rem !important;
+    span {
+        color: $span1;
+        font-size: .875rem;
+        line-height: 1.25;
+    }
+    .details {
+        padding: 1rem;
+    }
+    .img-wrap {
+        max-height: 187px;
+        overflow: hidden;
+        display: block;
+    }
+    img {
+        padding: 1rem;
+        width: 259px;
+        height: auto;
+    }
+    #type {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    #address {
+        font-size: 1.0625rem;
+        text-transform: uppercase;
+        padding: .125rem 0 .1875rem;
+    }
+    #brand {  }
+    #price {
+        font-size: 1.75rem;
+        line-height: 1;
+        color: $h5b;
+        text-transform: none;
+        margin: 1rem 0 .125rem;
+    }
+    #date {
+        float: right;
+        margin-top: .625rem;
+    }
+    .button-one {
+        display: inline-block;
+        padding: 0;
+        a {
+            color: $btn1-text;
+            text-decoration: none;
+            padding: .5rem 1.5rem;
+            display: block;
+        }
+    }
+    .bottom {
+        position: relative;
+        display: block;
+        padding-top: 1rem;
+    }
+}
+
+.ad {
+    display: block;
+    background: $bg4;
+    &.skyscraper-wide {
+        width: 160px;
+        height: 600px;
+        float: left;
+    }
+    &.leaderboard {
+        width: 728px;
+        height: 90px;
+        margin: 2rem auto 1rem;
+    }
+}
+
+/* -------------------------------------------------------------------
+	Prometheus Form Elements
+------------------------------------------------------------------- */
+
+label {
+    font-size: .875rem;
+    &.error {
+        background: none repeat scroll 0% 0% #D92B2B;
+        margin-top: 0px;
+        outline: none;
+        padding: 0.25rem 0.625rem;
+        font-size: .875rem !important;
+        color: #fff;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+select {
+    &.input_error { border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+}
+
+.submition { cursor: pointer; }
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+    font-size: .9375rem;
+    padding: 0.3125rem 0px 0.3125rem .75rem;
+}
+
+.ilp-shortform {
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {  }
+    .field {
+        &.form-element {
+            &.minimized {
+                input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+                    height: 3.5rem;
+                }
+            }
+        }
+    }
+}
+
+.lp-page-content {
+    .tcpa {
+        p { font-weight: 400; line-height: 1.5; margin-top: 0; }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Prometheus Typography
+------------------------------------------------------------------- */
+
+.lp-page-content {
+    h1 { color: $h1b; }
+    h2 { color: $h2b; }
+}
+
+
+/* -------------------------------------------------------------------
+	Prometheus Structure
+------------------------------------------------------------------- */
+
+.lp-page-content {
+    .lp-header-bg { @include bg($bg2, 'images/bg-lp-1.jpg'); background-size: cover; }
+}
+
+/* -------------------------------------------------------------------
+	Thanks Page
+------------------------------------------------------------------- */
+
+.thankyou {
+    min-height: 50vh;
+    .heading {
+        h1 { color: $h1b; }
+        h2 { color: $h2b; }
+        @include bg($bg2, 'images/bg-lp-1.jpg'); background-size: cover;
+    }
+    .bottom { margin-top: 2rem; margin-bottom: 3rem; }
+}
+
+/* -------------------------------------------------------------------
+	Media Queries
+------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+
+@media screen and (max-width: 750px) {
+    .site-footer {
+        p {
+            &.left, &.right {
+                float: left;
+                width: 100%;
+                text-align: center;
+            }
+            &.right { margin-top: 0; }
+        }
+    }
+    .leaderboard {
+        display: none;
+    }
+    .horizontal-form {
+        .row { top: 8%; }
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .form-top {
+        .advanced-fields {
+            display: none;
+        }
+        .hidden {
+            display: block;
+        }
+    }
+    .horizontal-form {
+        height: auto;
+        max-height: 20000rem;
+        min-height: .25rem;
+        h1 { font-size: 2.5rem; }
+        .row {  position: relative; }
+        .heading { margin-top: 3rem; }
+        .form-wrap {
+            margin-bottom: 3rem;
+            .button-one, #multi_next_1, #multi_next_4 { margin-top: .5rem; }
+        }
+    }
+    .site-header {
+        .inner { height: 2.75rem; }
+        .logo { margin-top: .5rem; }
+        .site-logo {
+            img { width: 12rem; }
+        }
+    }
+    .paginate {
+        a {
+            font-size: 14px;
+            padding: .625rem .25rem;
+        }
+        h6 {
+            padding-top: .5rem;
+        }
+    }
+    .modal-register {
+        .form-wrap {
+            .inner {
+                margin-top: 0;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
+            }
+        }
+    }
+    .search-results-wrap {
+        .search-results { width: 100%; }
+        .skyscraper-wide { display: none; }
+    }
+    .result {
+        .bottom { padding-top: 1rem; }
+        .button-one { display: block; }
+        #date {
+            float: none;
+            display: block;
+        }
+    }
+    .offer-page {
+        .images { height: auto; overflow: visible; }
+        .button-one {
+            width: 100%;
+            float: none;
+            margin-top: 1rem;
+        }
+        #price { margin: .5rem 0px 0px; }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-top {
+        .form-element {
+            //width: 100%;
+            input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+                //width: 100%;
+            }
+            button {
+                //width: 100%;
+                margin-top: .5rem;
+
+            }
+            label {
+                margin: .5rem 0px 0.25rem;
+            }
+        }
+        .button-two, .button-three {
+            margin-top: 2.125rem;
+            padding: .75rem;
+        }
+        .button-three {
+            padding: 0.625rem .75rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .site-header {
+        .button-two { font-size: 1rem; }
+        .logo { margin-top: .5rem; }
+    }
+    .paginate {
+        h6 { font-size: .75rem; }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+}

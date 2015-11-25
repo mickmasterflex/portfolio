@@ -1,0 +1,33 @@
+<div id="main_results" role="main" class="body_width">
+    <section id="content" class="traditional_list">
+        <div id="search_results">
+            <h1>{% if jobs|length > 0 %}Search <span class="user_query"></span> Job Opportunities <span class="user_location"></span>{% else %}Sorry we couldn't find any job matches.{% endif %}</h1>
+            <ul id="postings">
+                {% for job in jobs %}
+                <li class="post featured" onclick="location.href='{{ job.url }}';">
+                    <a href="{{ job.url }}" rel="external">
+                        {# <p class="featured_title">Sponsored Posting</p> #}
+                        <div class="search_results_wrap">
+                            <div class="search_results_left">
+                                <h3>
+                                    <a href="{{ job.url }}" rel="external">
+                                        {{ job.name }}
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="search_results_right">
+                                <p class="company_info">{{ job.company }} <span class="company_location">- {{ job.city }}, {{ job.state }}</span></p>
+                                <p class="description">
+                                    {{ job.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+    </section>
+</div>

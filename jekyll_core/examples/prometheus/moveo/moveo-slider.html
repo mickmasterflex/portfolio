@@ -1,0 +1,193 @@
+---
+#======================================================
+# Description:
+# This is the example for the mobile first landing page
+#
+# Use case examples:
+#   * Mobile Land
+#
+# Notes:
+# 
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout  # layout requirement
+
+#========= Form Type ==================================
+slider: true
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/api/post_school_lead/
+
+#========= Where page goes after form submit ==========
+next_url: /results/?search_query=Medical+Receptionist&zip_code=
+edu_next_url: true
+edu_url: http://findanycollege.com/df/ilp/p-uma-offer-hide.html?offer_id=5229&cip=51
+
+#========= Variation Variables ========================
+append_form_fields: true
+
+#========= Common Marketing Variables =================
+button_text: Next
+header_type: header_none.html
+
+#========= Form Fields ================================
+slider_fields:
+    - label: What Best Describes You?
+      field_name: experience
+      type: radio
+      is_required: required
+      options:
+        - label: I am licensed in Medical Billing & Coding
+          value: experienced
+        - label: I am interested in education options for Medical Billing & Coding.
+          value: not_experienced
+    - label: What Are You Interested In?
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Select One
+            value:
+          - label: Arts
+            value: 50
+          - label: Business & Management
+            value: 52
+          - label: Computers & Technology
+            value: 11
+          - label: Criminal Justice & Legal
+            value: 43
+          - label: Culinary
+            value: 12.05
+          - label: Nursing & Healthcare
+            value: 51.07
+          - label: Trades
+            value: 46
+    - label: What's Your First Name?
+      placeholder: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Your Last Name?
+      placeholder: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+    - label: What's Your Zip Code?
+      placeholder: 12345
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: Your Email Address?
+      placeholder: example@example.com
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+    - label: And Your Phone Number?
+      placeholder: 000-000-0000
+      field_name: phone_home
+      type: text
+      value:
+      is_required: required
+      mask: (999) 999-9999
+    - label:
+      field_name: city
+      type: hidden
+      value:
+    - label:
+      field_name: state
+      type: hidden
+      value:
+    - label:
+      field_name: controller
+      type: hidden
+      value: CakeController
+    - label:
+      field_name: ckm_key
+      type: hidden
+      value: f0p6Pwci6U
+    - label:
+      field_name: ckm_campaign_id
+      type: hidden
+      value: 404
+    - label:
+      field_name: ckm_subid
+      type: hidden
+      value: SF-EXP
+    - label:
+      field_name: ckm_subid_2
+      type: hidden
+      value: pre-qualification
+    - label:
+      field_name: form_cap_type
+      type: hidden
+      value: SF-EXP
+    - label:
+      field_name: program
+      type: hidden
+      value: Medical Admin Assistant
+    - label:
+      field_name: source
+      type: hidden
+      value: firstmedicaljobs.com
+    - label:
+      field_name: source_lp_domain
+      type: hidden
+      value: firstmedicaljobs.com
+    - label:
+      field_name: adid
+      type: hidden
+      value:
+---
+
+<section class="moveo">
+    <section class="top">
+        <div class="row">
+            <div class="large-6 medium-6 small-12 medium-centered columns">
+                <h1>Career Opportunities as a Medical Assistant</h1>
+            </div>
+            <div class="large-6 medium-6 small-12 medium-centered columns">
+                {% include prometheus_slider_form.html %}
+            </div>
+        </div>
+    </section>
+    
+    <section class="bottom">
+        <div class="branding">
+            <img class="logo" src="{{ site.baseurl }}{{ site.logo }}"/>
+        </div>
+        <div class="row">
+            <div class="medium-8 small-12 medium-centered columns content">
+                <h2>Find the right job.</h2>
+                <p>To get started, enter your contact information to see qualified job offers in your area.</p>
+                <div class="inner">
+                    <h3>Medical Office Receptionist Job Responsibilities:</h3>
+                    <p>Serves patients by greeting and helping them; scheduling appointments; maintaining records and accounts.</p>
+                    <h3>Medical Office Receptionist Job Duties:</h3>
+                    <ul>
+                        <li>Welcomes patients and visitors by greeting patients and visitors, in person or on the telephone; answering or referring inquiries.</li>
+                        <li>Optimizes patients' satisfaction, provider time, and treatment room  utilization by scheduling appointments in person or by telephone.</li>
+                        <li>Keeps patient appointments on schedule by notifying provider of patient's arrival; reviewing service delivery compared to schedule; reminding provider of service delays.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</section>

@@ -1,0 +1,22 @@
+<footer class="site-footer lp">
+    <div class="row">
+        <div class="large-6 medium-6 small-6 small-centered columns">
+            <a class="site-logo" href="{{ site.baseurl }}"><img class="" src="{{ site.baseurl }}{{ site.logo }}"/></a>
+        </div>
+        <div class="small-12 small-centered columns">
+        <p class="copyright lp">
+            <span class="columns small-12 small-centered">© 2015 {{ site.title }} | All Rights Reserved</span></br>
+            <span class="columns small-12 small-centered"><a href="/privacy.html" target="_blank">Privacy Policy</a> | <a href="{{ site.baseurl }}" target="_blank">{{ site.text_url }}</a></span>
+        </p>
+        </div>
+    </div>
+    {% if page.atlas_testing %}
+    <div id="atlas_testing">
+        <div id="response_time"></div>
+        <div id="atlas_results">
+            <ol></ol>
+        </div>
+    </div>
+    {% endif %}
+    <div id="conversion_scripts"></div>
+</footer>

@@ -1,0 +1,29 @@
+<header class="site-header {% if page.results %}results{% endif %}">
+    <div class="row header-nav {% if page.page_width == 'wide' %}wide{% endif %}">
+        <div class="large-6 medium-5 small-9 columns left">
+            <a class="site-logo" href="{{ site.baseurl }}"><img class="" src="{{ site.baseurl }}{{ site.logo }}"/></a>
+        </div>
+        <div class="large-6 medium-7 small-3 columns right">
+            {% include social.html %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row contact-wrap-container">
+        <div class="contact-wrap">
+            <div class="icons hide-for-small-down columns large-3 medium-3 small-3">
+                <ul>
+                    <li><img src="{{ site.baseurl }}images/icon-phone.png" /></li>
+                    <li class="last"><img src="{{ site.baseurl }}images/icon-mail.png" /></li>
+                </ul>
+            </div>
+            <div class="info columns large-9 medium-9 medium-9">
+                <ul>
+                    <li><a href="tel:{{ site.phone }}">{{ site.text_phone }}</a></li>
+                    <li class="last"><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</header>

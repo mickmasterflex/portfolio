@@ -1,0 +1,144 @@
+---
+layout: prometheus_base_layout
+ilp: true
+---
+
+<div class="ilp-page-content {% if page.new_offer_layout %}offer_particles{% endif %}">
+    {% if page.new_offer_layout %}
+    <div class="offer_header">
+        <div class="row">
+            <div class="medium-4 small-12 medium-push-8 columns">
+                <div class="offer_logo"></div>
+            </div>
+            <div class="medium-8 small-12 medium-pull-4 columns offer_title">
+                <h1></h1>
+                <h2></h2>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+
+        {% if page.form_id %}
+            {% if page.form_id == 'flex_form' %}
+                {% if page.form_type %}
+                    {% if page.form_type == 'job_search' %}
+                        <div class="article large-12 columns">
+                            <h1 class="center">{{ page.heading_one }}</h1>
+                            <h2 class="center">{{ page.heading_two }}</h2>
+                            <div class="content-area">{{ content }}</div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="article {% if page.form_side == 'flipped' %}large-push-5 medium-push-6{% endif %} large-7 medium-6 medium-uncentered small-centered columns">
+                        <h1>{{ page.heading_one }}</h1>
+                        <h2>{{ page.heading_two }}</h2>
+                        <div class="content-area hide-for-small-down">{{ content }}</div>
+                    </div>
+                    <div class="aside {% if page.form_style == 'blue' %}blue{% endif %} {% if page.v_type == 'fred' %}fred{% endif %} {% if page.v_type == 'fred' %}fred{% endif %} {% if page.form_side == 'flipped' %}large-pull-7 medium-pull-6{% endif %} large-5 medium-6 medium-uncentered small-centered columns">
+                        {% if page.form_nested %}
+                            {% include prometheus_simple_form_nestedradio.html %}
+                        {% elsif page.program_select %}
+                            {% include prometheus_simple_form_program_select.html %}
+                        {% else %}
+                            {% include prometheus_simple_form.html %}
+                        {% endif %}
+                    </div>
+                    <div class="content-area show-for-small-down small-centered columns">{{ content }}</div>
+                {% endif %}
+            {% elsif page.form_id == 'short_form' %}
+                <div class="article {% if page.form_side == 'flipped' %}large-push-5 medium-push-6{% endif %} large-7 medium-6 medium-uncentered small-centered columns">
+                    <h1>{{ page.heading_one }}</h1>
+                    {% if page.heading_two %}<h2>{{ page.heading_two }}</h2>{% endif %}
+                    <div class="content-area hide-for-small-down">{{ content }}</div>
+                </div>
+                <div class="aside {% if page.form_style == 'blue' %}blue{% endif %} {% if page.v_type == 'fred' %}fred{% endif %} {% if page.form_side == 'flipped' %}large-pull-7 medium-pull-6{% endif %} large-5 medium-6 medium-uncentered small-centered columns">
+                    {% include prometheus_short_form.html %}
+                </div>
+                <div class="content-area show-for-small-down small-centered columns">{{ content }}</div>
+            {% elsif page.form_id == 'offer_form' %}
+                <div class="atlas_loader">
+                    <div class="centered">
+                        <div>{{ page.loader_text }}</div>
+                        <img src="//cdn.lecero.com/atlas_host_post/images/loader.gif" title="Loading Results" />
+                    </div>
+                </div>
+                {% if page.new_offer_layout %}
+                    <div id="offer_wrap">
+                        <div class="aside {% if page.form_style == 'blue' %}blue{% endif %} large-5 medium-5 medium-uncentered small-centered columns">
+                            <h3>{{ page.heading_form }}</h3>
+                            {% include prometheus_offer_form.html %}
+                        </div>
+                        <div class="article large-7 medium-7 medium-uncentered small-centered columns">
+                            <div class="row offer_content_particle">
+                                <div class="icon">
+                                    <img src="http://www.findanycollege.com/images/icon-phone-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                                </div>
+                                <div class="particle">
+                                    <h5 class="phone_number">{{ page.phone_number }}</h5>
+                                    <a href="tel:{{ page.phone_number }}" class="btn_gray">Call Us!</a>
+                                </div>
+                            </div>
+                            <div class="row offer_content_particle">
+                                <div class="icon">
+                                    <img src="{{ site.baseurl }}core/images/icon-scroll-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                                </div>
+                                <div class="particle">
+                                    <p class="offer_short_desc"></p>
+                                </div>
+                            </div>
+                            <div class="row offer_content_particle">
+                                <div class="icon">
+                                    <img src="{{ site.baseurl }}core/images/icon-pin-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                                </div>
+                                <div class="particle">
+                                    <h5 class="offer_address"></h5>
+                                    <div class="offer_google_map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div id="offer_wrap">
+                        <div class="offer_content show-for-small-down">
+                            <div class="title"></div>
+                        </div>
+                        <div class="aside {% if page.form_style == 'blue' %}blue{% endif %} {% if page.v_type == 'fred' %}fred{% endif %} large-5 medium-6 medium-uncentered small-centered columns">
+                            {% include prometheus_offer_form.html %}
+                        </div>
+                        <div class="article large-7 medium-6 medium-uncentered small-centered columns">
+                            <!-- required html for offer content -->
+                            <div class="offer_content">
+                                <div class="title"></div>
+                                <div class="content_block"></div>
+                            </div>
+                            {{ content }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <div class="article large-12 columns">
+                <h1>{{ page.heading_one }}</h1>
+                <h2>{{ page.heading_two }}</h2>
+                <div class="content-area">{{ content }}</div>
+            </div>
+        {% endif %}
+
+    </div>
+
+    {% if page.new_offer_layout %}
+    <a name="MoreOfferContent"></a>
+    <div class="ilp-page-content no_padding">
+        <div class="offer_content">
+            <div class="row section_title">
+                <h4 class="offer_full_desc_heading"></h4>
+                <a href="#top" class="btn_gray">Go Back to Top</a>
+            </div>
+            <div class="row content_block"></div>
+        </div>
+    </div>
+    {% endif %}
+
+</div>

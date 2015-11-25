@@ -1,0 +1,242 @@
+/* -- Font Families -- */
+
+// Definitions - Use the variable below as a template, it can be removed.
+$ptSans: "PT Sans", "Helvetica", "Arial", sans-serif;
+$cantataOne: "Cantata One", "Georgia", "Palatino Linotype", serif;
+
+// Assignments
+$typeface1: $ptSans;
+$typeface2: $cantataOne;
+
+
+
+/* -- Color Definitions -- */
+
+// Neutral
+$white: #ffffff;
+$alabaster: #fbfbfb;
+$wildSand: #f6f6f6;
+$gallery: #ECECEC;
+$alto: #d4d4d4;
+$gray: #808080;
+$mineShaft: #333333;
+$black: #000000;
+
+// Blues
+$allports: #006f9e;
+$chathamsBlue: #115877;
+$limedSpruce: #3c4a50;
+$orient: #005275;
+
+//Greens
+$fruitSalad: #52aa5e;
+$woodland: #365325;
+
+// Red - Light to Dark
+$punch: #d92b2b;
+$punchDark: #d92b2b;
+
+/* -- Color Assignments -- */
+
+// Typography
+$h1a: $black;
+$h1b: $white;
+$h1c: $allports;
+$h1d: $black;
+$h1e: $black;
+
+$h2a: $black;
+$h2b: $white;
+$h2c: $allports;
+$h2d: $black;
+$h2e: $black;
+
+$h3a: $mineShaft;
+$h3b: $black;
+$h3c: $black;
+$h3d: $black;
+$h3e: $black;
+
+$h4a: $mineShaft;
+$h4b: $black;
+$h4c: $black;
+$h4d: $black;
+$h4e: $black;
+
+$h5a: $mineShaft;
+$h5b: $fruitSalad;
+$h5c: $black;
+$h5d: $black;
+$h5e: $black;
+
+$h6a: $mineShaft;
+$h6b: $black;
+$h6c: $black;
+$h5d: $black;
+$h5e: $black;
+
+$p1: $mineShaft;
+$p2: $white;
+$p3: $black;
+$p4: $black;
+$p5: $black;
+$p6: $black;
+$p7: $black;
+$p8: $black;
+
+$link1: $allports;
+$link2: $white;
+$link3: $black;
+$link4: $black;
+$link5: $black;
+$link1-hover: $chathamsBlue;
+$link2-hover: $gray;
+$link3-hover: $gray;
+$link4-hover: $gray;
+$link5-hover: $gray;
+
+$span1: $gray;
+$span2: $black;
+$span3: $black;
+$span4: $black;
+$span5: $black;
+
+$li1: $black;
+$li2: $black;
+$li3: $black;
+$li4: $black;
+$li5: $black;
+
+// Structural Elements
+$bg1: $white;
+$bg2: $gray;
+$bg3: $wildSand;
+$bg4: $allports;
+$bg5: $white;
+$bg6: $white;
+
+$border1: $white;
+$border2: $gallery;
+$border3: $white;
+$border4: $white;
+$border5: $white;
+$border6: $white;
+
+// Form Elements
+$label1: $mineShaft;
+$label2: $white;
+$label3: $black;
+$label4: $black;
+$label5: $black;
+$label6: $black;
+
+$field1: $white;
+$field2: $white;
+$field3: $white;
+$field4: $white;
+$field5: $white;
+$field6: $white;
+$field1-hover: $white;
+$field2-hover: $white;
+$field3-hover: $white;
+$field4-hover: $white;
+$field5-hover: $white;
+$field6-hover: $white;
+
+$field1-text: $black;
+$field2-text: $black;
+$field3-text: $black;
+$field4-text: $black;
+$field5-text: $black;
+$field6-text: $black;
+$field1-text-hover: $black;
+$field2-text-hover: $black;
+$field3-text-hover: $black;
+$field4-text-hover: $black;
+$field5-text-hover: $black;
+$field6-text-hover: $black;
+$field1-text-placeholder: $gray;
+$field2-text-placeholder: $gray;
+$field3-text-placeholder: $gray;
+$field4-text-placeholder: $gray;
+$field5-text-placeholder: $gray;
+$field6-text-placeholder: $gray;
+
+$field1-border: $white;
+$field2-border: $white;
+$field3-border: $white;
+$field4-border: $white;
+$field5-border: $white;
+$field6-border: $white;
+$field1-border-hover: $white;
+$field2-border-hover: $white;
+$field3-border-hover: $white;
+$field4-border-hover: $white;
+$field5-border-hover: $white;
+$field6-border-hover: $white;
+
+// Buttons
+$btn1: $allports;
+$btn2: $allports;
+$btn3: $orient;
+$btn4: $black;
+$btn5: $black;
+$btn6: $black;
+$btn1-hover: $chathamsBlue;
+$btn2-hover: $chathamsBlue;
+$btn3-hover: $orient;
+$btn4-hover: $black;
+$btn5-hover: $black;
+$btn6-hover: $black;
+
+$btn1-border: $allports;
+$btn2-border: $white;
+$btn3-border: $orient;
+$btn4-border: $black;
+$btn5-border: $black;
+$btn6-border: $black;
+$btn1-border-hover: $chathamsBlue;
+$btn2-border-hover: $white;
+$btn3-border-hover: $white;
+$btn4-border-hover: $black;
+$btn5-border-hover: $black;
+$btn6-border-hover: $black;
+
+$btn1-highlight: $allports;
+$btn2-highlight: $chathamsBlue;
+$btn3-highlight: $black;
+$btn4-highlight: $black;
+$btn5-highlight: $black;
+$btn6-highlight: $black;
+$btn1-highlight-hover: $allports;
+$btn2-highlight-hover: $chathamsBlue;
+$btn3-highlight-hover: $black;
+$btn4-highlight-hover: $black;
+$btn5-highlight-hover: $black;
+$btn6-highlight-hover: $black;
+
+$btn1-text: $white;
+$btn2-text: $white;
+$btn3-text: $white;
+$btn4-text: $white;
+$btn5-text: $white;
+$btn6-text: $white;
+$btn1-text-hover: $white;
+$btn2-text-hover: $white;
+$btn3-text-hover: $white;
+$btn4-text-hover: $white;
+$btn5-text-hover: $white;
+$btn6-text-hover: $white;
+
+$btn1-text-shadow: $chathamsBlue;
+$btn2-text-shadow: $chathamsBlue;
+$btn3-text-shadow: $white;
+$btn4-text-shadow: $white;
+$btn5-text-shadow: $white;
+$btn6-text-shadow: $white;
+$btn1-text-shadow-hover: $chathamsBlue;
+$btn2-text-shadow-hover: $chathamsBlue;
+$btn3-text-shadow-hover: $white;
+$btn4-text-shadow-hover: $white;
+$btn5-text-shadow-hover: $white;
+$btn6-text-shadow-hover: $white;

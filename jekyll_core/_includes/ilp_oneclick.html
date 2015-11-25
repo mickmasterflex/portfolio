@@ -1,0 +1,8 @@
+<div class="ilp-oneclick">
+    <form name="shortform" method="get" action="{{ site.baseurl }}thanks-vantage.html">
+        <h3>{{ page.intent_heading }}</h3>
+        <div class="submit">
+            <button id="application-submit" class="ilp-button" type="submit" onClick="ga('send', 'event', 'ILP', 'Submit', 'ILPOneclickSubmit');">{{ page.button_text }}</button>
+        </div>
+    </form>
+</div>

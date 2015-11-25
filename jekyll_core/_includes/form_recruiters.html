@@ -1,0 +1,125 @@
+<div class="ja">
+    <form id="application-form" method="post" action="{{ site.baseurl }}thanks.html" enctype="multipart/form-data">
+
+            <section class="large-12 columns title">
+                <h4>Submit a Job Posting Here</h4>
+                <h5>Part 1 : <span>Job Opening Information</span></h4>
+            </section>
+            
+            <section class="section">
+                <div class="field form-element large-6 columns">
+                    <label for="job_title">Job Title<span class="red">*</span></label>
+                    <input id="job_title" type="text" name="job_title" class="validate_text" placeholder="Job Title" />
+                </div>
+                <div class="field form-element large-6 columns">
+                    <label for="job_salary">Job Salary</label>
+                    <input id="job_salary" type="text" name="job_salary" placeholder="Job Salary" />
+                </div>
+                <div class="field form-element large-6 columns">
+                    <label for="required_education">Required Education</label>
+                    <select id="required_education" name="required_education">
+                        <option value="" default>--</option>
+                        <option value="High School">High School</option>
+                        <option value="Associate Degree">Associate Degree</option>
+                        <option value="Bachelor Degree">Bachelor Degree</option>
+                        <option value="Master\'s Degree">Master's Degree</option>
+                        <option value="None Required">None Required</option>
+                    </select>
+                </div>
+                <div class="field form-element large-6 columns">
+                    <label for="experience_level">Experience Level</label>
+                    <select id="experience_level" name="experience_level">
+                        <option value="" default>--</option>
+                        <option value="One Year">One Year</option>
+                        <option value="Two Years">Two Years</option>
+                        <option value="Three Years">Three Years</option>
+                        <option value="Four Years">Four Years</option>
+                        <option value="Five or More Years">Five or More Years</option>
+                    </select>
+                </div>
+                <div class="field form-element large-12 columns">
+                    <label for="job_description">Job Description<span class="red">*</span></label>
+                    <textarea id="job_description" type="text" name="job_description" class="validate_text" laceholder="Type or Paste Job Description Here"></textarea>
+                </div>
+            </section>
+
+
+            <section class="large-12 columns title">
+                <h5>Part 2 : <span>Your Contact Information</span></h5>
+            </section>
+            
+            <section class="section">
+                <div class="field form-element large-12 columns">
+                    <label for="company_name">Your Company<span class="red">*</span></label>
+                    <input id="company_name" type="text" name="company_name" class="validate_text" placeholder="Company Name" />
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="first_name">First Name<span class="red">*</span></label>
+                    <input id="first_name" type="text" name="first_name" class="validate_text" placeholder="First Name" />
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="last_name">Last Name<span class="red">*</span></label>
+                    <input id="last_name" type="text" name="last_name" class="validate_text" placeholder="Last Name" />
+                </div>
+    
+                <div class="field form-element large-12 columns">
+                    <label for="address">Address<span class="red">*</span></label>
+                    <textarea id="address" type="text" name="address" class="validate_text" placeholder="123 Street Name" ></textarea>
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="city">City<span class="red">*</span></label>
+                    <input id="city" type="text" name="city" class="validate_text" placeholder="City" />
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="state">State<span class="red">*</span></label>
+                    {% include state_select.html %}
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="zip_code">Zip Code<span class="red">*</span></label>
+                    <input id="zip_code" type="text" name="zip_code" class="validate_zip" maxlength="5" placeholder="00000" />
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="email_address">Email<span class="red">*</span></label>
+                    <input id="email_address" type="text" name="email_address" class="validate_email" placeholder="example@example.com"/>
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="phone_home">Phone<span class="red">*</span></label>
+                    <input id="phone_home" type="text" name="phone_home" class="validate_phone" maxlength="12" placeholder="555-555-5555" />
+                </div>
+    
+                <div class="field form-element large-6 columns">
+                    <label for="best_contact_time">Best Time to Contact You</label>
+                    <select id="best_contact_time" name="best_contact_time">
+                        <option value="" default>--</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                    </select>
+                </div>
+            </section>
+            
+            <input id="ckm_campaign_id" type="hidden" name="ckm_campaign_id" value="{{ page.ckm_campaign_id }}" />
+            <input id="ckm_key" type="hidden" name="ckm_key" value="{{ page.ckm_key }}" />
+            <input id="ckm_subid" type="hidden" name="ckm_subid" value="FF-EMP" />
+            <input id="form_cap_type" type="hidden" name="form_cap_type" value="FF-EMP" />
+            <input id="ckm_subid_2" type="hidden" name="ckm_subid_2" value="Recruiter Form" />
+            <input id="adid" type="hidden" name="adid" value="" />
+            <input id="source" type="hidden" name="source" value="" />
+            <input id="source_lp_domain" type="hidden" name="source_lp_domain" value="" />
+            <input id="ip_address" type="hidden" name="ip_address" value="" />
+    
+            <section class="this-is-the-end">
+                <div id="form_errors"></div>
+                <p>Fields marked with <span class="red">*</span> are required</p>
+                <button id="application-submit" class="button-one" type="submit"><span class="button-helper"></span>Submit Your Request &raquo;</button>
+            </section>
+
+    </form>
+</div>

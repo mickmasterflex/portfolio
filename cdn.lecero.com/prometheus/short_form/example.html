@@ -1,0 +1,150 @@
+---
+#======================================================
+# Description:
+# This example html is used to display and process a Proton offer
+#
+# Use case examples:
+#   * I want to load a offer based on an offer_id passed in the url.
+#   * I want to dispatch to the first offer.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: blank  # layout requirement
+
+#========= Link to required js for page ===============
+form_js: /prometheus/short_form/js/short_form.js
+
+#========= Name form & give js something to query =====
+form_id: short_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: http://www.google.com
+
+#========= Common Marketing Variables =================
+title: Example Short Form
+
+#========= Cake Specific Variables ====================
+ckm_key: 8jkXoT7PbIA
+ckm_campaign_id: 394
+ckm_subid: SF-EDU
+ckm_subid_2: Danding
+form_cap_type: SF-EDU
+program: Shortform Example
+source:
+source_lp_domain: cdn.lecero.com
+---
+
+<script type="text/javascript">
+    var form_id = '#{{ page.form_id }}';
+    var post_url = '{{ page.post_url }}';
+    var next_url = '{{ page.next_url }}';
+</script>
+
+<form class="cmxform" name="{{ page.form_id }}" id="{{ page.form_id }}" method="get">
+    <div class="field form-element">
+        <label for="zip_code">Zip *</label>
+        <input id="zip_code" type="text" name="zip_code" placeholder="00000" />
+    </div>
+    <div class="field form-element">
+        <label for="first_name">First Name *</label>
+        <input id="first_name" type="text" name="first_name" placeholder="First Name" />
+    </div>
+    <div class="field form-element">
+        <label for="last_name">Last Name *</label>
+        <input id="last_name" type="text" name="last_name" placeholder="Last Name" />
+    </div>
+    <div class="field form-element">
+        <label for="email_address">Email *</label>
+        <input id="email_address" type="text" name="email_address" placeholder="example@example.com"/>
+    </div>
+    <div class="field form-element">
+        <label for="phone_home">Phone *</label>
+        <input id="phone_home" type="text" name="phone_home" placeholder="5555555555" />
+    </div>
+    <div class="field form-element">
+        <label for="city">City *</label>
+        <input id="city" type="text" name="city" />
+    </div>
+    <div class="field form-element">
+        <label for="state">State *</label>
+        <input id="state" type="text" name="state" />
+    </div>
+
+    <div class="submit">
+        <!-- cake specific fields -->
+        <input id="program" type="hidden" name="program" value="{{ page.program }}" />
+        <input id="ckm_campaign_id" type="hidden" name="ckm_campaign_id" value="{{ page.ckm_campaign_id }}" />
+        <input id="ckm_key" type="hidden" name="ckm_key" value="{{ page.ckm_key }}" />
+        <input id="ckm_subid" type="hidden" name="ckm_subid" value="{{ page.ckm_subid }}" />
+        <input id="form_cap_type" type="hidden" name="form_cap_type" value="{{ page.form_cap_type }}" />
+        <input id="ckm_subid_2" type="hidden" name="ckm_subid_2" value="{{ page.ckm_subid_2 }}" />
+        <input id="source" type="hidden" name="source" value="{{ page.source }}" />
+        <input id="source_lp_domain" type="hidden" name="source_lp_domain" value="{{ page.source_lp_domain }}" />
+
+        <input id="adid" type="hidden" name="adid" value="" />
+
+        <!-- submit button -->
+        <button id="submit" type="submit">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        // validate the comment form when it is submitted
+        $(form_id).validate({
+//            rules: {
+//                text: "required",
+//                checkbox: "required",
+//                select: "required",
+//                radio: "required",
+//                email: {
+//                    required: true,
+//                    email: true
+//                },
+//                dateformat: "required",
+//                terms: "required"
+//            },
+//            messages: {
+//                fname: "Enter your firstname",
+//                lname: "Enter your lastname",
+//                email: {
+//                    required: "Please enter a valid email address",
+//                    minlength: "Please enter a valid email address",
+//                    remote: jQuery.validator.format("{0} is already in use")
+//                },
+//                dateformat: "Choose your preferred dateformat",
+//                terms: " "
+//            },
+            // the errorPlacement has to take the table layout into account
+            errorPlacement: function(error, element) {
+                if (element.is(":radio"))
+                    error.appendTo(element.parent().next().next());
+                else if (element.is(":checkbox"))
+                    error.appendTo(element.next());
+                else
+                    error.appendTo(element.parent());
+            },
+            // specifying a submitHandler prevents the default submit, good for the demo
+            submitHandler: function() {
+                $(form_id).submit(prometheus_submit(form_id));
+            },
+            // set this class to error-labels to indicate valid fields
+            success: function(label) {
+                // set &nbsp; as text for IE
+                label.html("&nbsp;").addClass("checked");
+            },
+            highlight: function(element, errorClass) {
+                $(element).parent().next().find("." + errorClass).removeClass("checked");
+            }
+        });
+    });
+</script>

@@ -1,0 +1,35 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+</script>
+
+<script type="text/javascript">
+    var form_id = '#offer_form';
+    var post_url = 'http://valkyrie.neutronnetwork.com/api/post_school_lead/';
+    var next_url = 'http://www.google.com';
+</script>
+
+<!-- required html for offer form -->
+<form class="cmxform" name="offer_form" id="offer_form" method="get">
+    <div id="render_form_fields"></div>
+    <div class="submit">
+        <input id="adid" type="hidden" name="adid" value="" />
+
+        <!-- submit button -->
+        <button id="submit" type="submit">Submit</button>
+        <div class="tcpa"></div>
+    </div>
+</form>
+
+<!-- required html for offer content -->
+<div class="offer_content">
+    <div class="title"></div>
+    <div class="content_block"></div>
+</div>
+
+<script type="text/javascript">
+    var expire = 10;
+</script>
+
+<!-- must go after all page content -->
+<script type="text/javascript" src="/prometheus/offer_form/js/offer_form.js"></script>

@@ -1,0 +1,25 @@
+<footer>
+    <div class="site-footer lp">
+        
+        <div class="wrap">
+            <div class="left">
+                <a class="site-logo" href="{{ site.baseurl }}"><img class="site-logo" src="{{ site.baseurl }}{{ site.logo }}"/></a>
+            </div>
+            <p class="copyright right">
+                © 2015 {{ site.title }} • All&nbsp;Rights&nbsp;Reserved<br/>
+                <a href="/privacy.html" target="_blank">Privacy Policy</a> | <a href="mailto:{{ site.email }}">Contact Us</a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="site-footer bottom">
+        {% if page.atlas_testing %}
+        <div id="atlas_testing">
+            <div id="response_time"></div>
+            <div id="atlas_results">
+                <ol></ol>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</footer>

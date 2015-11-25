@@ -1,0 +1,19 @@
+<header class="site-header {% if page.is_lp %}lp{% endif %}">
+    {% if page.is_lp %}
+    
+    {% else %}
+
+    <div class="inner row {% if page.page_width == 'wide' %}wide{% endif %}">
+        <div class="logo left">
+            <a class="site-logo" href="{{ site.baseurl }}"><img class="" src="{{ site.baseurl }}{{ site.logo }}"/></a>
+        </div>
+
+        {% if site.navlinks %}
+            {% include navigation.html %}
+        {% endif %}
+
+    <div class="clearfix"></div>
+    
+    {% endif %}
+    
+</header>

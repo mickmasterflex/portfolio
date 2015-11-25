@@ -1,0 +1,26 @@
+<div class="navigation-wrapper right">
+	<nav role="navigation" class="site-nav {% if page.is_home %}home{% endif %}">
+    	
+<!--
+        // If we want the nav broken out of the button functionality for desktop users we might do something like this. My only concern is having duplicate content - though it would only be a few lines of duplicate content.
+        
+    	<div class="hide-for-small-down">
+        {% for navlink in site.navlinks %}
+            <a href="{{ navlink.url }}" class="">{{ navlink.title }}</a>
+        {% endfor %}
+    	</div>
+-->
+        
+        <a id="menu-button"><i class="fa fa-bars"></i></a>
+                
+        <div class="menu-wrap-container {% if page.is_home %}home{% endif %}">
+            <div class="menu-wrap">
+                {% for navlink in site.navlinks %}
+                    <a href="{{ navlink.url }}" class="">{{ navlink.title }}</a>
+                {% endfor %}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        
+	</nav>
+</div><!-- /.navigation-wrapper -->

@@ -1,0 +1,19 @@
+<footer>
+    <div class="site-footer {% if page.is_home %}home{% endif %}">
+        <div class="wrap">
+            <p class="copright left">© 2015 {{ site.title }} • All Rights Reserved</p> 
+            <p class="copright right"><a href="/privacy.html" target="_blank">Privacy Policy</a> | <a href="mailto:{{ site.email }}">Contact Us</a></p>
+        </div>
+    </div>
+    
+    {% if page.atlas_testing %}
+    <div id="atlas_testing">
+        <div id="response_time"></div>
+        <div id="atlas_results">
+            <ol></ol>
+        </div>
+    </div>
+    {% endif %}
+    
+    </div>
+</footer>

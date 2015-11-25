@@ -1,0 +1,25 @@
+---
+layout: base_layout
+title:
+permalink: /results/
+results: true
+---
+
+<div class="row content results">
+    <div class="wrap">
+        <div class="large-12 columns">
+            <div class="content">
+                <h1>Searching <span class="user_query"></span> Programs <span class="user_location"></span></h1>
+                <!--<h4>3 Degree Results for <span class="user_query"></span></h4>-->
+                <div class="row">
+                    <div id="atlas_results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+{% if page.include_recent_posts %}
+    {% include page_recent.html %}
+{% endif %}

@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type='text/javascript' src='{{ site.baseurl }}core/js/analytics.js'></script>
+{% if page.form_page %}
+<script type='text/javascript' src='{{ site.baseurl }}core/js/{{ page.validate_js }}'></script>
+{% endif %}
+{% if page.form_page or page.page_type %}
+<div id="partners">
+    <button id="partners__closer">X</button>
+    <h2>Our Partners:</h2><br>
+    {% for partner in site.partner_list %}
+        {{ partner }}<br/>
+    {% endfor %}
+</div>
+{% endif %}
