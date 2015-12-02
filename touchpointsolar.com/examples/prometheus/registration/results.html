@@ -1,0 +1,22 @@
+---
+layout: base_layout
+title:
+permalink: /examples/prometheus/registration/results/
+angular: true
+results: true
+---
+
+<div class="row content results">
+    <div class="wrap">
+        <div class="large-12 medium-12 small-12 columns">
+            <div class="content">
+                <div get-jobs-results></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+{% if page.include_recent_posts %}
+    {% include page_recent.html %}
+{% endif %}

@@ -1,0 +1,63 @@
+<form class="cmxform {% if page.ilp %}ilp-shortform{% endif %}" id="{{ page.form_id }}" name="{{ page.form_id }}" method="get" autocomplete="off">
+    {% if page.ilp %}<h3>{{ page.form_heading }}</h3>{% endif %}
+    {% if page.form_image %} {{ page.form_image }} {% endif %}
+    {% for field in page.form_fields %}
+        <div class="field form-element">
+            <label for="{{ field.field_name }}">{{ field.label }} {% if field.is_required == 'required' %}<em class="form-req-mark">*</em>{% endif %}</label>
+            {% if field.type == 'checkbox' %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {% if field.value == 1 %}checked{% endif %} {{ field.is_required }} />
+            {% elsif field.type == 'select' %}
+                <select id="{{ field.field_name }}" name="{{ field.field_name }}" {{ field.is_required }}>
+                    {% for option in field.options %}
+                        <option value="{{ option.value }}" {% if field.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+                    {% endfor %}
+                </select>
+            {% elsif field.type == 'radio' %}
+                {% for option in field.option %}
+                    <div>
+                        <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" value="{{ option.value }}" {% if forloop.first == true %}checked{% endif %} />
+                        <label class="radio" for="{{ option.value }}">{{ option.label }}</label>
+                        {% if option.options %}
+                            {% for sub_option in option.options %}
+                                <div class="radio_sub">
+                                    <div>
+                                        <input id="{{ option.field_name }}" name="{{ option.field_name }}" type="{{ field.type }}" value="{{ sub_option.value }}" {% if forloop.first == true %}checked{% endif %}/>
+                                        <label class="radio" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% elsif field.type == 'hidden' %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" value="{{ field.value }}" />
+            {% else %}
+                <input id="{{ field.field_name }}" name="{{ field.field_name }}" type="{{ field.type }}" {{ field.is_required }} {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %} />
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div>
+        <input id="city" type="hidden" name="city" value="" />
+        <input id="state" type="hidden" name="state" value="" />
+        <button class="{% if page.ilp %}ilp-button{% else %} multi_next green{% endif %}" id="multi_next_1" type="submit">Submit</button>
+    </div>
+</form>
+
+<div id="url2png-cheese"></div>
+
+<!-- geo prepop -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type='text/javascript' src='{{ site.baseurl }}core/js/geo_prepop_helper.js'></script>
+
+<!-- form field masking -->
+<script type="text/javascript">
+    var expire = 10;
+
+    $(document).ready(function() {
+        {% for field in page.form_fields %}
+            {% if field.mask %}
+                $('#{{ field.field_name }}').mask('{{ field.mask }}', {placeholder: 'e.g. {{ field.mask }}'});
+            {% endif %}
+        {% endfor %}
+    });
+</script>

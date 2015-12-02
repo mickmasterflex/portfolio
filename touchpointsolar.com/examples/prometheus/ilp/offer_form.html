@@ -1,0 +1,41 @@
+---
+#======================================================
+# Description:
+# This example html is used to display and process a Proton offer
+#
+# Use case examples:
+#   * I want to load a offer based on an offer_id passed in the url.
+#   * I want to dispatch to the first offer.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_ilp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/offer_form/js/offer_form.js
+
+#========= Name form & give js something to query =====
+form_id: offer_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/api/post_school_lead/
+
+#========= Where page goes after form submit ==========
+next_url: /thanks.html
+next_no_offers_url: /thanks-nore.html
+
+#========= Common Marketing Variables =================
+title: Example Offer Form
+heading_one: Testing
+heading_two: Also a Test
+loader_text: Finding the Best School for You
+prepop_hidden: yes
+---
+

@@ -1,0 +1,120 @@
+---
+#======================================================
+# Description:
+# This homepage features an area for a LARGE amount of content and a Prometheus simple form
+#
+# Use case examples:
+# You need a home page with a flex form and a area for a LARGE amount of content ( 2 headings, paragraphs of text, lists, imagery )
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= Common Marketing Variables =================
+title: Touchpoint Solar - Why go solar?
+heading_one: Why go solar?
+heading_two: 
+form_heading: Make the first step to go solar!
+button_text: Get a Free Quote
+header_type: header_simple.html
+page_name: how-it-works
+
+---
+
+
+<div class="heading columns large-12 medium-12">
+    {{ if page.heading_one }}<h1 class="top">{{ page.heading_one }}</h1>{{ endif }}
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content form-right">
+    <div class="row">
+        <div class="heading columns large-12 medium-12">
+            <h2 class="top">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Touchpoint Solar - Text Link Ads -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:15px"
+                     data-ad-client="ca-pub-6943270913451072"
+                     data-ad-slot="2813069217"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </h2>
+        </div>
+        <div class="medium-7 columns">
+            <div class="sub-section">
+                <span class="circle-number">A</span>
+                <div class="content">
+                    <h4>Reduce your energy bills, not your curb appeal.</h4>
+                    <p>Powerful. Elegant. Rugged. This is what home solar was meant to be. Now available with zero-down financing, to help you save from day one.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <div class="content">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Touchpoint Solar - Content Ad Slot 1 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6943270913451072"
+                         data-ad-slot="4289802414"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <div class="sub-section">
+                <span class="circle-number">B</span>
+                <div class="content">
+                    <h4>"Going ‪solar is one of the best decisions I think anyone can make.</h4>
+                    <p>It pays for itself, helps us improve the quality of air we breathe, and increases the value of your home. It's no wonder everyone that I know that went solar is pleased they did. What's not to love about it?"</p>
+                    <p>- Tom, New Jersey SunPower Customer</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <div class="content">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Touchpoint Solar - Content Ad Slot 2 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6943270913451072"
+                         data-ad-slot="5766535618"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>                
+                </div>
+            </div>
+        </div>
+        <div class="one-option green sidebar medium-4 medium-offset-1 columns">
+            <div class="inner">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Touchpoint Solar - Content Right Rail -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:600px"
+                     data-ad-client="ca-pub-6943270913451072"
+                     data-ad-slot="9359130410"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

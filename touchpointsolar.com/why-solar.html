@@ -1,0 +1,89 @@
+---
+#======================================================
+# Description:
+# This homepage features an area for a LARGE amount of content and a Prometheus simple form
+#
+# Use case examples:
+# You need a home page with a flex form and a area for a LARGE amount of content ( 2 headings, paragraphs of text, lists, imagery )
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: request-quote.html
+
+#========= Common Marketing Variables =================
+title: Why Solar?
+heading_one: Why Solar?
+heading_two: Lower your electricity bill with solar for your home
+form_heading: Make the first step to go solar!
+button_text: Get a Free Quote
+header_type: header_simple.html
+page_name: why-solar
+
+---
+
+
+<div class="heading columns large-12 medium-12">
+    {{ if page.heading_one }}<h1 class="top">{{ page.heading_one }}</h1>{{ endif }}
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content form-right">
+    <div class="row">
+        <div class="heading columns large-12 medium-12">
+            {{ if page.heading_two }}<h2 class="top">{{ page.heading_two }}</h2>{{ endif }}
+        </div>
+        <div class="medium-7 columns">
+            <div class="sub-section">
+                <i class="fa fa-thumbs-up"></i>
+                <div class="content">
+                    <h4>It's free</h4>
+                    <p>Solar energy systems allow you to utilize free sunlight and convert that energy into powering your home.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <i class="fa fa-leaf"></i>
+                <div class="content">
+                    <h4>It's clean</h4>
+                    <p>People often ask what they can do to have an impact on global climate change. Using solar energy to heat and cool your home has almost no impact on global climate.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <i class="fa fa-money"></i>
+                <div class="content">
+                    <h4>Reducing your utility costs</h4>
+                    <p>Having a solar energy system in your home reduces your dependency on electricity from your utility company. Take a look at your electric bill this month and imagine being able to cut that cost out of your monthly expenses. What would you do with the extra money?</p>
+                </div>
+            </div>
+        </div>
+        <div class="one-option green sidebar medium-4 medium-offset-1 columns">
+            <div class="inner">
+                <p>See if you qualify for solar...</p>
+                <form action="{{ site.baseurl }}request-quote.html">
+                    <button class="button-two">Get a Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

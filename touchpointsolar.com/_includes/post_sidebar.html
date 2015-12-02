@@ -1,0 +1,52 @@
+<div class="sidebar-wrap">
+    <div class="row qna">
+        <span class="icon icon-question"></span>
+        <h3>Related Q&A</h3>
+        <div id="link-wrap">
+            <div class="link">
+                <a href="{{ site.baseurl }}blog/">How Often Should<br/>I Work Out/Lift<br/>Weights?<span class="icon icon-arrow-right"></span></a>
+            </div>
+            <div class="link">
+                <a href="{{ site.baseurl }}blog/">Do you need to be<br/>counting calories<br/>to lose weight?<span class="icon icon-arrow-right"></span></a>
+            </div>
+            <div class="link last">
+                <a href="{{ site.baseurl }}blog/">Should women Lift<br/>Weights?<span class="icon icon-arrow-right"></span></a>
+            </div>
+            <div id="submit-question">
+                <span>Submit Your Own Question</span>
+            </div>
+        </div>
+        <div id="form-wrap">
+            <form id="application-form" method="post" action="//forms.brace.io/kourtney@healthindustryexpert.com">
+                <div class="form-section">
+                    <span class="form-element">
+                        <label for="first_name">First Name <em class="form-req-mark">*</em></label>
+                        <input id="first_name" type="text" name="first_name" class="validate_text" value="" placeholder="First Name *" />
+                    </span>
+                    <span class="form-element">
+                        <label for="last_name">Last Name <em class="form-req-mark">*</em></label>
+                        <input id="last_name" type="text" name="last_name" class="validate_text" value="" placeholder="Last Name *" />
+                    </span>
+                    <span class="form-element">
+                        <label for="email_address">Email <em class="form-req-mark">*</em></label>
+                        <input id="email_address" type="text" name="_replyto" class="validate_email" value="" placeholder="Email *" />
+                    </span>
+                    <span class="form-element">
+                        <label for="question">Enter Your Question <em class="form-req-mark">*</em></label>
+                        <textarea id="question" name="question" class="validate_textarea" placeholder="Enter Your Question *"></textarea>
+                    </span>
+                </div><!-- end .form-section -->
+                <div id="form_errors"></div>
+                <div class="form-section last">
+                    <div class="submit-wrap">
+                        <input type="submit" value="Submit Question">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="sidebar-wrap">
+    <div class="row tip"></div>
+    <div class="row tip"></div>
+</div>

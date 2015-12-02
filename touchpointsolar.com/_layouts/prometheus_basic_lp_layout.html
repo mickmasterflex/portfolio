@@ -1,0 +1,28 @@
+---
+layout: prometheus_base_layout
+ilp: true
+---
+
+<div class="lp-page-content">
+    
+    <div class="lp-header-bg {% if page.banner_img %}banner_img{{ page.banner_img }}{% endif %}">
+        <div class="row">
+            <div class="lp-heading-top large-7 large-push-5 medium-6 medium-push-6 medium-uncentered">
+                <h1>{{ page.heading_one }}</h1>
+                <h2>{{ page.heading_two }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper row">
+        
+        <div class="aside large-5 medium-6 medium-uncentered small-centered columns">
+            {% include prometheus_simple_form.html %}
+        </div>
+        
+        <div class="article large-7 medium-6 medium-uncentered columns">
+            <div class="content-area">{{ content }}</div>
+        </div>
+        
+    </div>
+</div>

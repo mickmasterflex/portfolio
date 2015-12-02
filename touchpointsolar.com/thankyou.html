@@ -1,0 +1,94 @@
+---
+#======================================================
+# Description:
+# This is the thankyou page.
+#
+# Use case examples:
+# When you need a thankyou page or something...
+#
+# Notes:
+#
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type:
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= Common Marketing Variables =================
+title: Thankyou
+heading_one: Congratulations, you're on your way!
+heading_two: Hold tight, we'll be reaching out to you shortly!
+header_type: header_simple.html
+page_name: thanks
+
+---
+<!-- Google Code for Touchpoint Solar SF Lead Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1037938829;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "K46RCJucl18QjeH27gM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1037938829/?label=K46RCJucl18QjeH27gM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<div class="heading columns large-12 medium-12">
+    {{ if page.heading_one }}<h1 class="top">{{ page.heading_one }}</h1>{{ endif }}
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content form-right">
+    <div class="row">
+        <div class="heading columns large-12 medium-12">
+            {{ if page.heading_two }}<h2 class="top">{{ page.heading_two }}</h2>{{ endif }}
+        </div>
+        <div class="medium-centered medium-6 large-6 columns">
+            <div class="sub-section">
+                <i class="fa fa-check-circle"></i>
+                <div class="content">
+                    <h4>Find a Solar dealer that's right for you</h4>
+                    <p>Compare Solar offer from our partners below.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="banners">
+            <a href="http://h2htrk.com/?a=1048&c=18080&s1=neutron&s2=tps-close" class="banner-element-wrap columns medium-12 large-4"><img src="../images/300x250-FSR-1a.jpg"/></a>
+            <a href="http://adtrking.com/?a=477026&c=71083&s1=neutron" class="banner-element-wrap columns medium-12 large-4"><img src="../images/300x250-V3.jpg"/></a>
+            <a href="http://trkkkk.com/?a=477026&c=53916&s1=neutron" class="banner-element-wrap columns medium-12 large-4"><img src="../images/300x250-av.jpg"/></a>
+<!--             <div class="banner-element-wrap columns medium-12 large-4 end">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- TouchPointSolar Close Screen 
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-6943270913451072"
+                     data-ad-slot="8003808410"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div> -->
+        </div>
+    </div>
+</div>

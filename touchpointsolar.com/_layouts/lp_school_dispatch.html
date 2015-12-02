@@ -1,0 +1,26 @@
+---
+layout: base_layout
+ilp: true
+---
+
+<div class="ilp-page-content version5">
+
+    <div class="wrapper row">
+
+        <div class="ilp-heading-top large-12 small-centered columns"></div>
+
+        <div class="aside large-5 medium-6 medium-uncentered small-centered columns">
+            {% include lp_school_form_dispatch.html %}
+        </div>
+
+        <div class="article large-7 medium-6 medium-uncentered hide-for-small-down columns">
+            {% if page.variation == 'b' %}<div class="infographic"></div>{% endif %}
+            <div class="content-area">{{ content }}</div>
+        </div>
+
+        <div class="content-area show-for-small-down medium-7 small-centered columns">{{ content }}</div>
+
+    </div>
+</div>
+
+{% if page.variation == 'a' %}<div class="footerBanner show-for-large-up"></div>{% endif %}

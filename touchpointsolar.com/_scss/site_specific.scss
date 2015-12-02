@@ -1,0 +1,729 @@
+/* -------------------------------------------------------------------
+Import
+------------------------------------------------------------------- */
+@import "../_scss_include/core/_variables.scss";
+@import "../_scss_include/core/_default_colors.scss";
+@import "_site_variables.scss";
+@import "../_scss_include/core/_main.scss";
+@import "../_scss_include/core/_home_variations.scss";
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+/* -------------------------------------------------------------------
+    Base Site Styles
+------------------------------------------------------------------- */
+body {
+    background: #f0f0f0;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+#wrap {
+    background: none;
+}
+
+
+/* -------------------------------------------------------------------
+Typography
+------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $montserrat;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 2.875rem;
+    color: #FFFFFF;
+    line-height: 1.25;
+}
+h4 {
+    font-size: 1.0625rem;
+    text-transform: none;
+}
+p {
+    font-family: inherit;
+    line-height: 1.5;
+}
+a { 
+    &:hover {  }
+}
+li {  }
+label {
+    font-size: .875rem;
+    font-family: $montserrat;
+    font-weight: 400;
+    color: $label1;
+}
+
+
+/* -------------------------------------------------------------------
+    Buttons
+------------------------------------------------------------------- */
+.button-one, .button-two, .button-one:active, .button-one:focus, .button-two:active, .button-two:focus, button.disabled, button[disabled], .button.disabled, .button[disabled] {
+    text-transform: uppercase;
+    font-family: $montserrat;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    line-height: 1;
+    padding: 1rem 2rem;
+}
+.button-one:active, .button-one:focus {
+    color: $btn1-text;
+    background: $btn1;
+    border-color: $btn1-border;
+}
+.button-two:active, .button-two:focus {
+    color: $btn2-text;
+    background: none;
+    border-color: $btn2-border;
+}
+.button-one {  }
+
+.button-two {
+    background: none;
+}
+.button-three {  }
+
+#menu-button {
+    i {
+        font-size: 1.75rem;
+        color: $icon3;
+        padding: .5rem .625rem .25rem;
+    }
+}
+.menu-wrap {
+    border-radius: 6px;
+    top: 0;
+    box-shadow: 0px 0px 0.125rem #000;
+    overflow: hidden;
+    width: 13rem;
+
+    a {
+        background: $bg1;
+        color: $link1;
+        font-family: $typeface2;
+        border-bottom: 1px solid $border1;
+        font-size: .875rem;
+        text-transform: uppercase;
+        &:hover {
+            color: $link1-hover;
+            background: $bg2;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------
+    Elements
+------------------------------------------------------------------- */
+.phone-number {
+    border: 2px solid $border1;
+    background: $bg1;
+    padding: .75rem 1rem;
+    margin: .5rem 0 1rem;
+    max-width: 318px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    p {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5;
+        padding: 0.5rem 0rem .75rem 1rem;
+        margin: 0;
+        float: left;
+        font-family: $typeface2;
+    }
+    i {
+        font-size: 3rem;
+        color: $icon2;
+        float: left;
+        border-right: 1px solid $border1;
+        padding-right: 1rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+    Header & Footer
+------------------------------------------------------------------- */
+.site-header, .site-footer, .footer-bottom {  }
+
+
+/* -------------------------------------------------------------------
+    Header
+------------------------------------------------------------------- */
+.site-header {
+    background: none;
+    .logo {
+        margin-top: 0.5rem;
+    }
+    .site-logo {
+        img {
+            width: 236px;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------
+    Footer
+------------------------------------------------------------------- */
+.site-footer {
+    background: $bg3;
+    // Typography
+    p {
+        font-family: $typeface2;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+    a {
+        color: $link2;
+        &:hover {
+            color: $link2-hover;
+        }
+    }
+    // Structure
+    &.lp {  }
+}
+
+/* -------------------------------------------------------------------
+    Home Page
+------------------------------------------------------------------- */
+.home {
+    .image-wrap {
+        background: $bg4 url("../images/bg-home-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+    }
+    .form-center, .one-option {
+        .inner {
+            button {
+                margin: 0 auto;
+                font-weight: 700;
+                font-size: 1rem;
+            }
+        }
+    }
+    .form-center {
+        padding: 4rem 0 10rem;
+        .inner {
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.9);
+            border-radius: 0.625rem;
+            label {
+                font-weight: 400;
+                text-align: center;
+                font-size: 1.25rem;
+                line-height: 1.25;
+                margin: 0 0 0.625rem;
+            }
+            input {
+                text-align: center;
+                padding: 0.3125rem 0;
+                width: 90%;
+                margin: 0 auto;
+                height: 3rem;
+                font-size: 1.125rem;
+                color: $mountainMeadowDark;
+                border: 1px solid $field2-border;
+            }
+            .submission {
+                button, #multi_next_1, #multi_next_4 {
+                    margin-top: 0.625rem;
+                    width: 90%;
+                }
+            }
+        }
+    }
+    .main-content {
+        background: #ffffff;
+    }
+}
+
+.one-option {
+    .inner {
+        padding: 3.25rem 1.25rem;
+        margin: 2rem 0;
+        text-align: center;
+        color: #ffffff;
+        &.how {
+            background: $bg4 url("../images/bg-panels-xsml.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        &.why {
+            background: $bg4 url("../images/bg-home2-xsml.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        h3, p {
+            text-align: center;
+            line-height: 1.5;
+            color: #FFFFFF;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            line-height: 1.125;
+            width: 75%;
+            margin: 0 auto 1rem;
+            color: #FFFFFF;
+        }
+    }
+    &.green {
+        background: #1fbd69; /* Old poopy browsers */
+        background: -moz-linear-gradient(left, #1fbd69 0%, #11e172 50%, #1fbd69 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1fbd69), color-stop(50%,#11e172), color-stop(100%,#1fbd69)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, #1fbd69 0%,#11e172 50%,#1fbd69 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, #1fbd69 0%,#11e172 50%,#1fbd69 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, #1fbd69 0%,#11e172 50%,#1fbd69 100%); /* IE10+ */
+        background: linear-gradient(to right, #1fbd69 0%,#11e172 50%,#1fbd69 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1fbd69', endColorstr='#1fbd69',GradientType=1 ); /* IE6-9 */
+        .inner {
+            background: none;
+            margin: 0;
+            padding: 2.25rem 1.25rem;
+        }
+        p {
+            font-family: $montserrat;
+            font-size: 1.25rem;
+            padding: 0;
+        }
+        button {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------
+    Static Pages
+------------------------------------------------------------------- */
+.image-wrap {
+    padding-bottom: 1rem;
+}
+
+.how-it-works {
+    .image-wrap {
+        background: $bg4 url("../images/bg-panels-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+    }
+}
+.why-solar {
+    .image-wrap {
+        background: $bg4 url("../images/bg-home2-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+    }
+}
+.request-quote {
+    .image-wrap {
+        background: $bg4 url("../images/bg-panels2-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+    }
+}
+.privacy {
+    margin-top: 0;
+    padding-bottom: 3rem;
+    &#wrap {
+        background: $bg1;
+        padding-bottom: 0;
+    }
+    h1 {
+        font-size: 2rem;
+        color: $h1b;
+    }
+    .image-wrap {
+        background: $bg4 url("../images/bg-home2-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+        height: 5rem;
+        margin-bottom: 2rem;
+    }
+}
+.thanks {
+    .image-wrap {
+        background: $bg4 url("../images/bg-panels2-sml.jpg") no-repeat top center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+    }
+    .banners {
+        display: block;
+        .banner-element-wrap {
+            padding: 0;
+            margin-bottom: .5rem;
+        }
+        img {
+            border: 1px solid $border2;
+            margin: 0 auto;
+            display: block;
+        }
+        .adsbygoogle.adsbygoogle {
+            margin: 0 auto !important;
+            display: block !important;
+        }
+    }
+}
+
+.heading {
+    text-align: center;
+    float: none;
+    h1 {
+        text-align: center;
+    }
+}
+.main-content {
+    background: #FFFFFF;
+    &.form-right {
+        .heading {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 0rem 1rem 2rem;
+            margin-bottom: 2.75rem;
+            h2 {
+                font-size: 1.5rem;
+                text-transform: none;
+                line-height: 1.125;
+                font-weight: 400;
+                font-family: $ptSans;
+            }
+        }
+    }
+}
+.form-right {
+    p {
+        padding-top: .5rem;
+    }
+}
+.sub-section {
+    position: relative;
+    padding-bottom: 2rem;
+    .fa {
+        font-size: 2.5rem;
+        position: absolute;
+        color: $icon1;
+    }
+    .circle-number {
+        font-family: $typeface2;
+        text-align: center;
+        background: $icon1;
+        color: $icon3;
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        padding-top: .1875rem;
+        margin-left: .5rem;
+        border-radius: 50%;
+    }
+    .content {
+        padding-left: 4rem;
+    }
+    p {
+        padding-bottom: 0;
+    }
+}
+
+/* -------------------------------------------------------------------
+    Landing Page
+------------------------------------------------------------------- */
+.main-content {
+    .form-wrap {
+        h3 {
+            text-transform: none;
+            font-size: 1.25rem;
+            line-height: 1.25;
+            padding: 0.25rem 0rem .75rem 2rem;
+            margin: 0 0 1rem 0;
+            border-bottom: 1px solid $border1;
+            text-align: left;
+            position: relative;
+            &:before {
+                position: absolute;
+                font-family: FontAwesome;
+                top: 1px;
+                left: 0;
+                font-size: 24px;
+                font-weight: 400;
+                color: $mountainMeadow;
+                content: "\f003";
+            }
+        }
+        .inner {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            border: 2px solid $border1;
+        }
+        .bottom {
+            border-top: none;
+            padding: 0.75rem 1.5rem 2rem;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------
+    Prometheus Form Elements
+------------------------------------------------------------------- */
+label {  }
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+    border: 1px solid $field1-border;
+    background: $bg2;
+    height: 2.625rem;
+}
+
+.ilp-shortform {
+        input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {  }
+}
+.tcpa {
+    padding-bottom: 0;
+    margin-top: 1rem;
+}
+
+/* -------------------------------------------------------------------
+    Prometheus Typography
+------------------------------------------------------------------- */
+.ilp-page-content {  }
+
+
+/* -------------------------------------------------------------------
+    Media Queries
+------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+
+@media screen and (max-width: 750px) {
+    .phone-number {
+        margin: 1rem auto;
+        p {
+            font-size: 1rem;
+            padding-top: .75rem;
+        }
+    }
+}
+
+@media screen and (min-width: 641px) {
+
+    .green {
+        &.sidebar {
+            border: 1px solid $border3;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: $bg1;
+            p {
+                color: $p1;
+                font-size: 1.125rem;
+            }
+            .button-two {
+                background: $btn1;
+                border: $btn1-border;
+                &:hover {
+                    background: $btn1-hover;
+                    border: $btn1-border-hover;
+                }
+            }
+            .inner {
+                padding: 2rem 0 2.25rem;
+            }
+        }
+    }
+    .home {
+        .image-wrap {
+            background: $bg4 url("../images/bg-home-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+    .how-it-works {
+        .image-wrap {
+            background: $bg4 url("../images/bg-panels-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+    .why-solar {
+        .image-wrap {
+            background: $bg4 url("../images/bg-home2-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+    .privacy {
+        .image-wrap {
+            background: $bg4 url("../images/bg-home2-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+    .request-quote {
+        .image-wrap {
+            background: $bg4 url("../images/bg-panels2-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+    .thanks {
+        .image-wrap {
+            background: $bg4 url("../images/bg-panels2-lrg.jpg") no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .option:first-child {
+        .inner {
+            margin-bottom: 0;
+        }
+    }
+    .heading {
+        padding: 0 1rem;
+        h1 { font-size: 2rem; }
+    }
+    .home {
+        .form-center {
+            padding: 0rem 0px 2rem;
+            .inner {
+                padding: .75rem.25rem 1rem;
+                border-radius: 0.25rem;
+                label {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .phone-number {
+        width: 100%;
+        max-width: none;
+    }
+    .request-quote {
+        .form-right {
+            padding-top: 0;
+        }
+    }
+    .main-content {
+        .form-wrap {
+            padding: 0;
+            border-bottom: 2px solid $border2;
+            button, #multi_next_1, #multi_next_4 {
+                margin-top: 1rem;
+            }
+            .tcpa {
+                background: $bg3 none repeat scroll 0% 0%;
+                padding: 0.75rem;
+                -webkit-border-radius: .25rem;
+                -moz-border-radius: .25rem;
+                border-radius: .25rem;
+
+            }
+            .bottom {
+                padding: 0.75rem 1.5rem 1.5rem;
+            }
+            .inner {
+                border: none;
+            }
+            h3 {
+                padding-bottom: 1.25rem;
+            }
+        }
+        .form-right {
+            padding-top: 0;
+            .heading {
+                padding-top: 2rem;
+            }
+        }
+    }
+    .site-footer {
+        .wrap { padding: 1.25rem; }
+        p { text-align: center; }
+        .left, .right {
+            float: none !important;
+            padding: .125rem 0;
+        }
+    }
+    .privacy {
+        .content-area {
+            margin-top: 2rem;
+        }
+        h1 { font-size: 1.25rem; }
+    }
+    .why-solar, .how-it-works {
+        .form-right {
+            padding-bottom: 0;
+        }
+        .one-option {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+}
+
+@media screen and (max-width: 400px) {
+
+    .site-header {
+        .site-logo {
+            img {
+                width: 190px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+}

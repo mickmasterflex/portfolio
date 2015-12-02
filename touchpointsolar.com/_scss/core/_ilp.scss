@@ -1,0 +1,1553 @@
+/* -------------------------------------------------------------------
+	Import
+------------------------------------------------------------------- */
+
+@include web-fonts(("Asap": ("400", "700", "700 italic")));
+
+/* -------------------------------------------------------------------
+	Base
+------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $defaultText;
+}
+
+/* -------------------------------------------------------------------
+	Typography
+------------------------------------------------------------------- */
+
+
+.ilp-page-content {
+/*    
+    h1 {
+        font-family: $asap;
+        color: $h1a;
+        font-size: 2.25rem;
+        line-height: 1.1;
+        font-weight: 700;
+        font-style: italic;
+        text-align: left;
+        text-rendering: optimizeLegibility;
+        &.header {
+            color: $h1b;
+        }
+    }
+    h2 {
+        font-family: $asap;
+        color: $h2a;
+        font-size: 1.5rem;
+        line-height: 1.1;
+        font-weight: 700;
+        font-style: normal;
+        text-align: left;
+        text-rendering: optimizeLegibility;
+        padding: .625rem 0;
+        &.header {
+            color: $h2a;
+        }
+    }
+    h3 {
+        font-family: $asap;
+        color: $h3a;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        text-rendering: optimizeLegibility;
+    }
+    h4 {
+        font-family: $asap;
+        color: $h3a;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.125rem;
+        text-rendering: optimizeLegibility;
+    }
+    h5 {
+        font-family: $asap;
+        color: $h5a;
+        font-size: 1.125rem;
+        text-rendering: optimizeLegibility;
+    }
+    h6 {
+        font-family: $asap;
+        color: $h6a;
+        font-size: 1rem;
+        font-weight: 700;
+        text-rendering: optimizeLegibility;
+    }
+    p {
+        font-family: $asap;
+        color: $p1;
+        font-weight: 400;
+        text-rendering: optimizeLegibility;
+        margin: .625rem 0 .75rem;
+    }
+    a {
+        font-family: $link1;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    ul {
+        margin-top: .625rem;
+    }
+    li {
+        font-family: $asap;
+        color: $ilpText1;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: .625rem;
+        &.condensed {
+            margin-bottom: 0;
+        }
+    }
+    label {
+        font-family: $asap;
+        color: $ilpText1;
+        font-size: 1rem;
+        font-weight: 400;
+        &.error {
+            background: none repeat scroll 0% 0% #D92B2B;
+            margin-top: 0px;
+            outline: 2px solid #D92B2B;
+            padding: 0.25rem 0.625rem;
+            color: rgb(255, 255, 255) !important;
+        }
+    }
+    
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+        font-family: $asap;
+        color: $ilpText2;
+        font-size: 1rem;
+        font-weight: 400;
+        height: 3.75rem;
+        padding: 0.3125rem 0px 0.3125rem 1.1875rem;
+        box-shadow: none;
+    }
+    
+    select {
+        @include border-radius(.3125rem);
+        padding: 0.3125rem 0px 0.3125rem .9375rem;
+        option {
+            padding: 0.5rem 1rem;
+        }
+        &.input_error {
+            border: 2px solid #D92B2B !important;
+            outline: medium none !important;
+        }
+    }
+    
+    input[type="checkbox"], input[type="radio"] {
+        margin: .4375rem .75rem .3125rem .75rem;
+        display: block;
+        float: left;
+    }
+*/
+    
+    .radio {
+        margin: 0;
+        display: block;
+        line-height: 2;
+    }
+
+    .radio_sub {
+      display: none;
+    }
+
+    :checked ~ .radio_sub {
+      display: block;
+      margin-left: 30px;
+    }
+    
+    .radio-heading {
+        margin-bottom: .625rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: $asap;
+        text-align: left;
+        display: block;
+    }
+    .radio-heading + .form-req-mark {
+        display: none;
+    }
+    
+    .blue {
+        input[type="checkbox"], input[type="radio"] {
+            + label {
+                color: $ilpText3;
+            }
+        }
+    }
+    
+    .tcpa p {
+        margin: 0 0 0 0; 
+        font-size: .825rem;
+    }
+    .tcpa a {
+        color: $ilpText2;
+        &:hover { cursor: pointer; }
+    }
+    
+    .input_error {
+        outline: solid 2px $punch !important;
+        border: none !important;
+    }
+    
+    &.version4 {
+        #form_errors {
+            width: 100%;
+            margin: 1rem auto;
+            text-align: center;
+            color: $punch;
+            @include transition(position .25s);
+            background: $bg1;
+            border-radius: 5px;
+            strong {
+                font-weight: 700;
+                font-style: normal;
+                color: $punchDark;
+            }
+        }
+    }
+    
+}
+
+
+/* -------------------------------------------------------------------
+	Content Structure
+------------------------------------------------------------------- */
+
+.ilp-page-content {
+    padding: 5rem 0;
+    @include bg($bg1, '../images/bg-dotted.png', center, center, repeat);
+    .article { 
+        z-index: 1;
+        }
+    .aside {
+        display: block;
+        @include bg($bg3);
+        @include border-radius(.625rem);
+        border: solid .0625rem $border1;
+        z-index: 1;
+        &.blue {
+            @include bg($bg2);
+            h3, label, p, a, .tcpa {
+                color: $p2;
+            }
+            
+        }
+    }
+    .content-area { margin-top: 2.625rem; }
+        
+    .fred {
+        margin-top: 5rem;
+        &.aside {
+            &:before {
+                content: url('../../core/images/fred-hand-left.png');
+                display: block;
+                position: absolute;
+                top: -.125rem;
+                left: -.625rem;
+            }
+            &:after {
+                content: url('../../core/images/fred-hand-right.png');
+                display: block;
+                position: absolute;
+                top: -.125rem;
+                right: -.625rem;
+            }
+            form {
+                &:before {
+                    content: url('../../core/images/fred-face.png');
+                    display: block;
+                    position: absolute;
+                    top: -8.3125rem;
+                    left: 32%;
+                }
+            }
+        }
+    }
+    
+    .user-value {
+        width: 100%;
+        h5 {
+            font-size: 1.75rem;
+            color: $h5a;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        ul {
+            margin-left: 0;
+            li {
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                border: solid .0625rem $border1;
+                @include bg ($bg1);
+                list-style: none;
+                img {
+                    float: left;
+                    margin-right: 1rem;
+                }
+                .inner {
+                    padding: 1rem 1rem 1rem 1rem;
+                    display: block;
+                    font-size: 1.125rem;
+                    line-height: 1.35;
+                    bottom: 0;
+                    height: 100px;
+                    left: 170px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: auto;
+
+                }
+            }
+        }
+        
+    }
+}
+
+.ilp-button, .ilp-next-button {
+    position: relative;
+    display: block;
+    z-index: 0;
+    width: 100%;
+    padding: 1.125rem 0.625rem !important;
+    border: solid .0625rem $border1;
+    @include bg($btn1);
+    @include box-shadow(inset, 0px, 1px, $btn1-highlight, null);
+    @include border-radius(0.3125rem);
+    @include transition(all .25s);
+    font-family: $asap;
+    color: $btn1-text;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0px -0.08rem $btn1-text-shadow;
+    &:hover {
+        color: $btn1-text-hover;
+        text-decoration: none;
+        @include bg($btn1-hover);
+    }
+    &:visited {
+        color: $btn1-text-hover;
+        text-decoration: none;
+        @include bg($btn1-hover);
+    }
+}
+
+.ilp-oneclick {
+    @include border-radius(0.1875rem);
+    padding: 2rem .625rem 2.625rem;
+    position: relative;
+    
+    h3 {
+        margin: 0 0 1.625rem 0;
+    }
+    
+    a { 
+        position: relative; 
+        &.button-one { 
+            height: 71px;
+            display: block;
+            bottom: 0;
+            position: absolute;
+            }
+    }
+
+}
+
+.ilp-shortform {
+    @include border-radius(0.1875rem);
+    padding: 1.625rem .625rem;
+    position: relative;
+    
+    h3 {
+        margin: 0 0 1rem 0;
+    }
+    
+    a { 
+        position: relative; 
+        &.button-one { 
+            height: 71px;
+            display: block;
+            bottom: 0;
+            position: absolute;
+            }
+    }
+
+    .form-logo {
+        background: $bg1;
+        box-sizing: border-box;
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .tcpa {
+        display: block;
+        padding: 1rem 0 .0625rem;
+    }
+    
+    .field {
+        &.form-element {
+            &.minimized {
+                position: relative;
+                width: 100%;
+                height: 3.9375rem;
+                background: none repeat scroll 0% 0% rgb(251, 251, 251);
+                box-sizing: border-box;
+                margin-top: -1px;
+                border: 1px solid rgb(204, 204, 204);
+                label {
+                    display: block;
+                    width: 6.875rem;
+                    margin: 0;
+                    padding: 1.125rem 0px 0px .625rem;
+                }
+                .input-wrap {
+                    position: absolute;
+                    left: 107px;
+                    right: 0px;
+                    top: 0px;
+                    box-sizing: border-box;
+                    label {
+                        &.error {
+                            display: none !important;
+                        }
+                    }
+                }
+                input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+                    @include bg($field1);
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    width: 100%;
+                    height: 3.75rem;
+                    border-width: medium medium medium 1px;
+                    border-style: none none none solid;
+                    border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color #CCC;
+                    -moz-border-top-colors: none;
+                    -moz-border-right-colors: none;
+                    -moz-border-bottom-colors: none;
+                    -moz-border-left-colors: none;
+                    border-image: none;
+                }
+            }
+        }
+    }
+    
+    label {
+        display: block;
+        width: 100%;
+    }
+    
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+        @include bg($field1);
+        height: 3.75rem;
+        margin: 0;
+        padding: .3125rem 0 .3125rem 1.1875rem;
+        box-shadow: none;
+    }
+}
+
+.prometheus-footer {
+    border-top: 1px solid $border1;
+    min-height: 3.5rem;
+    padding: 0;
+    @include bg(transparent, '../images/bg-pattern-1.jpg', center, center, repeat);
+    p {
+        color: $p1 !important;
+        font-size: .9375rem;
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        color: $link1;
+        text-decoration: underline;
+        &:hover {
+            color: $link1-hover;
+        }
+    }
+    .copyright {
+        padding: 1.625rem 0;
+        text-align: left;
+        font-size: .9375rem;
+        .large-3 {
+            text-align: right;
+        }
+        &.lp { 
+            text-align: center;
+            padding: 1rem 0 .5rem;
+        }
+        .right { text-align: right; }
+    }
+    .site-logo {
+        margin: 1rem auto 0;
+        display: block;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+	Version 2 - Imagery & Infographic
+------------------------------------------------------------------- */
+
+.footerBanner {
+    display: block;
+    height: 430px;
+    width: 100%;
+    @include bg($bg1, '../images/bg-dotted.png', center, center, repeat);
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 430px;
+        @include bg(null, '../../images/ilp-bg-careers1.png', center, center, no-repeat);
+        background-size: cover;
+    }
+    &.medicalImage {
+        margin-top: -12rem;
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 430px;
+            @include bg(null, '../../images/ilp-bg-mbc.jpg', center, center, no-repeat);
+            background-size: cover;
+        }
+    }
+}
+.headerBanner {
+    display: block;
+    height: 430px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 191px;
+        @include bg(null, '../../images/ilp-bg-mbc3.jpg', center, center, no-repeat);
+        background-size: cover;
+    }
+}
+
+.ilp-page-content {
+    .infographic {
+        position: relative;
+        display: block;
+        height: 155px;
+        width: 566px;
+        margin-top: 2rem;
+        &:before {
+            content: url('../../../images/ilp-infographic1.png');
+            position: absolute;
+            display: inline-block;
+            width: 566px;
+            height: 155px;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Offer Particle Content Version
+------------------------------------------------------------------- */
+.ilp-page-content {
+    .btn_gray {
+        font-style: italic;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: .5rem 2rem;
+        background: #000;
+        border-radius: .1875rem;
+        color: $ilpText1;
+        background: $ilpButtonColor8;
+        &:hover { text-decoration:none; color: $ilpText2; }
+    }
+    &.no_padding {
+        padding: 0;
+    }
+    &.offer_particles {
+        padding-top: 0;
+        padding-bottom: 5rem;
+        background: $defaultBackgroundColor;
+        .offer_header {
+            padding: 1.5rem 0;
+            margin-bottom: 3rem;
+            background: $white;
+            border-top: .3125rem solid $ilpBorder3;
+            border-bottom: .0625rem solid $ilpBorder1;
+            .offer_title {
+                h1 {
+                    font-family: $ptSerif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    color: $ilpText1;
+                }
+                h2 {
+                    font-family: $ptSerif;
+                    font-weight: 400;
+                    font-style: italic;
+                    font-size: 1.125rem;
+                    color: $ilpText7;
+                    }
+            }
+            img { float: right; }
+        }
+        
+        .offer_content_particle {
+            position: relative;
+            display: block;
+            margin-bottom: 1.5rem;
+            .icon {
+                display: block;
+                width: 2rem;
+                min-height: 2rem;
+                float: left;
+                margin: 0 2rem 0 2rem;
+            }
+            .particle {
+                display: block;
+                width: calc(100% - 6rem);
+                float: left;
+                p { margin: 0; }
+                a:hover { color: $ilpText2; }
+                h5 {
+                    font-style: normal;
+                    font-size: 1.5rem;
+                    font-weight: 200;
+                    color: $ilpText7;
+                    &.phone_number {
+                        float: left;
+                        margin-right: 1rem;
+                    }
+                }
+                .btn_gray {
+                    float: left;
+                    margin: -.25rem 0 0 0;
+                }
+            }
+        }
+        
+        .aside {
+            border-radius: 0.3125rem;
+            h3 {
+                margin: 0;
+                padding: 1.5rem 0.9375rem;
+                background: #334b55;
+            }
+            &.column, &.columns {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .ilp-shortform {
+                padding-top: .25rem;
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+            }
+            .ilp-button {
+                background: $ilpButtonColor6;
+                box-shadow: 0px 1px $ilpButtonColor7 inset;
+                border: .0625rem solid $ilpBorder7;
+                text-shadow: 0px -0.08rem $ilpBorder7;
+                margin-top: 1rem !important;
+                &:hover { background: $ilpButtonColor7; }
+            }
+            label {
+                margin: 0.625rem 0px .125rem;
+            }
+            .tcpa {
+                label {
+                    font-size: .875rem;
+                    margin: 0;
+                }
+            }
+            input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+                height: 2.875rem;
+                border: none;
+            }
+        }
+    }
+    .offer_content {
+        .section_title {
+            padding: 1rem 0 2rem;
+            width: 100%;
+            border-bottom: .0625rem solid $ilpBorder1;
+            h4 {
+                font-family: $ptSerif;
+                font-size: 1.625rem;
+                font-weight: 400;
+                float: left;
+                margin-top: .125rem;
+            }
+            .btn_gray {
+                float: right;
+            }
+        }
+        .content_block {
+            padding: 1rem 0 3rem;
+            h3 {
+                text-align: left;
+            }
+            a:hover { color: $ilpText2; }
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------
+	Version 4 - Imitation Game
+------------------------------------------------------------------- */
+
+.version4 {
+    
+    padding: 5px 0px 10px;
+    
+    p {
+        color: $ilpText5;
+    }
+    li {
+        color: $ilpText5;
+    }
+    h3 {
+        color: $ilpText3;
+        font-size: 1.625rem;
+    }
+    
+    .tcpa p {
+        color: $ilpText4;
+    }
+    .tcpa a {
+        color: $ilpText3;
+    }
+    
+    .ilp-heading-top {
+        padding: 2rem 20rem 2rem 0;
+    }
+    
+    .ilp-header-bg {
+        width: 100%;
+        min-width: 1024px;
+        max-height: 326px;
+        border-bottom: 20px solid $ilpBorder2;
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        @include bg($ilpBackgroundColor2);
+        img { 
+            width: 100%;
+            height: 100%;
+            max-width: 1095px;
+            max-height: 349px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    
+    .wrapper {
+        position: relative;
+    }
+    
+    .aside {
+        @include bg($ilpBackgroundColor3);
+        @include border-radius(0);
+        border: none;
+    }
+    
+    .article {
+        position: absolute;
+        right: 0px;
+        top: 21.5rem;
+        padding: 0px 1rem 2rem;
+        .content-area {
+            margin-top: .625rem;
+            
+        }
+    }
+    
+    &.ilp-page-content {
+        padding: 0 0 10rem;
+    }
+    
+}
+
+
+/* -------------------------------------------------------------------
+	Version 5 - School Specific
+------------------------------------------------------------------- */
+
+.version5 {
+    padding: 5px 0px 10px;
+    p {
+        color: $ilpText5;
+    }
+    li {
+        color: $ilpText5;
+    }
+    h3 {
+        color: $ilpText3;
+        font-size: 1.625rem;
+    }
+    .tcpa p {
+        color: $ilpText4;
+    }
+    .tcpa a {
+        color: $ilpText3;
+    }
+    .ilp-heading-top {
+        padding: 1rem 1rem 1rem 0;
+    }
+    .ilp-header-bg {
+        width: 100%;
+        min-width: 1024px;
+        max-height: 326px;
+        border-bottom: 20px solid $ilpBorder2;
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        @include bg($ilpBackgroundColor2);
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 1095px;
+            max-height: 349px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    .wrapper {
+        position: relative;
+    }
+    .aside {
+        @include bg($ilpBackgroundColor3);
+        @include border-radius(0);
+        border: none;
+    }
+    .article {
+        position: absolute;
+        right: 0px;
+        top: 3rem;
+        padding: 0 1rem 2rem 2rem;
+        .content-area {
+            margin-top: .625rem;
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1.25rem;
+                line-height: 1.25;
+            }
+        }
+    }
+    &.ilp-page-content {
+        padding: 3rem 0 5rem;
+    }
+}
+
+/* -------------------------------------------------------------------
+    Form Slider
+------------------------------------------------------------------- */
+.slider_wrap {
+    position: relative;
+    border-radius: 3px;
+    background: #fff;
+    padding-top: .125rem;
+    margin-top: 1rem;
+}
+/*form styles*/
+.slider_form fieldset {
+    border: 0 none;
+    padding: 0 30px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    /*stacking fieldsets above each other*/
+    label {
+        color: #000 !important;
+        &.slider_label {
+            font-weight: 700;
+            margin-top: 0;
+        }
+    }
+}
+/*Hide all except first fieldset*/
+.slider_form fieldset:not(:first-of-type) {
+    display: none;
+
+}
+/*progressbar*/
+#progressbar {
+    margin: 1rem auto 0px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    border-bottom: 1px solid #CDCDCD;
+    li {
+        list-style-type: none;
+        color: rgb(58, 58, 58);
+        text-transform: uppercase;
+        font-size: .8125rem;
+        width: 50%;
+        margin-bottom: 0;
+        float: left;
+        position: relative;
+        text-align: center;
+        padding: 0 0 .5rem 0;
+        &:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 20px;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            color: #333;
+            background: rgb(231, 231, 231);
+            border-radius: 3px;
+            margin: 0 auto 5px auto;
+            transition: all .5s;
+        }
+        /*progressbar connectors*/
+        &:after {
+            content: '';
+            width: 88%;
+            height: 2px;
+            background: rgb(231, 231, 231);
+            position: absolute;
+            left: -44%;
+            top: 9px;
+            z-index: 0; /*put it behind the numbers*/
+        }
+        &:first-child:after {
+            /*connector not needed before the first step*/
+            content: none;
+        }
+        /*marking active/completed steps green*/
+        /*The number of the step and the connector before it = green*/
+        &.active:before, &.active:after {
+            background: #27AE60;
+            color: white;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------
+	Area of Interest 1
+------------------------------------------------------------------- */
+
+.aoi-1 {
+    &.ilp-page-content {
+        padding: 7rem 0 15rem;
+        border-bottom: 1.5rem solid $ilpBorder2;
+        @include bg(null, '../../images/bg-zigzag.jpg', center, center, repeat);
+    }
+    .ilp-aoi-shortform {
+        display: block;
+        width: 26.25rem;
+        margin: 0 auto;
+        box-shadow: 0 0 0 .375rem rgba(29, 66, 82, 0.5);
+        border: .0625rem solid $ilpBorder6;
+        @include bg($ilpBackgroundColor1);
+        @include border-radius(.3125rem);
+    }
+    .aoi-heading-wrap {
+        padding: 0 1rem;
+        h3 {
+            font-size: 1.625rem;
+        }
+        p {
+            text-align: center;
+        }
+    }
+    .aoi-button-wrap {
+        position: relative;
+        margin: 2rem;
+        @include border-radius(.3125rem);
+        @include bg($ilpButtonColor5);
+    }
+    .aoi-button {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 1.25rem 2rem 1.25rem 1rem;
+        font-family: $asap;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: $ilpText3;
+        text-shadow: 0px .0625rem $ilpBorder4;
+        text-align: left;
+        text-decoration: none;
+        border-bottom: solid .0625rem $ilpBorder4;
+        box-shadow: inset 0 .0625rem 0 $ilpBorder5;
+        @include bg($ilpButtonColor5);
+        &:hover {
+            text-decoration: none;
+            @include bg($ilpBorder5);
+        }
+        &:before {
+            content: url('../../../images/icon-arrow-right-brown-small.png');
+            position: absolute;
+            right: 1rem;
+        }
+        &.top {
+            @include border-top-left-radius(.3125rem);
+            @include border-top-right-radius(.3125rem);
+        }
+        &.bottom {
+            border: none;
+            @include border-bottom-left-radius(.3125rem);
+            @include border-bottom-right-radius(.3125rem);
+        }
+    }
+    
+}
+
+/* -------------------------------------------------------------------
+	School Logo Buttons
+------------------------------------------------------------------- */
+
+.ilp-page-content {
+    &.school-select-version {
+        
+        .article {
+            padding-left: 2.5rem;
+        }
+        .aside {
+            @include bg(#e0854d);
+            position: relative;
+            .ilp-shortform {
+                padding: 1.625rem 0px 0.5rem;
+            }
+            h3 {
+                text-align: left;
+                font-size: 1.875rem;
+                color: $white;
+                max-width: 21rem;
+                margin: 0 auto 1.25rem;
+            }
+            ul {
+                margin-left: 0;
+            }
+            li {
+                background: #ffffff;
+                padding: 1.5rem 3rem 1.5rem 1rem;
+                margin: .25rem 0;
+                height: 8.125rem;
+                width: 100%;
+                max-width: 23rem;
+                list-style: none;
+                position: relative;
+                @include border-radius(0.1875rem);
+                cursor: pointer;
+                a {
+                    cursor: pointer;
+                }
+                &:before {
+                    content: url('../../core/images/icon-arrow-right-grey.png');
+                    width: 18px;
+                    height: 33px;
+                    position: absolute;
+                    right: 1rem;
+                    top: 3rem;
+                }
+            }
+            .inner-logo {
+                width: 100%;
+            }
+            &:before {
+                content: url('../../core/images/icon-bigarrow.png');
+                display: block;
+                width: 183px;
+                height: 167px;
+                position: absolute;
+                right: -2.25rem;
+                top: -3.875rem;
+            }
+        }
+    }
+}
+/* -------------------------------------------------------------------
+	Media Queries
+------------------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+    .ilp-page-content {
+        padding-top: 2rem;
+        
+        h3 { font-style: normal; }
+        
+        .aside { 
+            margin-top: 2rem;
+            &.fred {
+                margin-top: 7rem;
+            }
+        }
+        &.offer_particles {
+            .aside { margin-top: 0; }
+        }
+        
+        &.variation_a {
+            .row {
+                max-width: 100%;
+                margin: 0;
+            }
+            .aside { 
+                @include bg($ilpBackgroundColor2, '../../images/ilp-bg-careers2.jpg', center, center, no-repeat);
+                background-size: cover;
+                @include border-radius(0);
+                padding: 0 13rem;
+                &.medicalImage {
+                    @include bg($ilpBackgroundColor2, '../../images/ilp-bg-mbc5.jpg', center, center, no-repeat);
+                    background-size: cover;
+                }
+            }
+        }
+        
+        .infographic {
+            width: 318px;
+            height: 150px;
+            margin: 2rem auto 0;
+            &:before {
+                content: url('../../../images/ilp-infographic3.png') no-repeat;
+                width: 318px;
+                height: 150px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        
+        &.version4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            h1, h2 { text-align: left; };
+            
+            .ilp-heading-top {
+                padding: 2rem 20rem 2rem 1rem;
+            }
+            .aside {
+                margin-top: 0;
+            }
+        }
+        
+        &.school-select-version {
+            
+            padding-top: 3rem;
+            
+            h1, h2 { 
+                text-align: left;
+            }
+            
+            .aside {
+                @include bg(#e0854d);
+                h3 {
+                    font-size: 1.6525rem;
+                    text-align: left;
+                    max-width: 23rem;
+                    margin: 0 auto 1.25rem;
+                    padding-right: 2rem;
+                }
+                li {
+                    margin: .25rem auto;
+                }
+            }
+            .article {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 960px) {
+    
+    .ilp-page-content {
+        &.offer_particles {
+            .offer_content_particle {
+                .icon { margin: 0 1rem; }
+            }
+        }
+        &.version4 {
+            .ilp-header-bg {
+                img { 
+                    margin: 0 0 0 4rem;
+                }
+            }
+        }
+        .user-value {
+            ul {
+                li {
+                    img {
+                        width: 150px;
+                    }
+                    .inner {
+                        left: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    
+    .ilp-page-content {
+        .user-value {
+            ul {
+                li {
+                    .inner {
+                        position: relative;
+                        left: 0;
+                        height: auto;
+                        }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    
+    .ilp-page-content {
+        &.variation_a {
+            .aside { 
+                padding: 0 10rem;
+            }
+        }
+        .infographic {
+            margin: 1rem auto 0;
+        }
+    }
+}
+@media screen and (max-width: 699px) {
+    h1, h2 { text-align: center; }
+    
+    .ilp-page-content {
+        &.offer_particles {
+            .offer_header {
+                .offer_title {
+                    h1, h2 { text-align: left; }
+                }
+            }
+            .aside {
+                border-radius: 0;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 640px) {
+    .ilp-page-content {
+        padding: 2rem 0;
+        
+        h1, h2 { text-align: center; }
+
+        .aside {
+            @include border-radius(.625rem);
+            border-left: none;
+            border-right: none;
+            &.fred {
+                margin-top: 8rem;
+                form {
+                    &:before {
+                        left: 40%;
+                    }
+                }
+            }
+        }
+
+        .content-area { padding: 0 2rem; }
+        
+        &.offer_particles {
+            .offer_header {
+                margin-bottom: 0;
+                border-bottom: none;
+                .offer_title {
+                    h1, h2 { text-align: center; }
+                }
+                img{ margin: 0 auto; display: block; float: none; }
+            }
+            .article {
+                padding-top: 3rem;
+            }
+        }
+        .offer_content {
+            .section_title {
+                position: relative;
+                h4 {
+                    float: none;
+                    margin-top: 0;
+                    text-align: center;
+                }
+                .btn_gray {
+                    float: none;
+                    margin: 0 auto;
+                    display: block;
+                    text-align: center;
+                    position: absolute;
+                    top: -5rem;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            .content_block {
+                padding: 1rem 0 3rem;
+                h3 {
+                    text-align: left;
+                }
+                a:hover { color: $ilpText2; }
+            }
+        }
+
+        
+        &.variation_a {
+            .aside { 
+                padding: 0 2rem;
+            }
+        }
+        
+        &.version4 {
+            padding: 0 0 2rem 0;
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.25rem }
+            .aside{
+                @include border-radius(0);
+                border-top: 10px solid $ilpBorder2;
+            }
+            .ilp-header-bg {
+                border: none;
+                min-width: 640px;
+                img {
+                    margin: 0 0 0 8rem;
+                    max-width: 775px;
+                }
+            }
+            .ilp-heading-top {
+                padding: 1rem 5rem 2rem 1rem;
+            }
+        }
+        
+        &.school-select-version {
+            padding-top: 0;
+            
+            h1, h2 { 
+                text-align: center;
+            }
+            
+            .aside {
+                max-width: 320px;
+                margin-top: 1rem;
+                .ilp-shortform {
+                    padding: 1rem 0 0;
+                }
+                h3 {
+                    text-align: center;
+                    max-width: 22rem;
+                    margin: 0 auto 1.25rem;
+                    padding-right: 0;
+                }
+                li {
+                    margin: .25rem auto;
+                }
+                &:before {
+                    content: "";
+                    display: none;
+                }
+            }
+            .article {
+                margin-top: 1rem;
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    
+    .ilp-page-content {
+        &.version4 {
+            .ilp-heading-top {
+                padding: .5rem 5rem 1rem 1rem;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    
+    .ilp-page-content {
+        &.aoi-1 {
+            padding: 1rem 0px 5rem;
+            @include bg($ilpBackgroundColor1);
+            .ilp-aoi-shortform {
+                border: none;
+                box-shadow: none;
+                width: 100%;
+            }
+            .aoi-heading-wrap {
+                margin: 0;
+                padding: 0;
+            }
+            .aoi-button-wrap {
+                margin: 2rem .5rem;
+            }
+        }
+        .aside {
+            &.fred {
+                form {
+                    &:before {
+                        left: 30%;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    .ilp-page-content {
+        padding-bottom: 1rem;
+        
+        h1 { font-size: 1.75rem; }
+        
+        h2 { font-size: 1.125rem; }
+        
+        .aside { margin-top: 1rem; }
+        
+        .content-area { margin-top: 1rem; }
+        
+        .infographic {
+            margin: .5rem auto 0;
+            &:before {
+                content: url('../../../images/ilp-infographic3.png') no-repeat;
+                width: 300px;
+            }
+        }
+        
+        &.version4 {
+            h1 { font-size: 1.625rem; }
+            .aside{
+                .ilp-shortform {
+                    padding-top: 1rem;
+                    h3 {
+                        margin-bottom: 1rem;
+                    }
+                }
+                }
+            .ilp-heading-top {
+                padding: 0rem 5rem 1rem 1rem;
+            }
+            .ilp-header-bg {
+                max-width: 838px;
+                min-width: 630px;
+                img {
+                    margin: 0 0 0 9rem;
+                    max-width: 935px;
+                }
+            }
+        }
+        
+        &.school-select-version {
+            padding-top: 0;
+            h2 { 
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    
+    .ilp-page-content {
+        
+        &.version4 {
+            h1 { font-size: 1.625rem; }
+            .aside{
+                border-top: 10px solid $ilpBorder2;
+                .ilp-shortform {
+                    padding-top: 1rem;
+                    h3 {
+                        margin-bottom: 1rem;
+                    }
+                }
+                }
+            .ilp-heading-top {
+                padding: 0rem 5rem 1rem 1rem;
+            }
+            .ilp-header-bg {
+                min-width: 740px;
+                img {
+                    margin: 0 0 0 12rem;
+                    max-width: 935px;
+                }
+            }
+        }
+        
+        &.school-select-version {
+            
+            h1, h2 {
+                text-align: left;
+            }
+            
+            .aside {
+                @include border-radius(0);
+                h3 {
+                    text-align: left;
+                }
+                li {
+                    padding-right: 2.5rem;
+                    &:before {
+                        content: url("../../core/images/icon-arrow-right-grey.png");
+                        width: 18px;
+                        height: 36px;
+                        position: absolute;
+                        right: .5rem;
+                        top: 3rem;
+                    }
+                }
+            }
+            
+            .content-area {
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+            }
+        }
+        &.aoi-1 {
+            padding: 1rem 0px 5rem;
+            @include bg($ilpBackgroundColor1);
+            .aoi-heading-wrap {
+                margin: 0;
+                padding: 0;
+            }
+            .aoi-button-wrap {
+                margin: 2rem 0;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,312 @@
+/* -- Font Families -- */
+
+// Definitions - Use the variable below as a template, it can be removed.
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$ptSans: 'PT Sans', Helvetica, Arial, sans-serif;
+$montserrat: 'Montserrat', Helvetica, Arial, sans-serif;
+
+// Assisgnments
+$typeface1: $ptSans;
+$typeface2: $montserrat;
+
+
+
+/* -- Color Definitions -- */
+
+// Neutral
+$white: #ffffff;
+$alabaster: #fbfbfb;
+$gallery: #f0f0f0;
+$galleryDark: #eaeaea;
+$silver: #C8C8C8;
+$gray: #808080;
+$mineshaft: #333333;
+$black: #000000;
+
+// Blues
+$curiousBlue: #299acf;
+$blue: #2e82b3;
+$shark: #202426;
+
+// Green
+$mountainMeadow: #1fbe6a;
+$mountainMeadowDark: #15aa5b;
+
+
+/* -- Color Assignments -- */
+
+// Typography
+$h1a: $mineshaft;
+$h1b: $mountainMeadow;
+$h1c: $black;
+$h1d: $black;
+$h1e: $black;
+
+$h2a: $mineshaft;
+$h2b: $black;
+$h2c: $black;
+$h2d: $black;
+$h2e: $black;
+
+$h3a: $mineshaft;
+$h3b: $black;
+$h3c: $black;
+$h3d: $black;
+$h3e: $black;
+
+$h4a: $mineshaft;
+$h4b: $black;
+$h4c: $black;
+$h4d: $black;
+$h4e: $black;
+
+$h5a: $mineshaft;
+$h5b: $black;
+$h5c: $black;
+$h5d: $black;
+$h5e: $black;
+
+$h6a: $mineshaft;
+$h6b: $black;
+$h6c: $black;
+$h5d: $black;
+$h5e: $black;
+
+$p1: $mineshaft;
+$p2: $white;
+$p3: $black;
+$p4: $black;
+$p5: $black;
+$p6: $black;
+$p7: $black;
+$p8: $black;
+
+$link1: $mountainMeadow;
+$link2: $mineshaft;
+$link3: $black;
+$link4: $black;
+$link5: $black;
+$link1-hover: $mountainMeadowDark;
+$link2-hover: $mountainMeadow;
+$link3-hover: $gray;
+$link4-hover: $gray;
+$link5-hover: $gray;
+
+$link1-bg: $white;
+$link2-bg: $white;
+$link3-bg: $white;
+$link4-bg: $white;
+$link5-bg: $white;
+$link1-bg-hover: $white;
+$link2-bg-hover: $white;
+$link3-bg-hover: $white;
+$link4-bg-hover: $white;
+$link5-bg-hover: $white;
+
+$span1: $black;
+$span2: $black;
+$span3: $black;
+$span4: $black;
+$span5: $black;
+
+$li1: $black;
+$li2: $black;
+$li3: $black;
+$li4: $black;
+$li5: $black;
+
+// Icons
+$icon1: $curiousBlue;
+$icon2: $mountainMeadow;
+$icon3: $white;
+
+// Structural Elements
+$bg1: $white;
+$bg2: $alabaster;
+$bg3: $gallery;
+$bg4: $shark;
+$bg5: $white;
+$bg6: $white;
+
+$border1: $gallery;
+$border2: $galleryDark;
+$border3: $mountainMeadow;
+$border4: $white;
+$border5: $white;
+$border6: $white;
+
+// Form Elements
+$label1: $mineshaft;
+$label2: $white;
+$label3: $black;
+$label4: $black;
+$label5: $black;
+$label6: $black;
+
+$field1: $white;
+$field2: $white;
+$field3: $white;
+$field4: $white;
+$field5: $white;
+$field6: $white;
+$field1-hover: $white;
+$field2-hover: $white;
+$field3-hover: $white;
+$field4-hover: $white;
+$field5-hover: $white;
+$field6-hover: $white;
+
+$field1-text: $black;
+$field2-text: $black;
+$field3-text: $black;
+$field4-text: $black;
+$field5-text: $black;
+$field6-text: $black;
+$field1-text-hover: $black;
+$field2-text-hover: $black;
+$field3-text-hover: $black;
+$field4-text-hover: $black;
+$field5-text-hover: $black;
+$field6-text-hover: $black;
+$field1-text-placeholder: $gray;
+$field2-text-placeholder: $gray;
+$field3-text-placeholder: $gray;
+$field4-text-placeholder: $gray;
+$field5-text-placeholder: $gray;
+$field6-text-placeholder: $gray;
+
+$field1-border: $galleryDark;
+$field2-border: $silver;
+$field3-border: $white;
+$field4-border: $white;
+$field5-border: $white;
+$field6-border: $white;
+$field1-border-hover: $galleryDark;
+$field2-border-hover: $silver;
+$field3-border-hover: $white;
+$field4-border-hover: $white;
+$field5-border-hover: $white;
+$field6-border-hover: $white;
+
+// Buttons
+$btn1: $mountainMeadow;
+$btn2: $mountainMeadow;
+$btn3: $black;
+$btn4: $black;
+$btn5: $black;
+$btn6: $black;
+$btn1-hover: $mountainMeadowDark;
+$btn2-hover: $mountainMeadow;
+$btn3-hover: $black;
+$btn4-hover: $black;
+$btn5-hover: $black;
+$btn6-hover: $black;
+$btn1-active: $mountainMeadow;
+$btn2-active: $mountainMeadow;
+$btn3-active: $black;
+$btn4-active: $black;
+$btn5-active: $black;
+$btn6-active: $black;
+
+$btn1-border: $mountainMeadow;
+$btn2-border: $white;
+$btn3-border: $black;
+$btn4-border: $black;
+$btn5-border: $black;
+$btn6-border: $black;
+$btn1-border-hover: $mountainMeadowDark;
+$btn2-border-hover: $mountainMeadowDark;
+$btn3-border-hover: $black;
+$btn4-border-hover: $black;
+$btn5-border-hover: $black;
+$btn6-border-hover: $black;
+$btn1-border-active: $mountainMeadow;
+$btn2-border-active: $white;
+$btn3-border-active: $black;
+$btn4-border-active: $black;
+$btn5-border-active: $black;
+$btn6-border-active: $black;
+
+$btn1-highlight: $mountainMeadow;
+$btn2-highlight: $mountainMeadow;
+$btn3-highlight: $black;
+$btn4-highlight: $black;
+$btn5-highlight: $black;
+$btn6-highlight: $black;
+$btn1-highlight-hover: $mountainMeadow;
+$btn2-highlight-hover: $mountainMeadow;
+$btn3-highlight-hover: $black;
+$btn4-highlight-hover: $black;
+$btn5-highlight-hover: $black;
+$btn6-highlight-hover: $black;
+
+$btn1-text: $white;
+$btn2-text: $white;
+$btn3-text: $white;
+$btn4-text: $white;
+$btn5-text: $white;
+$btn6-text: $white;
+$btn1-text-hover: $white;
+$btn2-text-hover: $white;
+$btn3-text-hover: $white;
+$btn4-text-hover: $white;
+$btn5-text-hover: $white;
+$btn6-text-hover: $white;
+
+$btn1-text-shadow: $mountainMeadowDark;
+$btn2-text-shadow: $white;
+$btn3-text-shadow: $white;
+$btn4-text-shadow: $white;
+$btn5-text-shadow: $white;
+$btn6-text-shadow: $white;
+$btn1-text-shadow-hover: $mountainMeadowDark;
+$btn2-text-shadow-hover: $white;
+$btn3-text-shadow-hover: $white;
+$btn4-text-shadow-hover: $white;
+$btn5-text-shadow-hover: $white;
+$btn6-text-shadow-hover: $white;
+
+$nav1-text: $white;
+$nav2-text: $white;
+$nav3-text: $white;
+$nav4-text: $white;
+$nav1-text-hover: $white;
+$nav2-text-hover: $white;
+$nav3-text-hover: $white;
+$nav4-text-hover: $white;
+
+$nav1-text-shadow: $white;
+$nav2-text-shadow: $white;
+$nav3-text-shadow: $white;
+$nav4-text-shadow: $white;
+$nav1-text-shadow-hover: $white;
+$nav2-text-shadow-hover: $white;
+$nav3-text-shadow-hover: $white;
+$nav4-text-shadow-hover: $white;
+
+$nav1-bg: $black;
+$nav2-bg: $black;
+$nav3-bg: $black;
+$nav4-bg: $black;
+$nav1-bg-hover: $gray;
+$nav2-bg-hover: $gray;
+$nav3-bg-hover: $gray;
+$nav4-bg-hover: $gray;
+
+$nav1-highlight: $white;
+$nav2-highlight: $white;
+$nav3-highlight: $white;
+$nav4-highlight: $white;
+$nav1-highlight-hover: $white;
+$nav2-highlight-hover: $white;
+$nav3-highlight-hover: $white;
+$nav4-highlight-hover: $white;
+
+$nav1-border: $black;
+$nav2-border: $black;
+$nav3-border: $black;
+$nav4-border: $black;
+$nav1-border-hover: $black;
+$nav2-border-hover: $black;
+$nav3-border-hover: $black;
+$nav4-border-hover: $black;

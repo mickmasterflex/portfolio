@@ -1,0 +1,90 @@
+---
+#======================================================
+# Description:
+# This homepage features an area for a LARGE amount of content and a Prometheus simple form
+#
+# Use case examples:
+# You need a home page with a flex form and a area for a LARGE amount of content ( 2 headings, paragraphs of text, lists, imagery )
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= Common Marketing Variables =================
+title: How Going Solar Works
+heading_one: How it Works
+heading_two: The process to go solar is easier than you think.
+form_heading: Make the first step to go solar!
+button_text: Get a Free Quote
+header_type: header_simple.html
+page_name: how-it-works
+
+---
+
+
+<div class="heading columns large-12 medium-12">
+    {{ if page.heading_one }}<h1 class="top">{{ page.heading_one }}</h1>{{ endif }}
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content form-right">
+    <div class="row">
+        <div class="heading columns large-12 medium-12">
+            {{ if page.heading_two }}<h2 class="top">{{ page.heading_two }}</h2>{{ endif }}
+        </div>
+        <div class="medium-7 columns">
+            <div class="sub-section">
+                <span class="circle-number">1</span>
+                <div class="content">
+                    <h4>Get a free solar consultation</h4>
+                    <p>Each solar installation project starts with a review and conversation to see if solar is the best for you. A installation specialist will discuss your energy use and most cost effective setup that meets your budget. A free customized quote will be made available to you upon completion.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <span class="circle-number">2</span>
+                <div class="content">
+                    <h4>Sign your agreement</h4>
+                    <p>Once you have reviewed your free solar quote the next step is to finalize a personalized agreement. Your representative will walk you through all of the guarantees and warranties to ensure your home and new investment are protected.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <span class="circle-number">3</span>
+                <div class="content">
+                    <h4>Design & Installation</h4>
+                    <p>A solar design specialist will review your purchased solar package and utilize roof measurements to maximize the collection of solar energy. Once design is complete you'll be amazed at how quickly your solar panel system is installed. Typically it only takes a single day to install your new solar panels.</p>
+                </div>
+            </div>
+            <div class="sub-section">
+                <span class="circle-number">4</span>
+                <div class="content">
+                    <h4>Turn on your power</h4>
+                    <p>Once the utility company gives you final approval, you are ready to switch over to your new clean, affordable energy source.</p>
+                </div>
+            </div>
+        </div>
+        <div class="one-option green sidebar medium-4 medium-offset-1 columns">
+            <div class="inner">
+                <p>See if you qualify for solar...</p>
+                <form action="{{ site.baseurl }}request-quote.html">
+                    <button class="button-two">Get a Free Quote</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

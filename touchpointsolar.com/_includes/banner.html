@@ -1,0 +1,48 @@
+<div class="row header-search {% if page.results %}minimal{% endif %}">
+    <div id="search-wrap">
+        <div class="wrap odin-search large-12 large-centered medium-11 medium-centered small-11 small-centered">
+            <div class="large-12 medium-12 small-12">
+                {% if page.is_home %}
+                <div class="search-heading wrap large-12 large-centered medium-11 medium-centered small-12 small-centered">
+                    <h1>Discover the Right College for You</h1>
+                    <h2>Select a program and enter your zip code to&nbsp;get&nbsp;started.</h2>
+                </div>
+                {% endif %}
+                <form method="GET" action="{{ site.baseurl }}results/" id="search_form" class="body_width">
+                    <div class="form_inner">
+                        <div class="field_wrap columns large-5 medium-5 small-12">
+                            <label for="area_of_interest">Which Program Interests You?</label>
+                            <select id="area_of_interest" name="area_of_interest" class="industry_select optional">
+                                <option value="">Choose a Field of Study:</option>
+                                <option value="50">Arts</option>
+                                <option value="52">Business &amp; Management</option>
+                                <option value="11">Computers &amp; Technology</option>
+                                <option value="12.04">Cosmetology</option>
+                                <option value="43">Criminal Justice &amp; Legal</option>
+                                <option value="12.05">Culinary</option>
+                                <option value="13">Education &amp; Teaching</option>
+                                <option value="52">Hospitality, Tourism &amp; Travel</option>
+                                <option value="22">Legal Studies</option>
+                                <option value="24">Liberal Arts</option>
+                                <option value="51">Nursing &amp; Healthcare</option>
+                                <option value="42">Psychology &amp; Human Services</option>
+                                <option value="38">Religion</option>
+                                <option value="27">Science, Math &amp; Engineering</option>
+                                <option value="46">Trades</option>
+                                <option value="47">Vocational Education</option>
+                            </select>
+                        </div>
+                        <div class="field_wrap columns large-3 medium-3 small-12">
+                            <label for="location">In What Area?</label>
+                            <input class="zip_input optional" type="text" id="location" name="zipCode" value="" placeholder="Zip Code" maxlength="5"/>
+                        </div>
+                        <div class="submit_wrap columns large-4 medium-4 small-12">
+                            <button class="button-three" type="submit"><span class="button-helper"></span>Search Degrees &raquo;</button>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

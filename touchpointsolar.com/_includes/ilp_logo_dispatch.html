@@ -1,0 +1,18 @@
+<div class="ilp-shortform">
+    <h3>{{ page.intent_heading }}</h3>
+    <ul>
+        {% for offer in page.school_offers %}
+        <li>
+            <div class="inner-logo">
+                {% if offer.school == 'UMA' %}
+                    <a class="offer_logo_click" onclick="atlas_results.offerClick({{ offer.offer_id }});$('.offer_wrap').fadeIn('easeInCirc');$('#offer__modal-backdrop').fadeIn('fast');ga('send', 'event', 'ILP', 'Click', 'ILPLogoClick{{ offer.school }}');"><img src="{{ offer.logo }}" /></a>
+                {% else %}
+                <a class="offer_logo_click" href="{{ site.baseurl }}thanks.html" onclick="ga('send', 'event', 'ILP', 'Click', 'ILPLogoClick{{ offer.school }}');"><img src="{{ offer.logo }}" /></a>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- Atlas and zipcode pre population -->
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>

@@ -1,0 +1,75 @@
+---
+#======================================================
+# Description:
+# This example html is used to show a user-specified form.
+#
+# Use case examples:
+#   * I want to create my own form to then point to a shortform or offer form.
+#
+# Notes:
+# Blah
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_basic_lp_layout  # layout requirement
+
+#========= Google Analytics ===========================
+page_type: ilp
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/d.ashx
+
+#========= Where page goes after form submit ==========
+next_url: ../../../thanks-new.html
+
+#========= Common Marketing Variables =================
+title: Example Simple Form
+heading_one: Testing
+heading_two: Also a Test
+form_heading: Forms Have Headings
+form_image: <img src="../images/icon-house.png" alt="icon-house" width="77" height="73" />
+minimized_fields: true
+
+#========= Form Fields ================================
+form_fields:
+    - label: Zip Code
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+      maxlength: 5
+    - label: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+    - label: Email
+      field_name: email_address
+      type: text
+      value:
+      is_required: required
+    - label: Phone
+      field_name: phone_home
+      type: text
+      value:
+      is_required: required
+      mask: (999) 999-9999
+
+---
+
+<h3>Congratulations! You’re ready to buy a home…</h3>
+<p>Buying a home is one of the biggest purchase decisions we ever make. That’s why finding the right home financing with the right mortgage lender is so important. Whether this is your first home, a vacation home, or an investment property, you’ll want to be prepared.</p>
+<p>Get up to 5 free loan offers in minutes. There’s no cost and no obligation. It’s just a great first step to turn your dream home into a reality.</p>

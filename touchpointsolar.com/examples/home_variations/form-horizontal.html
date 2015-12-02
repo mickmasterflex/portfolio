@@ -1,0 +1,92 @@
+---
+#======================================================
+# Description:
+# This homepage features 2 options for the user to select from - each options has an area for a title, icon, button and short description of around 124 characters.
+#
+# Use case examples:
+# You need a home page where the user selects one of two options
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+# Make sure the Jekyll Specific Variable 'home_hrz: yes' is present as it is used in an if 
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+is_home: yes
+home_hrz: yes
+tcpa: <!-- no tcpa -->
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: short_form.html
+
+#========= Common Marketing Variables =================
+title: Jekyll Template
+heading_one: This Here is a Title!
+heading_two: Now this is a secondary title
+phone_title: Have Questions? We’re Here to Help.
+button_text: GoGoGadget!
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: text
+      value:
+      is_required: required
+      mask: 99999
+    - label: What Are You Interested In?
+      field_name: cip
+      type: select
+      is_required: required
+      options:
+          - label: Select One
+            value:
+          - label: Arts
+            value: 50
+          - label: Business & Management
+            value: 52
+          - label: Computers & Technology
+            value: 11
+          - label: Criminal Justice & Legal
+            value: 43
+          - label: Culinary
+            value: 12.05
+          - label: Nursing & Healthcare
+            value: 51.07
+          - label: Trades
+            value: 46
+
+---
+
+<section class="main-content horizontal-form">
+    <div class="row">
+        <div class="heading large-12 small-12 small-centered">
+            <h1>{{ page.heading_one }}</h1>
+            <h2>{{ page.heading_two }}</h2>
+            <p>{{ page.paragraph }}</p>
+        </div>
+        
+        <div class="form-wrap row">
+            <div class="inner">
+                {% include prometheus_simple_form.html %}
+            </div>
+        </div>
+        
+    </div>
+</section>

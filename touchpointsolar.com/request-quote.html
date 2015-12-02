@@ -1,0 +1,110 @@
+---
+#======================================================
+# Description:
+# This homepage features an area for a LARGE amount of content and a Prometheus simple form
+#
+# Use case examples:
+# You need a home page with a flex form and a area for a LARGE amount of content ( 2 headings, paragraphs of text, lists, imagery )
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_base_layout
+sitemap_include: y
+priority: 0.5
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url: http://valkyrie.neutronnetwork.com/api/post_solar_lead
+
+#========= Where page goes after form submit ==========
+next_url: thankyou.html
+
+#========= Common Marketing Variables =================
+title: Request a Free Quote
+heading_one: Request a Free Quote
+form_heading: Contact Us
+button_text: Request Quote
+header_type: header_simple.html
+footer_type: footer.html
+page_name: request-quote
+
+#========= Form Fields ================================
+form_fields:
+    - label: What's Your Zip Code?
+      field_name: zip_code
+      type: tel
+      value:
+      is_required: required
+      mask: 99999
+    - label: First Name
+      field_name: first_name
+      type: text
+      value:
+      is_required: required
+    - label: Last Name
+      field_name: last_name
+      type: text
+      value:
+      is_required: required
+    - label: Email Address
+      field_name: email_address
+      type: email
+      value:
+      is_required: required
+    - label: Phone Number
+      field_name: phone
+      type: tel
+      value:
+      is_required: required
+    - label:
+      field_name: adid
+      type: hidden
+      value:
+    - label:
+      field_name: controller
+      type: hidden
+      value: SolarController
+    - label:
+      field_name: source_lp_domain
+      type: hidden
+      value: touchpointsolar.com
+    - label:
+      field_name: program
+      type: hidden
+      value: solar
+---
+
+<div class="heading columns large-12 medium-12">
+    {{ if page.heading_one }}<h1 class="top">{{ page.heading_one }}</h1>{{ endif }}
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content form-right">
+    <div class="row">
+        <div class="form-wrap medium-6 columns">
+            <div class="inner">
+                <div class="bottom">
+                    {% include prometheus_simple_form.html %}
+                </div>
+            </div>
+        </div>
+        <div class="medium-6 columns">
+            <div class="phone-number"><i class="fa fa-mobile"></i><p>Call Us : {{ site.text_phone }}</p><div class="clear"></div></div>
+            <p>Fill out a contact form and a member of our team will be in touch with you shortly to answer any questions you may have or to schedule your free, no obligation energy consultation.</p>
+            <img src="../images/home3-xsml.jpg" alt="house with solar panels" width="391" height="242"/>
+        </div>
+    </div>
+</div>

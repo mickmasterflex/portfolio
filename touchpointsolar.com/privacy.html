@@ -1,0 +1,20 @@
+---
+layout: base_layout
+sitemap_include: y
+priority: 0.5
+title: Privacy Policy
+subpage: yes
+header_type: header_simple.html
+page_name: privacy
+---
+
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<section class="main subpage">
+    <div class="row">
+        <div class="small-12 medium-12 medium-centered large-12 large-centered columns">
+            {% include privacy_content_no_modal.html %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,122 @@
+---
+#======================================================
+# Description:
+# This homepage features a simple form centered on top of a area for a large splash image. For this to work properly a maximum of 2 form fields can be defined
+#
+# Use case examples:
+# You need a simple home page with a splash image, a couple headings and a form with 1 or 2 fields.
+#
+# Notes:
+# To use this template as the home page for your site: Copy this template, name it index.html, and move it outside of the home_variations folder.
+#
+#======================================================
+
+#========= Jekyll Specific Variables ==================
+layout: prometheus_base_layout
+sitemap_include: y
+priority: 0.5
+is_home: yes
+
+#========= Google Analytics ===========================
+page_type: 
+
+#========= Link to required js for page ===============
+form_js: http://cdn.lecero.com/prometheus/simple_form/js/simple_form.js
+
+#========= Name form & give js something to query =====
+form_id: flex_form
+
+#========= URL to post form to ========================
+post_url:
+
+#========= Where page goes after form submit ==========
+next_url: request-quote.html
+
+#========= Common Marketing Variables =================
+title: Touchpoint Solar
+heading_one: Going Solar is the New Green
+phone_title: Have Questions? We’re Here to Help.
+header_type: header_simple.html
+footer_type: footer.html
+page_name: home
+button_text: Next Step
+tcpa: <!-- no tcpa needed -->
+
+#========= Form Fields ================================
+form_fields:
+    - label: Start by Entering Your Zip Code
+      field_name: zip_code
+      type: tel
+      value:
+      is_required: required
+      mask: 99999
+---
+
+<div class="form-center">
+    <div class="row">
+        <div class="heading large-12 small-12 small-centered">
+            <h1>{{ page.heading_one }}</h1>
+            {% if page.heading_two %}<h2>{{ page.heading_two }}</h2>{% endif %}
+        </div>
+        <div class="inner columns small-11 medium-5 small-centered">
+            <div class="bottom">
+                <!--<form action="{{ site.baseurl }}request-quote.html" method="post">-->
+                    <!--<label for="zip_code">Start by Entering Your Zip Code</label>-->
+                    <!--<input id="zip_code" class="zip_code" name="zip_code" type="text" placeholder="00000" />-->
+                    <!--<button class="button-one">Next Step</button>-->
+                <!--</form>-->
+                {% include prometheus_simple_form.html %}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% if page.page_name %}
+</div><!-- LEAVE THIS CLOSING DIV TAG HERE. for closing image_wrap div if page_name var is specified -->
+{% endif %}
+<div class="main-content one-option">
+    <div class="row">
+        <div class="option-wrap">
+            <div class="option medium-6 columns">
+                <div class="inner how">
+                    <div class="top">
+                        <h3>How it Works</h3>
+                    </div>
+                    <div class="bottom">
+                        <p>Learn about how the setup process will work and what to&nbsp;expect.</p>
+                        <form action="{{ site.baseurl }}how-it-works.html">
+                            <button class="button-one">Learn More</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="option medium-6 columns">
+                <div class="inner why">
+                    <div class="top">
+                        <h3>Why Solar?</h3>
+                    </div>
+                    <div class="bottom">
+                        <p>Learn about why so many people are collecting solar&nbsp;energy.</p>
+                        <form action="{{ site.baseurl }}why-solar.html">
+                            <button class="button-one">Learn More</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="one-option green">
+    <div class="row">
+        <div class="inner">
+            <p>Make the first step to go solar!</p>
+            <form action="{{ site.baseurl }}request-quote.html">
+                <button class="button-two">Get a Free Quote</button>
+            </form>
+        </div>
+    </div>
+</div>

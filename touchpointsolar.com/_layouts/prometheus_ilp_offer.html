@@ -1,0 +1,80 @@
+---
+layout: prometheus_base_layout
+ilp: true
+---
+
+<a name="top"></a>
+
+<div class="ilp-page-content offer_particles">
+
+    <div class="offer_header">
+        <div class="row">
+            <div class="medium-4 small-12 medium-push-8 columns">
+                {{ page.offer_logo }}
+            </div>
+            <div class="medium-8 small-12 medium-pull-4 columns offer_title">
+                <h1>{{ page.heading_one }}</h1>
+                <h2>{{ page.heading_two }}</h2>
+            </div>
+            
+        </div>
+    </div>
+            
+    <div class="row">
+        <div id="offer_wrap">
+            <div class="aside blue large-5 medium-5 medium-uncentered small-centered columns">
+                <h3>{{ page.heading_form }}</h3>
+                {% include prometheus_offer_form.html %}
+            </div>
+            <div class="article large-7 medium-7 medium-uncentered small-centered columns">
+                    
+                    <div class="row offer_content_particle">
+                        <div class="icon">
+                            <img src="http://www.findanycollege.com/images/icon-phone-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                        </div>
+                        <div class="particle">
+                            <h5 class="phone_number">{{ page.phone_number }}</h5>
+                            <a href="tel:{{ page.phone_number }}" class="btn_gray">Call Us!</a>
+                        </div>
+                    </div>
+                    
+                    <div class="row offer_content_particle">
+                        <div class="icon">
+                            <img src="http://www.findanycollege.com/images/icon-scroll-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                        </div>
+                        <div class="particle">
+                            <p>{{ page.blurb }}...<a href="#MoreOfferContent">Read More &raquo</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="row offer_content_particle">
+                        <div class="icon">
+                            <img src="http://www.findanycollege.com/images/icon-pin-blue.png" alt="icon-phone-blue" width="32" height="32" />
+                        </div>
+                        <div class="particle">
+                            <h5>{{ page.address }}</h5>
+                            {{ page.google_map }}
+                        </div>
+                    </div>
+                    
+                    <div class="row offer_content_particle">
+                        <div class="icon"></div>
+                        <div class="particle">
+                            {{ content }}
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+<a name="MoreOfferContent"></a>
+<div class="ilp-page-content no_padding">
+    <div class="offer_content">
+        <div class="row section_title">
+            <h4>{{ page.heading_full_desc }}</h4>
+            <a href="#top" class="btn_gray">Go Back to Top</a>
+        </div>
+        <div class="row content_block"></div>
+    </div>
+</div>

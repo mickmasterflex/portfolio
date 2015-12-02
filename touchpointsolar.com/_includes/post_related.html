@@ -1,0 +1,19 @@
+<div class="row related">
+    <div class="wrap">
+        <hr/>
+        <h2>Related Blog Posts</h2>
+        {% for post in site.posts limit:4 %}
+        <div class="article large-3 medium-3">
+            <a href="{{ post.url }}" title="{{ post.title }}">
+                <div class="post-image"><img src="{{ site.baseurl }}core/images/blog/{{ post.post_image }}" alt="{{post.title}}" /></div>
+                <div class="post-title">
+                    <div class="title">
+                        <h3>{{ post.title }}</h3>
+                    </div>
+                    <div class="author">By: {{ post.author }}</div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

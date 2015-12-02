@@ -1,0 +1,250 @@
+/* -------------------------------------------------------------------
+    Home Page Two Option Variation
+------------------------------------------------------------------- */
+
+.two-options {
+    position: relative;
+    min-height: 56px;
+    padding: 0 0 0 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 55rem;
+    max-height: 65.5625rem;
+    // Structure
+    .row {
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+    }
+    .heading { margin: 1.5rem 0; }
+    
+    // Typography
+    h1, h2 {
+        line-height: 1.1;
+        text-align: center;
+    }
+    h1 { padding: 1rem 0px .75rem; }
+    h2 { padding: 0.25rem 0px 2rem; }
+    
+    // Option Styles
+    .option {
+        display: block;
+        padding: 0 1rem;
+        margin-top: .5rem;
+        @include transition(all .25s);
+        &:hover {
+            margin-top: 0;
+            @include transition(all .5s);
+        }
+        
+        // Structure
+        .inner {
+            min-height: 25rem;
+            box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.25);
+            @include border-radius(.25rem);
+            @include bg ($bg1);
+        }
+        .top {
+            display: inline-block;
+            width: 100%;
+            padding: 2rem 11%;
+            @include bg ($bg1);
+            @include border-top-left-radius(.25rem);
+            @include border-top-right-radius(.25rem);
+        }
+        .bottom {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 1.75rem 11%;
+            border-top: solid .0625rem $border1;
+            @include bg ($bg1);
+            @include border-bottom-left-radius(.25rem);
+            @include border-bottom-right-radius(.25rem);
+        }
+        
+        //Typography
+        h3 {
+            margin: 0;
+            padding: 1.25rem 0 0 1.75rem;
+            float: left;
+        }
+        p { 
+            font-size: 1.125rem;
+            line-height: 1.8125rem;
+        }
+        
+        // Elements
+        .button-one {
+            width: 100%;
+            margin: 0 0 1.25rem 0;
+            padding: 1.125rem .625rem;
+        }
+        .icon { float: left; }
+    }
+}
+
+/* -------------------------------------------------------------------
+    Home Page Form Center Variation
+------------------------------------------------------------------- */
+
+.form-center {
+    padding: 2rem 0 6rem;
+    
+    // Structure
+    .heading { margin: 0 0 1.5rem; }
+    
+    // Typography
+    h1, h2 {
+        line-height: 1.1;
+        text-align: center;
+    }
+    h1 { padding: 1rem 0 .75rem; }
+    h2 { padding: 0; }
+    p {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        padding: 1rem 0 2rem;
+        text-align: center;
+    }
+    
+    // Form Structure Styles
+    .form-wrap {  }
+}
+
+/* -------------------------------------------------------------------
+    Home Page Form Right Variation
+------------------------------------------------------------------- */
+
+.form-right {
+    padding: 2rem 0 6rem;
+    
+    // Structure
+    .heading { margin: 0 0 1.5rem; }
+    
+    // Typography
+    h1, h2 {
+        line-height: 1.1;
+        text-align: left;
+        &.top { text-align: center; }
+    }
+    h1 { padding: 1rem 0 .75rem; }
+    h2 { padding: 0; }
+    p {
+        padding: 1rem 0 2rem;
+        text-align: left;
+    }
+    
+    // Form Structure Styles
+    .form-wrap {  }
+}
+
+/* -------------------------------------------------------------------
+    Home Page Horizontal Layout
+------------------------------------------------------------------- */
+
+.horizontal-form {
+    position: relative;
+    min-height: 56px;
+    padding: 0 0 0 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 35rem;
+    max-height: 67rem;
+    
+    // Structure
+    .row {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+    }
+    .heading { margin: 1.5rem 0; }
+    
+    // Typography
+    h1, h2 { line-height: 1.1; text-align: center; }
+    h1 { padding: 1rem 0 0; }
+    h2 { padding: 0.25rem 0 0; }
+    
+    // Form
+    .form-wrap {
+        position: relative;
+        width: auto;
+        .column, .columns { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .inner {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: none;
+            background: none;
+        }
+        form {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            padding: .25rem 1rem 1.875rem;
+            background: rgba(0,0,0,.25);
+            border-radius: 5px;
+        }
+        label { font-size: 1.125rem; }
+        .form-element, .submition {
+    
+        }
+        input, select {
+            width: 100%;
+            height: 49px;
+        }
+        .button-one, #multi_next_1, #multi_next_4 {
+            margin: 2.6875rem 0 0;
+            opacity: 1;
+            width: 100%;
+            height: 49px;
+            padding-top: .625rem;
+            &:focus, &:active {
+                @include bg($btn1);
+                &.hover { @include bg($btn1-hover); }
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------------
+	Media Queries
+------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+
+@media screen and (max-width: 750px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+    .horizontal-form {
+        height: auto;
+        max-height: 20000rem;
+        min-height: .25rem;
+        .row {  position: relative; }
+        .form-wrap { margin-bottom: 3rem; }
+        h1 { font-size: 3.75rem; }
+        h2 { font-size: 2rem; }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+}
+
+@media screen and (max-width: 400px) {
+    
+}
+
+@media screen and (max-width: 320px) {
+    
+}

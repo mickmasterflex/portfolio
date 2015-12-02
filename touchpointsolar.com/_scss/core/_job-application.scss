@@ -1,0 +1,260 @@
+.ja {
+    display: block;
+    background: $altBackgroundColor;
+    border: solid .0625rem $altBorder2;
+    border-radius: .1875rem;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    font-family: $raleway;
+    color: $defaultText;
+    .title { padding-top: 1rem; padding-bottom: 1rem; }
+    h5 { display: inline-block; }
+    h4 {
+        font-family: $raleway;
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+        text-align: center;
+        font-weight: 700;
+        color: $h4b;
+        background-color: transparent !important;
+        padding-bottom: 1.125rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $altBorder2;
+    }
+    .circle {
+        @include linearGradient-vrt($altCircleGradientTop, $altCircleGradientBottom);
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        color: $altBackgroundColor;
+        font-weight: 300;
+        display: block;
+        width: 1.4375rem;
+        height: 1.4375rem;
+        border-radius: 50%;
+        float: left;
+        margin: 3px 10px 0 0;
+    }
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+        border-bottom: none;
+        border: 1px solid $border3;
+    }
+    input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+        border-bottom: none;
+        border: 1px solid $border2;
+    }
+    .section { display: inline-block; padding-bottom: 1.5rem; border-bottom: .0625rem solid $altBorder2; }
+    .this-is-the-end {
+        padding: 0px 0.9375rem .9375rem;
+        p { text-align: center; margin-bottom: .5rem; }
+        .button-one { width: 100%; }
+    }
+}
+
+.ja__step-one {
+    padding: 0;
+}
+
+.ja__step-two {
+    border-top: solid 1px $altBorder2;
+    padding: .9375rem 0 0 0;
+    margin: 0;
+    h4 {
+        padding-left: .9375rem;
+        &.label_error {
+            color: $defaultError;
+        }
+    }
+    label {
+        padding: .625rem .9375rem 1rem 0  !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+}
+
+.ja__step-three {
+    border-top: solid 1px $altBorder2;
+    padding: .9375rem .9375rem;
+    .button {
+        display: block;
+    }
+    p { text-align: center; }
+    .tcpa {
+        p {
+            font-size: .75rem;
+            line-height: 1.3125rem;
+            text-align: left;
+            color: $altText2;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.ja__form {
+    margin: 1.3rem 0 0 0;
+    padding:0;
+    ul {
+        list-style: none;
+        margin-left: 0 !important;
+    }
+
+    .field {
+        margin: 0 0 .8rem 0;
+        padding: 0 5px;
+        float: left !important;
+        .input_error {
+            border-color: $defaultError;
+        }
+        label {
+            color: $defaultText;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            font-weight: 300;
+        }
+        input {
+            font-size: 1rem;
+            font-weight: 200;
+        }
+    }
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+        box-shadow: none;
+        border: solid 1px $field2-border;
+        border-left: solid 2px $altBorder;
+        @include border-radius(2px);
+        margin: 0;
+        &:focus {
+            border-left: solid 2px $defaultInputBorder;
+            border-color: $field2-border;
+        }
+    }
+    .radio {
+        height: 5.1875rem;
+        display:block;
+        background: $altHeading1;
+        margin: .0625rem 0 0 0;
+        padding: 0 .9375rem;
+    }
+    input[type="radio"] + label {
+        padding-left: 1em;
+        color: $altText2 !important;
+        font-size: 1.05rem;
+        font-weight: 300;
+        letter-spacing: .02rem;
+        @include transition(color .25s);
+        &:hover {
+            color: $altHeading4 !important;
+        }
+    }
+
+    input[type="radio"] {
+        position:absolute;
+        clip: rect(0,0,0,0);
+        clip: rect(0 0 0 0);
+        background-color: $altBackgroundColor;
+        @include transition(background-color 5s);
+        &:hover, &:focus, &:hover + label, &:focus + label {
+            border-color: $field2-border;
+            color: $defaultInputBorder;
+            background-color: $altBackgroundColor;
+            @include transition(background-color .25s, text-shadow .5s .25s, color .5s .25s);
+        }
+        &:checked + label {
+            background-color: $defaultInputBorder;
+            color: $altBackgroundColor !important;
+            @include transition(background-color .25s);
+        }
+    }
+    input[type="radio"] + label::before {
+/*         border: solid 2px $defaultInputBorder; */
+        background: $altBackgroundColor;
+        content: '';
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-left: -2.2rem;
+        position: relative;
+        top: .3em;
+        display: flex;
+        flex-flow: row wrap;
+        align-content:center;
+        font-size: 1.5rem;
+        float: left;
+        background-color: transparent;
+        border-radius: 0%;
+        border: 1px solid rgba($field2-border, .5);
+        @include transition(background-color 1s 0s, border .25s 0 0);
+    }
+    input[type="radio"]:hover + label::before {
+/*         border: 2px solid $defaultInputBorder; */
+        @include transition(border .25s 0 0);
+    }
+    input[type="radio"]:checked + label::before {
+/*         border: 3px solid $defaultInputBorder; */
+        background: $altBackgroundColor;
+        content: "\d7";
+        padding: 0 0 2px 3px;
+        color: $defaultInputBorder;
+        box-shadow: 0px 0px 0 1px $altBackgroundColor;
+        @include transition(border .25s 0 0);
+    }
+}
+
+#form_errors {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: $altHeading1;
+    margin-bottom: 1rem;
+    @include transition(position .25s);
+    strong {
+        font-weight: 400;
+        font-style: italic;
+        color: $defaultError;
+    }
+}
+
+.application {
+    .ja__form {
+        .field {
+            padding: 0 10px;
+            margin: 0 0 1.5rem 0;
+            label {
+                display: block;
+            }
+        }
+    }
+    .btn-three {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+    .tcpa {
+        width: 75%;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $altButton;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $altButton;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $altButton;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $altButton;
+}
+
+@media screen and (max-width: 600px) {
+
+    .ja {
+
+    }
+}

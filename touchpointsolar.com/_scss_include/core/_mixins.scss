@@ -1,0 +1,315 @@
+// Custom mixins and variables
+// Used for setting the font values of an element
+// NOTE: REM only
+@mixin font($fontSize:1, $lineHeight:null, $fontWeight:null, $fontStyle:null, $fontFamily:null) {
+    @if $lineHeight == null {
+        font-size: $fontSize + rem;
+    } @else {
+        @if $fontWeight == null {
+            font-size: $fontSize + rem;
+            line-height: $lineHeight + rem;
+        } @else {
+            @if $fontFamily == null {
+                @if $fontWeight == inherit {
+                    font-size: $fontSize + rem;
+                    line-height: $lineHeight + rem;
+                    font-style: $fontStyle;
+                } @else {
+                    font-size: $fontSize + rem;
+                    line-height: $lineHeight + rem;
+                    font-weight: $fontWeight;
+                    font-style: $fontStyle;
+                }
+            } @else {
+                @if $fontWeight == inherit {
+                    font: $fontStyle $fontSize + rem/$lineHeight + rem $fontFamily;
+                } @else {
+                    font: $fontWeight $fontStyle $fontSize + rem/$lineHeight + rem $fontFamily;
+                }
+            }
+        }
+    }
+}
+
+// Image Path
+@function imagePath($image) {
+    @return '../' + $image;
+}
+
+// Used as a shorthand for setting the background of an element
+@mixin bg($color:null, $image:null, $horiz:center, $vert:center, $repeat:no-repeat) {
+    @if $color == null {
+        background: url(#{imagePath($image)}) $horiz $vert $repeat;
+} @else {
+    @if $image == null {
+        background: $color;
+    } @else {
+        background: $color url(#{imagePath($image)}) $horiz $vert $repeat;
+}
+    }
+    }
+// Linear Gradient - Horizontal - Background
+@mixin linear-gradient($color1, $color2, $reverse:false) {
+    @if $reverse == false {
+        background: $color1;
+        background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+        background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+        background: -o-linear-gradient(top, $color1 0%, $color2 100%);
+        background: -ms-linear-gradient(top, $color1 0%, $color2 100%);
+        background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=0);
+    } @else {
+        background: $color2;
+        background: -moz-linear-gradient(top, $color2 0%, $color1 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color2), color-stop(100%, $color1));
+        background: -webkit-linear-gradient(top, $color2 0%, $color1 100%);
+        background: -o-linear-gradient(top, $color2 0%, $color1 100%);
+        background: -ms-linear-gradient(top, $color2 0%, $color1 100%);
+        background: linear-gradient(to bottom, $color2 0%, $color1 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color2', endColorstr='$color1', GradientType=0);
+    }
+}
+
+// Linear Gradient - Vertical
+@mixin linearGradient-vrt($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 ); /* IE6-9 */
+}
+
+// Linear Gradient - Horizontal
+@mixin linearGradient-hrz($left, $right){
+    background: $left; /* Old browsers */
+    background: -moz-linear-gradient(top,  $left 0%, $right 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, top left, bottom right, color-stop(0%,$left), color-stop(100%,$right)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  $left 0%,$right 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  $left 0%,$right 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  $left 0%,$right 100%); /* IE10+ */
+    background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$left', endColorstr='$right',GradientType=0 ); /* IE6-9 */
+}
+
+// Radial Gradient
+@mixin radial-gradient($color1, $color2, $offset: center, $color-stop: 100%, $shape: ellipse, $reverse:false) {
+    @if $reverse == false {
+        background: $color1;
+        background: -moz-radial-gradient($offset, $shape cover, $color1 0%, $color2 $color-stop);
+        background: -webkit-gradient(radial, $offset, 0px, center center, 100%, color-stop(0%, $color1), color-stop($color-stop, $color2));
+        background: -webkit-radial-gradient($offset, $shape cover, $color1 0%, $color2 $color-stop);
+        background: -o-radial-gradient($offset, $shape cover, $color1 0%, $color2 $color-stop);
+        background: -ms-radial-gradient($offset, $shape cover, $color1 0%, $color2 $color-stop);
+        background: radial-gradient($shape at $offset, $color1 0%, $color2 $color-stop);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=1);
+    } @else {
+        background: $color2;
+        background: -moz-radial-gradient($offset, $shape cover, $color2 0%, $color1 $color-stop);
+        background: -webkit-gradient(radial, $offset, 0px, center center, 100%, color-stop(0%, $color2), color-stop($color-stop, $color1));
+        background: -webkit-radial-gradient($offset, $shape cover, $color2 0%, $color1 $color-stop);
+        background: -o-radial-gradient($offset, $shape cover, $color2 0%, $color1 $color-stop);
+        background: -ms-radial-gradient($offset, $shape cover, $color2 0%, $color1 $color-stop);
+        background: radial-gradient($shape at $offset, $color2 0%, $color1 $color-stop);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color2', endColorstr='$color1', GradientType=1);
+    }
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    -moz-border-bottom-left-radius: $radius;
+    -ms-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-bottom-right-radius: $radius;
+    -ms-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius) {
+    -webkit-border-top-left-radius: $radius;
+    -moz-border-top-left-radius: $radius;
+    -ms-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-top-right-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    -moz-border-top-right-radius: $radius;
+    -ms-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+// Transistion
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+// Box Shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    -o-box-shadow:$top $left $blur $color #{$inset};
+    -ms-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
+}
+
+// Text Shadow
+@mixin text-shadow($horizOffset, $vertOffset, $blur, $color) {
+    -webkit-text-shadow: $horizOffset $vertOffset $blur $color;
+    -moz-text-shadow: $horizOffset $vertOffset $blur $color;
+    -ms-text-shadow: $horizOffset $vertOffset $blur $color; /* IE 10+ */
+    -o-text-shadow: $horizOffset $vertOffset $blur $color;
+    text-shadow: $horizOffset $vertOffset $blur $color;
+    }
+
+// Background Opacity
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+// skew
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+// Google Fonts
+@function wf-str-replace($string, $find, $replace, $all: true) {
+    $index: str-index($string, $find);
+    @if $index {
+        $before: str-slice($string, 1, $index - 1);
+        $after: str-slice($string, $index + str-length($find), str-length($string));
+        $string: $before + $replace + $after;
+
+        @if $all and not str-index($find, $replace) {
+            $string: wf-str-replace($string, $find, $replace);
+        }
+    }
+    @return $string;
+}
+
+@function wf-url-encode($string) {
+    $replacements: (
+    "!": "%21",
+    "#": "%23",
+    "$": "%24",
+    "&": "%26",
+    "'": "%27",
+    "(": "%28",
+    ")": "%29",
+    "*": "%2A",
+    "+": "%2B",
+    ",": "%2C",
+    "/": "%2F",
+    ":": "%3A",
+    ";": "%3B",
+    "=": "%3D",
+    "?": "%3F",
+    "@": "%40",
+    "[": "%5B",
+    "]": "%5D"
+  );
+
+    @each $from, $to in $replacements {
+        $string: wf-str-replace($string, $from, $to);
+    }
+
+    @return $string;
+}
+
+@function wf-implode($list, $seperator: ",") {
+    $string: "";
+    @for $i from 1 through length($list) {
+        $el: nth($list, $i);
+        $string: $string + $el;
+        @if ($i < length($list)) {
+            $string: $string + $seperator;
+        }
+    }
+    @return $string;
+}
+
+@function wf-serialize($fonts) {
+    @if type-of($fonts) == 'list' or type-of($fonts) == 'arglist' {
+        $serialized: ();
+        @each $font in $fonts {
+            $serialized: append($serialized, wf-serialize($font));
+        }
+        @return wf-implode($serialized, "|");
+    }
+
+    @if type-of($fonts) == 'map' {
+        $serialized: ();
+        @each $family, $variants in $fonts {
+            $variants: wf-implode($variants, ",");
+            $variants: wf-str-replace($variants, " ", "");
+            $serialized: append($serialized, "#{$family}:#{$variants}");
+        }
+        @return wf-serialize($serialized);
+    }
+
+    @if type-of($fonts) == 'string' {
+        @return wf-url-encode($fonts);
+    }
+
+    @warn "Unsupported font type: #{type-of($fonts)}";
+}
+
+@mixin web-fonts($fonts...) {
+    $web-fonts-protocol: "" !default;
+    $protocol: $web-fonts-protocol;
+    @if str-length($protocol) > 0 {
+        $protocol: $protocol + ":";
+    }
+    $url: "#{$protocol}//fonts.googleapis.com/css?family=";
+    $url: $url + wf-serialize($fonts);
+    @import url($url);
+}
